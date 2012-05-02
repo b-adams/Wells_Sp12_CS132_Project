@@ -83,10 +83,21 @@
     return YES;
 }
 
-- (IBAction)dChangeOfUnits:(id)sender {
+#pragma mark User Interface Methods
+- (IBAction)dChangeOfUnits:(id)sender
+{
+    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    NSLog(@"SENDER: %@\n\tselectedItem: %@\n\tindexOfSelectedItem: %ld\n\ttitleOfSelectedItem: %@\n\n", 
+          sender, [sender selectedItem], [sender indexOfSelectedItem], [sender titleOfSelectedItem]);
 }
-- (IBAction)dChangeTaskActivity:(id)sender {
+- (IBAction)dChangeTaskActivity:(id)sender
+{
+    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    NSLog(@"SENDER: %@\n\tstate: %ld\n\n", sender, [sender state]);
 }
-- (IBAction)dAddTask:(id)sender {
+- (IBAction)dAddTask:(id)sender
+{
+    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    NSLog(@"SENDER: %@\n\n", sender);
 }
 @end
