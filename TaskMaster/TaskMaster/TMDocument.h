@@ -31,7 +31,7 @@
 @property (weak) IBOutlet NSProgressIndicator *dCurrentTaskDateProgress;
 
 #pragma mark New Task
-@property (strong) IBOutlet NSWindow *dNewTaskName;
+@property (weak) IBOutlet NSTextField *dNewTaskName;
 @property (unsafe_unretained) IBOutlet NSTextView *dNewTaskDescription;
 @property (weak) IBOutlet NSTextField *dNewTaskDuration;
 @property (weak) IBOutlet NSDatePicker *dNewTaskDueDate;
