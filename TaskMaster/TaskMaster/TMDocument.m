@@ -9,6 +9,28 @@
 #import "TMDocument.h"
 
 @implementation TMDocument
+@synthesize dTasksRemaining;
+
+@synthesize dCurrentTaskDescription;
+@synthesize dCurrentTaskName;
+@synthesize dCurrentTaskTimeRemaining;
+@synthesize dTaskInProgress;
+
+@synthesize dCurrentTaskTimeSpent;
+@synthesize dCurrentTaskCompletion;
+@synthesize dCurrentTaskTimeUnits;
+
+@synthesize dCurrentTaskDateEntered;
+@synthesize dCurrentTaskDateDue;
+@synthesize dCurrentTaskDateProgress;
+
+@synthesize dNewTaskName;
+@synthesize dNewTaskDescription;
+@synthesize dNewTaskDuration;
+@synthesize dNewTaskDueDate;
+@synthesize dNewTaskTimeUnit;
+
+@synthesize cCompletedTasks;
 
 - (id)init
 {
@@ -61,4 +83,10 @@
     return YES;
 }
 
+- (IBAction)dChangeOfUnits:(id)sender {
+}
+- (IBAction)dChangeTaskActivity:(id)sender {
+}
+- (IBAction)dAddTask:(id)sender {
+}
 @end
