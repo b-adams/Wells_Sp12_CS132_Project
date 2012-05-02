@@ -14,6 +14,7 @@
 		E921AC8F15508B0E00D4281F /* TMDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = E921AC8E15508B0E00D4281F /* TMDocument.m */; };
 		E921AC9215508B0E00D4281F /* TMDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = E921AC9015508B0E00D4281F /* TMDocument.xib */; };
 		E921AC9515508B0F00D4281F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E921AC9315508B0F00D4281F /* MainMenu.xib */; };
+		E921ACB21550D50500D4281F /* TaskMaster.icns in Resources */ = {isa = PBXBuildFile; fileRef = E921ACB11550D50500D4281F /* TaskMaster.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		E921AC8E15508B0E00D4281F /* TMDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMDocument.m; sourceTree = "<group>"; };
 		E921AC9115508B0E00D4281F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TMDocument.xib; sourceTree = "<group>"; };
 		E921AC9415508B0F00D4281F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E921ACB11550D50500D4281F /* TaskMaster.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = TaskMaster.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 		E921AC6C15508B0D00D4281F = {
 			isa = PBXGroup;
 			children = (
+				E921ACB11550D50500D4281F /* TaskMaster.icns */,
 				E921AC8115508B0D00D4281F /* TaskMaster */,
 				E921AC7A15508B0D00D4281F /* Frameworks */,
 				E921AC7815508B0D00D4281F /* Products */,
@@ -159,6 +162,7 @@
 				E921AC8C15508B0E00D4281F /* Credits.rtf in Resources */,
 				E921AC9215508B0E00D4281F /* TMDocument.xib in Resources */,
 				E921AC9515508B0F00D4281F /* MainMenu.xib in Resources */,
+				E921ACB21550D50500D4281F /* TaskMaster.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +304,7 @@
 				E921AC9A15508B0F00D4281F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
