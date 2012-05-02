@@ -99,5 +99,7 @@
 {
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     NSLog(@"SENDER: %@\n\n", sender);
+    NSLog(@"\n\tName: %@\n\tDescription: %@\n\tDue: %@",
+          [dNewTaskName stringValue], [dNewTaskDescription string], [dNewTaskDueDate stringValue]);
 }
 @end
