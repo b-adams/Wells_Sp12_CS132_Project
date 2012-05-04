@@ -6,7 +6,7 @@ Please edit this file, add your name to the list below, save the file, commit yo
 
 THE LIST BELOW
 --------------
-Prof Adams
+Prof Adams (is still here)
 Dauris 
 Keegan Evans
 Constance LeBerth
