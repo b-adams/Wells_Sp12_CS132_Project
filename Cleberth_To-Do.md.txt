@@ -1,0 +1,58 @@
+# Constance LeBerth To-Do List
+
+* Make a To-Do List
+
+Task Ivars (Easiest-Just data storage) (CS132Task)
+  -What it needs to know        -Type of Data           -Property Name
+    *Name                         *NSString               *taskName
+    *description                  *NSString               *taskDescription
+    *Creation Date                *NSDate                 *dateCreated
+    *Due Date                     *NSDate                 *dateDue
+    *Date Completed               *NSDate                 *dateCompleted
+    *Time spent working           *NSTimeInterval         *timeSpent
+    *Time remaining               *NSTimeInterval         *timeRemaining
+    *Initial Time Expected        *NSTimeInterval         *timeExpected
+
+                           **Documentation**
+
+Task Methods
+  -What it needs to do                           -Method Name
+    *Compare to another CS132Task                  *(NSComparisionResult)compare:
+                                                          (CS132Task*)anotherTask
+
+       -Compare:dateDue - timeRemaining            *(NSDate*)dateEffective
+                NSDate  - NSTimeInterval -> NSDate
+
+       -Compute Time and Date Progress (0-100)     *(int)progressInTimeFrom:(int)none 
+					                                 To:(int)done
+                                                   *(int)progressInCompletionFrom:(int)none 
+					                                       To:(int)done
+
+Heap Ivars
+  -What it needs to know
+    *Top Task
+
+Heap Methods
+  
+
+Manager Ivars (Cs132Manager)
+  -What it needs to have
+    *To Do List (Heap
+    *Completed List (Array)
+
+Manager Methods
+  -What Actions are needed            
+    *Add a New Task into the Heap 
+       with given name, description,
+       time expected and due date
+    *Access current Top Task
+    *Report Number of Tasks remaining
+    *Finish Top Task
+    *Access Completed tasks array
+    *Update Time remaining on Top Task
+    *Report Time Spent on top task
+
+
+
+
+
