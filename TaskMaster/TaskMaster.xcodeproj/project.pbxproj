@@ -15,6 +15,7 @@
 		E921AC9215508B0E00D4281F /* TMDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = E921AC9015508B0E00D4281F /* TMDocument.xib */; };
 		E921AC9515508B0F00D4281F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E921AC9315508B0F00D4281F /* MainMenu.xib */; };
 		E921ACB21550D50500D4281F /* TaskMaster.icns in Resources */ = {isa = PBXBuildFile; fileRef = E921ACB11550D50500D4281F /* TaskMaster.icns */; };
+		E9D5522C15587DC800193328 /* CS132Task.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D5522B15587DC800193328 /* CS132Task.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		E921AC9115508B0E00D4281F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TMDocument.xib; sourceTree = "<group>"; };
 		E921AC9415508B0F00D4281F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E921ACB11550D50500D4281F /* TaskMaster.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = TaskMaster.icns; sourceTree = "<group>"; };
+		E9D5522A15587DC800193328 /* CS132Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CS132Task.h; sourceTree = "<group>"; };
+		E9D5522B15587DC800193328 /* CS132Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CS132Task.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				E921AC8D15508B0E00D4281F /* TMDocument.h */,
+				E9D5522A15587DC800193328 /* CS132Task.h */,
+				E9D5522B15587DC800193328 /* CS132Task.m */,
 				E921AC8E15508B0E00D4281F /* TMDocument.m */,
 				E921AC9015508B0E00D4281F /* TMDocument.xib */,
 				E921AC9315508B0F00D4281F /* MainMenu.xib */,
@@ -175,6 +180,7 @@
 			files = (
 				E921AC8815508B0D00D4281F /* main.m in Sources */,
 				E921AC8F15508B0E00D4281F /* TMDocument.m in Sources */,
+				E9D5522C15587DC800193328 /* CS132Task.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
