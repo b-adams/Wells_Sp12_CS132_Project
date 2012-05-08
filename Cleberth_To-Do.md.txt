@@ -36,20 +36,20 @@ Heap Methods
   
 
 Manager Ivars (Cs132Manager)
-  -What it needs to have
-    *To Do List (Heap
-    *Completed List (Array)
+  -What it needs to have      -Type of Data               -Name
+    *To Do List (Heap)          *                           *tasksToDo …?
+    *Completed List (Array)     *                           *tasksCompleted …?
 
 Manager Methods
-  -What Actions are needed            
-    *Add a New Task into the Heap 
+  -What Actions are needed                 -Method Names
+    *Add a New Task into the Heap             *(CS132Task*)addTask:(CS132Task*)newTask
        with given name, description,
        time expected and due date
-    *Access current Top Task
-    *Report Number of Tasks remaining
-    *Finish Top Task
-    *Access Completed tasks array
-    *Update Time remaining on Top Task
+    *Access current Top Task                  *(CS132Task*)taskCurrentlyAtTop
+    *Report Number of Tasks remaining         *(int)tasksRemaining
+    *Finish Top Task                          *(BOOL)taskIsCompleted
+    *Access Completed tasks array             *(NSArray*)tasksCompleted
+    *Update Time remaining on Top Task        *(
     *Report Time Spent on top task
 
 
