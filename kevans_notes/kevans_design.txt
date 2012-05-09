@@ -1,1 +1,33 @@
-kevans_notes
+-Task ivars
+	taskName
+	taskDescription
+	dateDue
+	dateCreated
+	timeRemaining
+	timeExpected
+	dateCompleted
+	timeSpend
+
+-Task methods
+	NS Comparison Result (Compare Tasks)
+	NSDate* (Compute effective date)
+	int (compute time and progress)
+	int (compute time and progress)
+
+-Heap ivars
+	nodeFirst
+	nodeLast
+-Heap methods
+	topRemove
+	bubbleUp
+	bubbleDown
+-Manager ivars
+		
+-Manager methods
+	addTask
+	topTaskView
+	topTaskSpendTime
+	topTaskFinish
+	viewCompletedTasks
+	viewTasksRemaining
+	topTaskUpdate
