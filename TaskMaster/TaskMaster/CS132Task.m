@@ -10,4 +10,32 @@
 
 @implementation CS132Task
 
+{
+    NSString* DNU_taskName;
+    NSString* DNU_taskDescription;
+    NSDate* DNU_dateDue;
+    NSDate* DNU_dateCreated;
+    NSTimeInterval* DNU_timeRemaining;
+    NSDate* DNU_dateCompleted;
+    NSTimeInterval* DNU_timeExpected;
+    NSTimeInterval* DNU_timeSpent;
+}
+
+@synthesize taskName=DNU_taskName;
+
+@synthesize taskDescription=DNU_taskDescription;
+
+@synthesize dateDue=DNU_dateDue;
+
+@synthesize dateCreated=DNU_dateCreated;
+
+@synthesize timeRemaining=DNU_timeRemaining;
+
+@synthesize dateCompleted=DNU_dateCompleted;
+
+@synthesize timeExpected=DNU_timeExpected;
+
+@synthesize timeSpent=DNU_timeSpent;
+
+
 @end

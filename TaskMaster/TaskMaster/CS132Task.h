@@ -10,4 +10,21 @@
 
 @interface CS132Task : NSObject
 
+@property (strong) NSString* taskName;
+
+@property (strong) NSString* taskDescription;
+
+@property (strong) NSDate* dateDue;
+
+@property (strong) NSDate* dateCreated;
+
+@property (strong) NSTimeInterval* timeRemaining;
+
+@property (strong) NSDate* dateCompleted;
+
+@property (strong) NSTimeInterval* timeExpected;
+
+@property (strong) NSTimeInterval* timeSpent;
+
+
 @end
