@@ -26,5 +26,20 @@
 
 @property (strong) NSTimeInterval* timeSpent;
 
+-(NSString *) taskName;
+
+-(NSString *)taskDescription;
+
+-(NSDate *) dateDue;
+
+-(NSDate *) dateCreated;
+
+-(NSTimeInterval *) timeSpent;
+
+-(NSTimeInterval *) timeRemaining;
+
+-(NSDate *) dateCompleted;
+
+-(NSTimeInterval *) timeInterval;
 
 @end
