@@ -10,4 +10,20 @@
 
 @interface CS132Task : NSObject
 
+-(NSString *) taskName;
+
+-(NSString *)taskDescription;
+
+-(NSDate *) dateDue;
+
+-(NSDate *) dateCreated;
+
+-(NSTimeInterval *) timeSpent;
+
+-(NSTimeInterval *) timeRemaining;
+
+-(NSDate *) dateCompleted;
+
+-(NSTimeInterval *) timeInterval;
+
 @end

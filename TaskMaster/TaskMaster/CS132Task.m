@@ -13,21 +13,25 @@
 -(NSString *) taskName
 {
    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+        return nil;
 }
 
 -(NSString *)taskDescription
 {
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+        return nil;
 }
 
 -(NSDate *) dateDue
 {
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+        return nil;
 }
 
 -(NSDate *) dateCreated
 {
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+        return nil;
 }
 
 -(NSTimeInterval *) timeSpent
@@ -38,15 +42,18 @@
 -(NSTimeInterval *) timeRemaining
 {
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+        return nil;
 }
 
 -(NSDate *) dateCompleted
 {
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+        return nil;
 }
 
 -(NSTimeInterval *) timeInterval
 {
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    return nil;
 }
 @end
