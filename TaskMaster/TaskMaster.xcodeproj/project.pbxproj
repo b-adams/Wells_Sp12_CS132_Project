@@ -15,6 +15,8 @@
 		E921AC9215508B0E00D4281F /* TMDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = E921AC9015508B0E00D4281F /* TMDocument.xib */; };
 		E921AC9515508B0F00D4281F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E921AC9315508B0F00D4281F /* MainMenu.xib */; };
 		E921ACB21550D50500D4281F /* TaskMaster.icns in Resources */ = {isa = PBXBuildFile; fileRef = E921ACB11550D50500D4281F /* TaskMaster.icns */; };
+		E9329BA2155B10D9000108D8 /* CS132Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = E9329BA1155B10D9000108D8 /* CS132Manager.m */; };
+		E9329BA6155B10E4000108D8 /* CS132Heap.m in Sources */ = {isa = PBXBuildFile; fileRef = E9329BA5155B10E4000108D8 /* CS132Heap.m */; };
 		E9D5522C15587DC800193328 /* CS132Task.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D5522B15587DC800193328 /* CS132Task.m */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,10 @@
 		E921AC9115508B0E00D4281F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TMDocument.xib; sourceTree = "<group>"; };
 		E921AC9415508B0F00D4281F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E921ACB11550D50500D4281F /* TaskMaster.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = TaskMaster.icns; sourceTree = "<group>"; };
+		E9329BA0155B10D9000108D8 /* CS132Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CS132Manager.h; sourceTree = "<group>"; };
+		E9329BA1155B10D9000108D8 /* CS132Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CS132Manager.m; sourceTree = "<group>"; };
+		E9329BA4155B10E4000108D8 /* CS132Heap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CS132Heap.h; sourceTree = "<group>"; };
+		E9329BA5155B10E4000108D8 /* CS132Heap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CS132Heap.m; sourceTree = "<group>"; };
 		E9D5522A15587DC800193328 /* CS132Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CS132Task.h; sourceTree = "<group>"; };
 		E9D5522B15587DC800193328 /* CS132Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CS132Task.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +103,10 @@
 				E921AC9015508B0E00D4281F /* TMDocument.xib */,
 				E921AC9315508B0F00D4281F /* MainMenu.xib */,
 				E921AC8215508B0D00D4281F /* Supporting Files */,
+				E9329BA0155B10D9000108D8 /* CS132Manager.h */,
+				E9329BA4155B10E4000108D8 /* CS132Heap.h */,
+				E9329BA5155B10E4000108D8 /* CS132Heap.m */,
+				E9329BA1155B10D9000108D8 /* CS132Manager.m */,
 			);
 			path = TaskMaster;
 			sourceTree = "<group>";
@@ -181,6 +191,8 @@
 				E921AC8815508B0D00D4281F /* main.m in Sources */,
 				E921AC8F15508B0E00D4281F /* TMDocument.m in Sources */,
 				E9D5522C15587DC800193328 /* CS132Task.m in Sources */,
+				E9329BA2155B10D9000108D8 /* CS132Manager.m in Sources */,
+				E9329BA6155B10E4000108D8 /* CS132Heap.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
