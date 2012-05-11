@@ -13,6 +13,8 @@
 @interface CS132Heap : NSObject
 @property int lastUsedIndex;
 @property (strong) NSMutableArray* taskArray;
+@property (strong) NSMutableArray* mrPopperPenguins;
+@property int tickTock;
 
 #pragma mark Bubbling 
 -(void) bubbleDown: (int) indexOfTooBigNode;

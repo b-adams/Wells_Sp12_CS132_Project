@@ -21,6 +21,8 @@
 
 @synthesize taskArray;
 @synthesize lastUsedIndex;
+@synthesize mrPopperPenguins;
+@synthesize tickTock;
 
 - (id)init {
     self = [super init];
