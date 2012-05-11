@@ -48,7 +48,7 @@ Manager Methods
     *Access current Top Task                  *(CS132Task*)taskCurrentlyAtTop
     *Report Number of Tasks remaining         *(int)tasksRemaining
     *Finish Top Task                          *(BOOL)taskIsCompleted
-    *Access Completed tasks array             *(NSArray*)tasksCompleted
+    *Access Completed tasks array             *(NSMutableArray*)tasksCompleted
     *Update Time remaining on Top Task        *(
     *Report Time Spent on top task
 

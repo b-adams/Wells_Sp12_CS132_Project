@@ -1,0 +1,29 @@
+#Constance LeBerth Heap Notes
+
+Heap
+ -What is does                -What it has
+  *Access to Task at root      *root node -> Array to store all tasks
+
+  *Access number of elements   *Counter of elements(ReadOnly)
+  							     lastElement(LastUsedSpot(int))(ReadWrite)<-Property
+  *Add (Node)                  *Add at Bottom BubbleDown
+  *Remove Top                  *Swap Top and Bottom BubbleUp
+  
+  
+Internally 
+  -Methods
+   *(int)IndexOfParentOf:(int)index
+   *(int)IndexOfleftChildOf:(int)index
+   *(int)IndexOfRightChildOf:(int)index
+   *(BOOL)hasParent:(int)index
+   *(BOOL)hasLeftChild:(int)index   *MayIndicateNoChildren*
+   *(BOOL)hasRightChild:(int)index
+   *(BOOL)isValidIndex:(int)index (NotLess than One. NotGreater than counter)
+   *Accessing array ([[sefl theArray] objectAtIndex]] -> [self taskAtIndex:__])
+      -> (CS132Task*) taskAtIndex:(int) index
+   *(BOOL)isEmpty
+   *(void)BubbleUp:(int)index  (
+   *(void)BubbleDown:(int)index
+   
+                             *DECLARATION*
+   
