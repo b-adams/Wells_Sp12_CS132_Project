@@ -22,6 +22,8 @@ Task Methods
 
        -Compare:dateDue - timeRemaining            *(NSDate*)dateEffective
                 NSDate  - NSTimeInterval -> NSDate
+			*Look at NSDate's Compare…*
+
 
        -Compute Time and Date Progress (0-100)     *(int)progressInTimeFrom:(int)none 
 					                                 To:(int)done
