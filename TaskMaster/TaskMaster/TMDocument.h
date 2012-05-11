@@ -7,8 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+@class CS132Manager;
 
-@interface TMDocument : NSDocument
+@interface TMDocument : NSDocument <NSTableViewDataSource>
+
+@property (strong) CS132Manager* taskTracker;
+
 
 #pragma mark AllTabs
 @property (weak) IBOutlet NSTextField *dTasksRemaining;
@@ -38,6 +42,14 @@
 @property (weak) IBOutlet NSPopUpButton *dNewTaskTimeUnit;
 - (IBAction)dAddTask:(id)sender;
 
-@property (strong) IBOutlet NSArrayController *cCompletedTasks;
+- (IBAction)dUpdateTimeRemaining:(id)sender;
+- (void) updateCurrentTaskDisplay;
+- (void)workTicker:(NSTimer*)theTimer;
 
+- (void)stopWorkOnCurrentTask;
+
+-(int) multiplierForUnitSelector:(NSPopUpButton*) theButton;
+
+@property int unitMultiplier;
+- (IBAction)dumpDebugInfo:(id)sender;
 @end

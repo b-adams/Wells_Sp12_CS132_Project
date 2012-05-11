@@ -2,7 +2,7 @@
 //  CS132Task.m
 //  TaskMaster
 //
-//  Created by Bryant Adams on 5/7/12.
+//  Created by Bryant Adams on 5/6/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
@@ -14,10 +14,10 @@
     NSString* DNU_taskDescription;
     NSDate* DNU_dateDue;
     NSDate* DNU_dateCreated;
-    NSTimeInterval* DNU_timeRemaining;
+    NSTimeInterval DNU_timeRemaining;
     NSDate* DNU_dateCompleted;
-    NSTimeInterval* DNU_timeExpected;
-    NSTimeInterval* DNU_timeSpent;
+    NSTimeInterval DNU_timeExpected;
+    NSTimeInterval DNU_timeSpent;
 }
 
 @synthesize taskName=DNU_taskName;
@@ -36,53 +36,67 @@
 
 @synthesize timeSpent=DNU_timeSpent;
 
-
-
--(NSString *) taskName
+-(id) initWithName: (NSString*) aName
+    andDescription: (NSString*) aDescription
+        andDueDate: (NSDate*) dueDate
+   andTimeEstimate: (NSTimeInterval) seconds
 {
-   NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-        return nil;
+    self = [super init];
+    if (self) {
+        NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    }
+    return self;
 }
 
--(NSString *)taskDescription
+-(NSDate*) dateEffective
 {
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-        return nil;
+    NSDate* modifiedDueDate = nil;
+    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    return modifiedDueDate;
+}
+-(NSDate*) effectiveDate 
+{
+    NSDate* retval = nil;
+    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    return retval;
 }
 
--(NSDate *) dateDue
+-(BOOL) isCompleted
 {
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-        return nil;
+    BOOL retval = NO;
+    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    return retval;
 }
 
--(NSDate *) dateCreated
+
+-(NSString*) description 
 {
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-        return nil;
+    NSString* retval = nil;
+    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    return retval;
 }
 
--(NSTimeInterval *) timeSpent
+-(NSComparisonResult) compare: (CS132Task*) anotherTask
 {
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    NSComparisonResult retval = NAN;
+    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    return retval;
 }
 
--(NSTimeInterval *) timeRemaining
+-(int) progressOfCompletionFrom:(int) none
+                             to:(int) done
 {
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-        return nil;
+    int retval = NAN;
+    return retval;
 }
 
--(NSDate *) dateCompleted
+-(int) progressOfDateFrom:(int) none
+                       to:(int) done
 {
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-        return nil;
+    int retval = NAN;
+    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    return retval;
 }
 
--(NSTimeInterval *) timeInterval
-{
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return nil;
-}
 
 @end

@@ -2,7 +2,7 @@
 //  CS132Task.h
 //  TaskMaster
 //
-//  Created by Bryant Adams on 5/7/12.
+//  Created by Bryant Adams on 5/6/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
@@ -18,28 +18,31 @@
 
 @property (strong) NSDate* dateCreated;
 
-@property (strong) NSTimeInterval* timeRemaining;
+@property NSTimeInterval timeRemaining;
 
 @property (strong) NSDate* dateCompleted;
 
-@property (strong) NSTimeInterval* timeExpected;
+@property NSTimeInterval timeSpent;
 
-@property (strong) NSTimeInterval* timeSpent;
+@property NSTimeInterval timeExpected;
 
--(NSString *) taskName;
+-(NSDate*) dateEffective;
 
--(NSString *)taskDescription;
+-(NSDate*) effectiveDate;
 
--(NSDate *) dateDue;
+-(BOOL) isCompleted;
 
--(NSDate *) dateCreated;
+-(id) initWithName: (NSString*) name
+    andDescription: (NSString*) description
+        andDueDate: (NSDate*) dueDate
+   andTimeEstimate: (NSTimeInterval) seconds;
 
--(NSTimeInterval *) timeSpent;
+-(NSComparisonResult) compare: (CS132Task*) anotherTask;
 
--(NSTimeInterval *) timeRemaining;
+-(int) progressOfCompletionFrom:(int) none
+                             to:(int) done;
 
--(NSDate *) dateCompleted;
-
--(NSTimeInterval *) timeInterval;
+-(int) progressOfDateFrom:(int) none
+                       to:(int) done;
 
 @end
