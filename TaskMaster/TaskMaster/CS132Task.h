@@ -76,6 +76,11 @@
         andDueDate: (NSDate*) dueDate
    andTimeEstimate: (NSTimeInterval) seconds;
 
+/*
+ Compares two tasks
+ param anoterTask is the task that the given task will be compared to
+ returns an NSComparisionResult value
+ */
 -(NSComparisonResult) compare: (CS132Task*) anotherTask;
 
 /*

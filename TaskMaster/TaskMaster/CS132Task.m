@@ -56,9 +56,17 @@
 }
 -(NSDate*) effectiveDate 
 {
-    NSDate* retval = nil;
+    NSDate* newDate = [[NSDate alloc] init];
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;
+    //Compare: dateDue - timeRemaining 
+             //NSDate  - NSTimeInterval -> NSDate
+             //*Look at NSDate's Compare…*
+    //newDate = Date Due - Time Remaining
+    
+    //newDate = [self timeRemaining];
+    //[self setDateDue:[self dateDue] - newDate];
+    
+    return newDate;
 }
 
 -(BOOL) isCompleted
@@ -80,6 +88,10 @@
 {
     NSComparisonResult retval = NAN;
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    //Needs to compare the Proiority of one task to another...??
+    
+    
+    
     return retval;
 }
 
