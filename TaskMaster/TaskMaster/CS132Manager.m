@@ -25,9 +25,7 @@
 
 -(int) countTasksToDo
 {
-    int retval = NAN;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;
+    return [CS132Heap numberOfTasks];
 }
 
 -(void) fixTopTask
@@ -55,8 +53,6 @@
 
 -(NSString*) description
 {
-    NSString* retval = nil;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;    
+    return [CS132Task description];
 }
 @end

@@ -48,7 +48,8 @@
 }
 -(void) deleteTopTask
 {
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    [taskArray removeObject:[self topTask]];
+    return;
 }
 
 -(void) addTask: (CS132Task*) taskToAdd
@@ -60,9 +61,14 @@
 
 -(BOOL) isValidIndex: (int) index
 {
-    BOOL retval = NO;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;
+    if ([self taskAtIndex: index] == nil)
+    {
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
 }
 
 -(int) indexOfParentOf: (int) index
@@ -86,15 +92,26 @@
 
 -(BOOL) hasParent:(int) index
 {
-    BOOL retval = NO;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;
+    if([self taskAtIndex: [self indexOfParentOf:index]] == nil)
+    {
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
 }
 -(BOOL) hasLeftChild: (int) index
 {
-    BOOL retval = NO;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;
+    if([self taskAtIndex: [self indexOfLeftChildOf:index]] == nil)
+    {
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
+
 }
 -(BOOL) hasRightChild: (int) index
 {
@@ -119,8 +136,6 @@
 
 -(NSString*) description
 {
-    NSString* retval = nil;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;    
+    return [CS132Task description];
 }
 @end
