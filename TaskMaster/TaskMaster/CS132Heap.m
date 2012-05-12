@@ -32,7 +32,34 @@
 
 -(void) bubbleDown: (int) indexOfTooBigNode
 {
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    if ([self indexOfLeftChildOf:indexOfTooBigNode] == NAN) 
+    {
+        return;
+    }
+    
+    if (indexOfTooBigNode > [self indexOfLeftChildOf:indexOfTooBigNode]) 
+    {
+        if (indexOfTooBigNode > [self indexOfRightChildOf:indexOfTooBigNode])
+        {
+            if ([self indexOfLeftChildOf:indexOfTooBigNode] > [self indexOfRightChildOf:indexOfTooBigNode])
+            {
+                indexOfTooBigNode=[self indexOfRightChildOf:indexOfTooBigNode];
+            }
+            else
+            {
+                indexOfTooBigNode=[self indexOfLeftChildOf:indexOfTooBigNode];
+            }
+        }
+        else
+        {
+            indexOfTooBigNode=[self indexOfLeftChildOf:indexOfTooBigNode];
+
+        }
+    }
+    else
+    {
+        return;
+    }
 }
 
 -(void) bubbleUp: (int) indexOfTooSmallNode
