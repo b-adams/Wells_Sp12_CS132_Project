@@ -19,8 +19,8 @@
     return retval;
 }
 
-@synthesize taskArray;
-@synthesize lastUsedIndex;
+@synthesize taskArray = DNU_tickTock;
+@synthesize lastUsedIndex = DNU_mrPopperPenguins;
 
 - (id)init {
     self = [super init];
