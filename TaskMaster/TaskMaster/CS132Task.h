@@ -10,18 +10,18 @@
 
 @interface CS132Task : NSObject
 
-/*
- Represents a string pointer to a task
+/**
+ @brief Name or Title of the task
  */
 @property (strong) NSString* taskName;
 
-/*
- Represents a String pointer to the task's description
+/**
+ @brief A textual description of the task or its details
  */
 @property (strong) NSString* taskDescription;
 
-/*
- Represents an NSDate pointer to the dateDue
+/**
+ @brief The date when the task is due
  */
 @property (strong) NSDate* dateDue;
 
@@ -30,8 +30,8 @@
  */
 @property (strong) NSDate* dateCreated;
 
-/*
- Represents an NSTimeInterval of time Remaining
+/**
+ @brief The (estimated) amount of active worktime left until the task is completed.
  */
 @property NSTimeInterval timeRemaining;
 
@@ -50,9 +50,9 @@
  */
 @property NSTimeInterval timeExpected;
 
-/*
- Calls effectiveDate
- Returns and NSDate pointer to a newly generated date
+/**
+ @brief An autocompletion-friendly shell for effectiveDate
+ @returns the same thing as effectiveDate
  */
 -(NSDate*) dateEffective;
 
@@ -68,14 +68,26 @@
  */
 -(BOOL) isCompleted;
 
-/*
- The designated initializer for setting up a new task
+/**
+ @brief Designated initializer
+ @param name Desired name for the new task
+ @param description Desired description/details for the new task
+ @param dueDate Date when the new task will be due
+ @param seconds Amount of actively-working time (in seconds) the task is expected to require
+ @returns the initialized task
  */
 -(id) initWithName: (NSString*) name
     andDescription: (NSString*) description
         andDueDate: (NSDate*) dueDate
    andTimeEstimate: (NSTimeInterval) seconds;
 
+/**
+ @brief Compare the priority level of two tasks
+ @param anotherTask The task to compare the receiver against
+ @returns NSOrderedAscending, NSOrderedSame, or NSOrderedDescending, as appropriate
+ 
+ For more information, see <a href="https://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Constants/Reference/reference.html#//apple_ref/c/tdef/NSComparisonResult">NSComparisonResult</a>
+ */
 -(NSComparisonResult) compare: (CS132Task*) anotherTask;
 
 /*
