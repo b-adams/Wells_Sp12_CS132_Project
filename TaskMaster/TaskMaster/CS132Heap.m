@@ -27,7 +27,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+        [self setTickTock:NAN];
     }
     return self;
 }
@@ -101,21 +101,33 @@
 -(BOOL) hasRightChild: (int) index
 {
     BOOL retval = NO;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    
+    if ([self taskAtIndex:[self indexOfRightChildOf:index]]) {
+        return YES;
+    } else {
+        return NO;
+    }
+    //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     return retval;
 }
 
 -(CS132Task*) taskAtIndex: (int) index
 {
     CS132Task* retval = nil;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    CS132Task* point = [[CS132Task alloc] init];
+    point = [self dateDue];
+    
+    
+   
     return retval;
 }
 
 -(CS132Task*) topTask
 {
     CS132Task* retval = nil;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    //CS132Task* get =
     return retval;
 }
 

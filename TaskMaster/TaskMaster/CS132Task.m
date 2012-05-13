@@ -7,6 +7,8 @@
 //
 
 #import "CS132Task.h"
+#import "CS132Heap.h"
+#import "CS132Manager.h"
 
 @implementation CS132Task
 {
@@ -71,8 +73,20 @@
 
 -(NSString*) description 
 {
-    NSString* retval = nil;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    //NSString* retval = nil;
+    //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    
+    NSString* retval = [[NSString alloc] init];
+    
+    BOOL going = YES;
+    
+    while (going == YES) {
+        if (retval != Nil) {
+            retval = //[NSStringWithFormat: @"%@%c", retval, [retval cs132Task description];
+        } else {
+            going = NO;
+        }
+    }
     return retval;
 }
 
