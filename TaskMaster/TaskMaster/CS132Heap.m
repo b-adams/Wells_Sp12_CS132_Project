@@ -37,23 +37,25 @@
         return;
     }
     
+    
     if (indexOfTooBigNode > [self indexOfLeftChildOf:indexOfTooBigNode]) 
     {
         if (indexOfTooBigNode > [self indexOfRightChildOf:indexOfTooBigNode])
         {
             if ([self indexOfLeftChildOf:indexOfTooBigNode] > [self indexOfRightChildOf:indexOfTooBigNode])
             {
-                indexOfTooBigNode=[self indexOfRightChildOf:indexOfTooBigNode];
+                [taskArray exchangeObjectAtIndex:[self indexOfRightChildOf:indexOfTooBigNode]withObjectAtIndex:indexOfTooBigNode];
             }
             else
             {
-                indexOfTooBigNode=[self indexOfLeftChildOf:indexOfTooBigNode];
+                [taskArray exchangeObjectAtIndex:[self indexOfLeftChildOf:indexOfTooBigNode]withObjectAtIndex:indexOfTooBigNode];
+                
             }
         }
         else
         {
-            indexOfTooBigNode=[self indexOfLeftChildOf:indexOfTooBigNode];
-
+            [taskArray exchangeObjectAtIndex:[self indexOfLeftChildOf:indexOfTooBigNode]withObjectAtIndex:indexOfTooBigNode];
+            
         }
     }
     else
@@ -75,7 +77,12 @@
 }
 -(void) deleteTopTask
 {
-    [taskArray removeObject:[self topTask]];
+   [taskArray exchangeObjectAtIndex:[taskArray indexOfObject:[self topTask]] withObjectAtIndex:[self lastUsedIndex]];
+    
+    [taskArray removeObject:[taskArray indexOfObject:[self lastUsedIndex]]];
+    
+    [self bubbleDown:[self topTask]];
+    
     return;
 }
 
@@ -88,7 +95,7 @@
 
 -(BOOL) isValidIndex: (int) index
 {
-    if ([self taskAtIndex: index] == nil)
+    if ([self taskAtIndex: index] == NULL)
     {
         return NO;
     }
@@ -119,7 +126,7 @@
 
 -(BOOL) hasParent:(int) index
 {
-    if([self taskAtIndex: [self indexOfParentOf:index]] == nil)
+    if([self taskAtIndex: [self indexOfParentOf:index]] == NULL)
     {
         return NO;
     }
@@ -138,7 +145,7 @@
     {
         return YES;
     }
-
+    
 }
 -(BOOL) hasRightChild: (int) index
 {
