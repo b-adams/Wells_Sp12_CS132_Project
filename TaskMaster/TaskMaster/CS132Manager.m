@@ -33,6 +33,7 @@
 -(void) fixTopTask
 {
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    //Point topTaks to the heap...
 }
 
 -(void) spendTimeOnTopTask:(int) seconds
@@ -51,6 +52,7 @@
         andTimeRequired: (int) newTimeNeeded
 {
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    //
 }
 
 -(NSString*) description
