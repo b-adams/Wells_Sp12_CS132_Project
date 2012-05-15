@@ -25,7 +25,7 @@
 
 -(int) countTasksToDo
 {
-    return [CS132Heap numberOfTasks];
+    return [tasksToDo numberOfTasks];
 }
 
 -(void) fixTopTask
@@ -53,6 +53,6 @@
 
 -(NSString*) description
 {
-    return [CS132Task description];
+    return [NSString stringWithFormat:@"%l, %l, %l", [self topTask],[self tasksToDo], [self tasksCompleted]];
 }
 @end

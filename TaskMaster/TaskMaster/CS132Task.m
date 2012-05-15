@@ -40,15 +40,25 @@
 -(id) initWithName: (NSString*) aName
     andDescription: (NSString*) aDescription
         andDueDate: (NSDate*) dueDate
-   andTimeEstimate: (NSTimeInterval) seconds
+   andDateCreated: (NSTimeInterval) date
+  andTimeRemaining:(NSTimeInterval) seconds 
+   andDateComplete:(NSDate *)dateCompleted 
+   andTimeExpected:(NSTimeInterval)expected 
+      andTimeSpent:(NSTimeInterval)spent
 {
     self = [super init];
-    if (self) {
+    if (self) 
+    {
         [self setTaskName: aName];
         [self setTaskDescription: aDescription];
         [self setDateDue: dueDate];
-        [self setTimeExpected: seconds];
+        [self setTimeExpected: expected];
+        [self setTimeRemaining: seconds]; 
+        [self setDateCreated: [NSDate date]];
+        [self setTimeSpent: 0];
+        [self setDateCompleted: nil];
     }
+         
     return self;
 }
 
@@ -67,13 +77,13 @@
 
 -(BOOL) isCompleted
 {
-    if ([self timeRemaining] == 0) 
+    if ([self dateCompleted] == nil) 
     {
-        return YES;
+        return NO;
     }
     else
     {
-        return NO;
+        return YES;
     }
 }
 
@@ -95,32 +105,10 @@
 -(int) progressOfCompletionFrom:(int) none
                              to:(int) done
 {
-    BOOL working = YES;
-    none=0;
-    done=100;
     int amountOfProgress;
-    amountOfProgress=([self timeRemaining] - [self timeSpent])/ [self timeRemaining] +[self timeSpent];
+    amountOfProgress=([self timeSpent] / ([self timeRemaining] + [self timeSpent]));
     
-    while (working == YES)
-    {
-        for(int i=0; i<done; i++)
-        {
-            amountOfProgress=amountOfProgress;
-            return amountOfProgress;
-        }
-            
-        if (done==100)
-        {
-            working=NO;
-        }
-        else
-        {
-            working=YES;
-        }
-            
-    }
-   
-    return amountOfProgress;
+    return (none + amountOfProgress*(done-none));
 }
 
 -(int) progressOfDateFrom:(int) none

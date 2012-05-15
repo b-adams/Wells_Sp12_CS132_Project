@@ -35,7 +35,11 @@
 -(id) initWithName: (NSString*) name
     andDescription: (NSString*) description
         andDueDate: (NSDate*) dueDate
-   andTimeEstimate: (NSTimeInterval) seconds;
+   andDateCreated: (NSTimeInterval) date
+  andTimeRemaining: (NSTimeInterval) seconds
+   andDateComplete: (NSDate*) dateCompleted
+   andTimeExpected: (NSTimeInterval) expected
+      andTimeSpent: (NSTimeInterval) spent;
 
 -(NSComparisonResult) compare: (CS132Task*) anotherTask;
 

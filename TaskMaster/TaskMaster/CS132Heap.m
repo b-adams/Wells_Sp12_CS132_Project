@@ -1,10 +1,11 @@
-//
-//  CS132Heap.m
-//  TaskMaster
-//
-//  Created by Bryant Adams on 5/6/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
+/**
+ @file CS132Heap.m
+ @author CS132 Class and Bryant Adams
+ @date 5/15/12
+ @brief Heap implementation
+ @assistant Professor Adams
+ */
+
 
 #import "CS132Heap.h"
 #import "CS132Task.h"
@@ -75,13 +76,14 @@
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     return retval;
 }
+
 -(void) deleteTopTask
 {
    [taskArray exchangeObjectAtIndex:[taskArray indexOfObject:[self topTask]] withObjectAtIndex:[self lastUsedIndex]];
     
-    [taskArray removeObject:[taskArray indexOfObject:[self lastUsedIndex]]];
+    [taskArray replaceObjectAtIndex: lastUsedIndex withObject:[NSNull null]];
     
-    [self bubbleDown:[self topTask]];
+    [self bubbleDown: [taskArray indexOfObject: [self topTask]]];
     
     return;
 }
@@ -95,13 +97,20 @@
 
 -(BOOL) isValidIndex: (int) index
 {
-    if ([self taskAtIndex: index] == NULL)
+    if (index < ROOT_INDEX)
     {
         return NO;
     }
     else
     {
-        return YES;
+        if(index < [self lastUsedIndex])
+        {
+            return YES;
+        }
+        else
+        {
+            return NO;
+        }
     }
 }
 
@@ -126,24 +135,24 @@
 
 -(BOOL) hasParent:(int) index
 {
-    if([self taskAtIndex: [self indexOfParentOf:index]] == NULL)
+    if([self isValidIndex:[self indexOfParentOf:index]]==YES)
     {
-        return NO;
+        return YES;
     }
     else
     {
-        return YES;
+        return NO;
     }
 }
 -(BOOL) hasLeftChild: (int) index
 {
-    if([self taskAtIndex: [self indexOfLeftChildOf:index]] == nil)
+    if([self isValidIndex:[self indexOfLeftChildOf:index]]==YES)
     {
-        return NO;
+        return YES;
     }
     else
     {
-        return YES;
+        return NO;
     }
     
 }
@@ -170,6 +179,6 @@
 
 -(NSString*) description
 {
-    return [CS132Task description];
+    return [taskArray description];
 }
 @end
