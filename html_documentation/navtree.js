@@ -10,7 +10,6 @@ var NAVTREE =
     [ "Class Index", "classes.html", null ],
     [ "Class Members", "functions.html", null ],
     [ "File List", "files.html", [
-      [ "TaskMaster/TaskMaster/._CS132Task.h", "_8___c_s132_task_8h.html", null ],
       [ "TaskMaster/TaskMaster/CS132Heap.h", "_c_s132_heap_8h.html", null ],
       [ "TaskMaster/TaskMaster/CS132Heap.m", "_c_s132_heap_8m.html", null ],
       [ "TaskMaster/TaskMaster/CS132Manager.h", "_c_s132_manager_8h.html", null ],

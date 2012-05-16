@@ -64,7 +64,7 @@ function toggleVisibility(linkObj) {
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="TaskMaster_Icon.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Task Master&#160;<span id="projectnumber">c219b88</span></div>
+   <div id="projectname">Task Master&#160;<span id="projectnumber">ce3365f</span></div>
    <div id="projectbrief">CS132 Final Project - Task Tracking Application</div>
   </td>
  </tr>
@@ -137,41 +137,21 @@ function toggleVisibility(linkObj) {
 <a name="l00022"></a>00022 
 <a name="l00026"></a><a class="code" href="interface_c_s132_task.html#a580b64debb0b27061e686fdf3567a1b6">00026</a> @property (strong) NSDate* <a class="code" href="interface_c_s132_task.html#a580b64debb0b27061e686fdf3567a1b6" title="The date when the task is due.">dateDue</a>;
 <a name="l00027"></a>00027 
-<a name="l00028"></a>00028 <span class="comment">/*</span>
-<a name="l00029"></a>00029 <span class="comment"> Represents an NSDate pointer to the dateCreated</span>
-<a name="l00030"></a>00030 <span class="comment"> */</span>
-<a name="l00031"></a><a class="code" href="interface_c_s132_task.html#a09ad0124856e996f59d47b41f081cc5e">00031</a> @property (strong) NSDate* <a class="code" href="interface_c_s132_task.html#a09ad0124856e996f59d47b41f081cc5e">dateCreated</a>;
+<a name="l00031"></a><a class="code" href="interface_c_s132_task.html#a09ad0124856e996f59d47b41f081cc5e">00031</a> @property (strong) NSDate* <a class="code" href="interface_c_s132_task.html#a09ad0124856e996f59d47b41f081cc5e" title="Date the task was created.">dateCreated</a>;
 <a name="l00032"></a>00032 
-<a name="l00036"></a><a class="code" href="interface_c_s132_task.html#aa42785b1cd6f0f504d91a6c39a27c9a2">00036</a> @property NSTimeInterval <a class="code" href="interface_c_s132_task.html#aa42785b1cd6f0f504d91a6c39a27c9a2" title="The (estimated) amount of active worktime left until the task is completed.">timeRemaining</a>;
+<a name="l00036"></a><a class="code" href="interface_c_s132_task.html#aa42785b1cd6f0f504d91a6c39a27c9a2">00036</a> @property NSTimeInterval <a class="code" href="interface_c_s132_task.html#aa42785b1cd6f0f504d91a6c39a27c9a2" title="Amount of remaining work-time currently forecast before the task will be completed.">timeRemaining</a>;
 <a name="l00037"></a>00037 
-<a name="l00038"></a>00038 <span class="comment">/*</span>
-<a name="l00039"></a>00039 <span class="comment"> Represents an NSDate pointer to the dateCompleted</span>
-<a name="l00040"></a>00040 <span class="comment"> */</span>
-<a name="l00041"></a><a class="code" href="interface_c_s132_task.html#a00ab823e601f4a87e221648d6c10d9bf">00041</a> @property (strong) NSDate* <a class="code" href="interface_c_s132_task.html#a00ab823e601f4a87e221648d6c10d9bf">dateCompleted</a>;
+<a name="l00041"></a><a class="code" href="interface_c_s132_task.html#a00ab823e601f4a87e221648d6c10d9bf">00041</a> @property (strong) NSDate* <a class="code" href="interface_c_s132_task.html#a00ab823e601f4a87e221648d6c10d9bf" title="Date when the task was finished. If the task hasn&#39;t been finished yet, this should be nil...">dateCompleted</a>;
 <a name="l00042"></a>00042 
-<a name="l00043"></a>00043 <span class="comment">/*</span>
-<a name="l00044"></a>00044 <span class="comment"> Represents an NSTimeInterval of timeSpent</span>
-<a name="l00045"></a>00045 <span class="comment"> */</span>
-<a name="l00046"></a><a class="code" href="interface_c_s132_task.html#ac780519437dad9335b26cec9582643a5">00046</a> @property NSTimeInterval <a class="code" href="interface_c_s132_task.html#ac780519437dad9335b26cec9582643a5">timeSpent</a>;
+<a name="l00046"></a><a class="code" href="interface_c_s132_task.html#ac780519437dad9335b26cec9582643a5">00046</a> @property NSTimeInterval <a class="code" href="interface_c_s132_task.html#ac780519437dad9335b26cec9582643a5" title="Amount of work-time that has been spent on the task so far.">timeSpent</a>;
 <a name="l00047"></a>00047 
-<a name="l00048"></a>00048 <span class="comment">/*</span>
-<a name="l00049"></a>00049 <span class="comment"> Represents an NSTimeInterval of timeExpected</span>
-<a name="l00050"></a>00050 <span class="comment"> */</span>
-<a name="l00051"></a><a class="code" href="interface_c_s132_task.html#a64503a688df342de8240397cc9b68bc2">00051</a> @property NSTimeInterval <a class="code" href="interface_c_s132_task.html#a64503a688df342de8240397cc9b68bc2">timeExpected</a>;
+<a name="l00051"></a><a class="code" href="interface_c_s132_task.html#a64503a688df342de8240397cc9b68bc2">00051</a> @property NSTimeInterval <a class="code" href="interface_c_s132_task.html#a64503a688df342de8240397cc9b68bc2" title="Original amount of actively-working-time the task was expected to take.">timeExpected</a>;
 <a name="l00052"></a>00052 
-<a name="l00057"></a>00057 -(NSDate*) <a class="code" href="interface_c_s132_task.html#a701ae619ee160981490b1fb35f801d26" title="An autocompletion-friendly shell for effectiveDate.">dateEffective</a>;
+<a name="l00057"></a>00057 -(NSDate*) <a class="code" href="interface_c_s132_task.html#a701ae619ee160981490b1fb35f801d26" title="Calls effectiveDate.">dateEffective</a>;
 <a name="l00058"></a>00058 
-<a name="l00059"></a>00059 <span class="comment">/*</span>
-<a name="l00060"></a>00060 <span class="comment"> Compares dateDue to timeRemaining (dateDute - timeRemaining)</span>
-<a name="l00061"></a>00061 <span class="comment"> returns an NSDate pointer to the newly generated date</span>
-<a name="l00062"></a>00062 <span class="comment"> */</span>
-<a name="l00063"></a>00063 -(NSDate*) <a class="code" href="interface_c_s132_task.html#af527761c2fd231266890cd66fa47b2c2">effectiveDate</a>;
+<a name="l00063"></a>00063 -(NSDate*) <a class="code" href="interface_c_s132_task.html#af527761c2fd231266890cd66fa47b2c2" title="Compares dateDue to timeRemaining (dateDute - timeRemaining)">effectiveDate</a>;
 <a name="l00064"></a>00064 
-<a name="l00065"></a>00065 <span class="comment">/*</span>
-<a name="l00066"></a>00066 <span class="comment"> Determines whether the task has been completed or not</span>
-<a name="l00067"></a>00067 <span class="comment"> returns Yes if the task has been completed and No if the taskis not complete</span>
-<a name="l00068"></a>00068 <span class="comment"> */</span>
-<a name="l00069"></a>00069 -(BOOL) <a class="code" href="interface_c_s132_task.html#a9f0b4fd9fa4d694a75ec743f848fe795">isCompleted</a>;
+<a name="l00069"></a>00069 -(BOOL) <a class="code" href="interface_c_s132_task.html#a9f0b4fd9fa4d694a75ec743f848fe795" title="Determines whether the task has been completed or not.">isCompleted</a>;
 <a name="l00070"></a>00070 
 <a name="l00079"></a>00079 -(id) initWithName: (NSString*) name
 <a name="l00080"></a>00080     andDescription: (NSString*) description
@@ -180,31 +160,19 @@ function toggleVisibility(linkObj) {
 <a name="l00083"></a>00083 
 <a name="l00091"></a>00091 -(NSComparisonResult) compare: (<a class="code" href="interface_c_s132_task.html">CS132Task</a>*) anotherTask;
 <a name="l00092"></a>00092 
-<a name="l00093"></a>00093 <span class="comment">/*</span>
-<a name="l00094"></a>00094 <span class="comment"> Computes the time in progress from start to finish</span>
-<a name="l00095"></a>00095 <span class="comment"> param none the value of the current progress</span>
-<a name="l00096"></a>00096 <span class="comment"> param done the value of the progress to the completion</span>
-<a name="l00097"></a>00097 <span class="comment"> returns the integer representing progress (between 0-100)</span>
-<a name="l00098"></a>00098 <span class="comment"> */</span>
-<a name="l00099"></a>00099 -(int) progressOfCompletionFrom:(<span class="keywordtype">int</span>) none
-<a name="l00100"></a>00100                              to:(<span class="keywordtype">int</span>) done;
-<a name="l00101"></a>00101 
-<a name="l00102"></a>00102 <span class="comment">/*</span>
-<a name="l00103"></a>00103 <span class="comment"> Computes the progress of the date from start to finish</span>
-<a name="l00104"></a>00104 <span class="comment"> param none the value of the current progress from the date</span>
-<a name="l00105"></a>00105 <span class="comment"> param done the value of the progress to the completion date</span>
-<a name="l00106"></a>00106 <span class="comment"> returns the integer representing progress (between 0-100)</span>
-<a name="l00107"></a>00107 <span class="comment"> */</span>
-<a name="l00108"></a>00108 -(int) progressOfDateFrom:(<span class="keywordtype">int</span>) none
-<a name="l00109"></a>00109                        to:(<span class="keywordtype">int</span>) done;
-<a name="l00110"></a>00110 
-<a name="l00111"></a>00111 <span class="keyword">@end</span>
+<a name="l00103"></a>00103 -(int) progressOfCompletionFrom:(<span class="keywordtype">int</span>) none
+<a name="l00104"></a>00104                              to:(<span class="keywordtype">int</span>) done;
+<a name="l00105"></a>00105 
+<a name="l00112"></a>00112 -(int) progressOfDateFrom:(<span class="keywordtype">int</span>) none
+<a name="l00113"></a>00113                        to:(<span class="keywordtype">int</span>) done;
+<a name="l00114"></a>00114 
+<a name="l00115"></a>00115 <span class="keyword">@end</span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_c_s132_task_8h.html">CS132Task.h</a>      </li>
-      <li class="footer">Generated on Sun May 13 2012 02:20:51 for Task Master by&#160;
+      <li class="footer">Generated on Wed May 16 2012 15:49:22 for Task Master by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
@@ -214,7 +182,7 @@ function toggleVisibility(linkObj) {
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">

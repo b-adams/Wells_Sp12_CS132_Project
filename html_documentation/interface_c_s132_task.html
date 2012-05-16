@@ -64,7 +64,7 @@ function toggleVisibility(linkObj) {
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="TaskMaster_Icon.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Task Master&#160;<span id="projectnumber">c219b88</span></div>
+   <div id="projectname">Task Master&#160;<span id="projectnumber">ce3365f</span></div>
    <div id="projectbrief">CS132 Final Project - Task Tracking Application</div>
   </td>
  </tr>
@@ -131,15 +131,19 @@ function toggleVisibility(linkObj) {
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(NSDate *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_c_s132_task.html#a701ae619ee160981490b1fb35f801d26">dateEffective</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">An autocompletion-friendly shell for effectiveDate.  <a href="#a701ae619ee160981490b1fb35f801d26"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls effectiveDate.  <a href="#a701ae619ee160981490b1fb35f801d26"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(NSDate *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_c_s132_task.html#af527761c2fd231266890cd66fa47b2c2">effectiveDate</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares dateDue to timeRemaining (dateDute - timeRemaining)  <a href="#af527761c2fd231266890cd66fa47b2c2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_c_s132_task.html#a9f0b4fd9fa4d694a75ec743f848fe795">isCompleted</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the task has been completed or not.  <a href="#a9f0b4fd9fa4d694a75ec743f848fe795"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_c_s132_task.html#ae61dbe68371b2fb5f2b4a34da8e42785">initWithName:andDescription:andDueDate:andTimeEstimate:</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated initializer.  <a href="#ae61dbe68371b2fb5f2b4a34da8e42785"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The designated initializer for setting up a new task.  <a href="#ae61dbe68371b2fb5f2b4a34da8e42785"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(NSComparisonResult)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_c_s132_task.html#a294847cfafdd403dcdc074072cd88e68">compare:</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare the priority level of two tasks.  <a href="#a294847cfafdd403dcdc074072cd88e68"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_c_s132_task.html#a84862ca83e6adbd32f02cc5e95cb3ef6">progressOfCompletionFrom:to:</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the time in progress from start to finish.  <a href="#a84862ca83e6adbd32f02cc5e95cb3ef6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_c_s132_task.html#a30da4f4f532bb33c104cd1da88438ee2">progressOfDateFrom:to:</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the progress of the date from start to finish.  <a href="#a30da4f4f532bb33c104cd1da88438ee2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_c_s132_task.html#a9584be95fbe2c4d6ff7ba2ec96d3d201">description</a><code> [implementation]</code></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
@@ -150,11 +154,15 @@ Properties</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">NSDate *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_c_s132_task.html#a580b64debb0b27061e686fdf3567a1b6">dateDue</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The date when the task is due.  <a href="#a580b64debb0b27061e686fdf3567a1b6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">NSDate *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_c_s132_task.html#a09ad0124856e996f59d47b41f081cc5e">dateCreated</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Date the task was created.  <a href="#a09ad0124856e996f59d47b41f081cc5e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">NSTimeInterval&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_c_s132_task.html#aa42785b1cd6f0f504d91a6c39a27c9a2">timeRemaining</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The (estimated) amount of active worktime left until the task is completed.  <a href="#aa42785b1cd6f0f504d91a6c39a27c9a2"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Amount of remaining work-time currently forecast before the task will be completed.  <a href="#aa42785b1cd6f0f504d91a6c39a27c9a2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">NSDate *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_c_s132_task.html#a00ab823e601f4a87e221648d6c10d9bf">dateCompleted</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Date when the task was finished. If the task hasn't been finished yet, this should be nil.  <a href="#a00ab823e601f4a87e221648d6c10d9bf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">NSTimeInterval&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_c_s132_task.html#ac780519437dad9335b26cec9582643a5">timeSpent</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Amount of work-time that has been spent on the task so far.  <a href="#ac780519437dad9335b26cec9582643a5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">NSTimeInterval&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_c_s132_task.html#a64503a688df342de8240397cc9b68bc2">timeExpected</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Original amount of actively-working-time the task was expected to take.  <a href="#a64503a688df342de8240397cc9b68bc2"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
@@ -178,14 +186,14 @@ Properties</h2></td></tr>
 <p>Compare the priority level of two tasks. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">anotherTask</td><td>The task to compare the receiver against </td></tr>
+    <tr><td class="paramname">anoterTask</td><td>the task that the receiver task will be compared to </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>NSOrderedAscending, NSOrderedSame, or NSOrderedDescending, as appropriate</dd></dl>
-<p>For more information, see <a href="https://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Constants/Reference/reference.html#//apple_ref/c/tdef/NSComparisonResult">NSComparisonResult</a> </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>an NSComparisionResult indicating whether the receiver should be before, after, or the same as anotherTask</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a href="https://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Constants/Reference/reference.html#//apple_ref/c/tdef/NSComparisonResult">NSComparisonResult documentation</a> for more information on NSComparisonResult </dd></dl>
 
-<p>Definition at line <a class="el" href="_c_s132_task_8m_source.html#l00079">79</a> of file <a class="el" href="_c_s132_task_8m_source.html">CS132Task.m</a>.</p>
+<p>Definition at line <a class="el" href="_c_s132_task_8m_source.html#l00091">91</a> of file <a class="el" href="_c_s132_task_8m_source.html">CS132Task.m</a>.</p>
 <div class="fragment"><pre class="fragment">                             : (<a class="code" href="interface_c_s132_task.html">CS132Task</a>*) anotherTask
 {
     NSComparisonResult retval = NAN;
@@ -209,10 +217,10 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>An autocompletion-friendly shell for effectiveDate. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the same thing as effectiveDate </dd></dl>
+<p>Calls effectiveDate. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>see effectiveDate </dd></dl>
 
-<p>Definition at line <a class="el" href="_c_s132_task_8m_source.html#l00051">51</a> of file <a class="el" href="_c_s132_task_8m_source.html">CS132Task.m</a>.</p>
+<p>Definition at line <a class="el" href="_c_s132_task_8m_source.html#l00052">52</a> of file <a class="el" href="_c_s132_task_8m_source.html">CS132Task.m</a>.</p>
 <div class="fragment"><pre class="fragment">{
     NSDate* modifiedDueDate = nil;
     NSLog(<span class="stringliteral">@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;</span>, <span class="stringliteral">@&quot;Stubulous&quot;</span>, NSStringFromClass([<span class="keyword">self</span> <span class="keyword">class</span>]), NSStringFromSelector(_cmd));
@@ -235,7 +243,7 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_c_s132_task_8m_source.html#l00072">72</a> of file <a class="el" href="_c_s132_task_8m_source.html">CS132Task.m</a>.</p>
+<p>Definition at line <a class="el" href="_c_s132_task_8m_source.html#l00084">84</a> of file <a class="el" href="_c_s132_task_8m_source.html">CS132Task.m</a>.</p>
 <div class="fragment"><pre class="fragment">{
     NSString* retval = nil;
     NSLog(<span class="stringliteral">@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;</span>, <span class="stringliteral">@&quot;Stubulous&quot;</span>, NSStringFromClass([<span class="keyword">self</span> <span class="keyword">class</span>]), NSStringFromSelector(_cmd));
@@ -258,11 +266,22 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_c_s132_task_8m_source.html#l00057">57</a> of file <a class="el" href="_c_s132_task_8m_source.html">CS132Task.m</a>.</p>
+<p>Compares dateDue to timeRemaining (dateDute - timeRemaining) </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The latest date at which you could start the task and have any hope of finishing on time, given current remaining-time estimates. </dd></dl>
+
+<p>Definition at line <a class="el" href="_c_s132_task_8m_source.html#l00058">58</a> of file <a class="el" href="_c_s132_task_8m_source.html">CS132Task.m</a>.</p>
+
+<p>References <a class="el" href="_c_s132_task_8h_source.html#l00026">dateDue</a>, and <a class="el" href="_c_s132_task_8h_source.html#l00036">timeRemaining</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    NSDate* retval = nil;
-    NSLog(<span class="stringliteral">@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;</span>, <span class="stringliteral">@&quot;Stubulous&quot;</span>, NSStringFromClass([<span class="keyword">self</span> <span class="keyword">class</span>]), NSStringFromSelector(_cmd));
-    <span class="keywordflow">return</span> retval;
+    <span class="comment">//effectiveDate is when it needs to be start...</span>
+    <span class="comment">//Compare: dateDue - timeRemaining </span>
+             <span class="comment">//NSDate  - NSTimeInterval -&gt; NSDate</span>
+             <span class="comment">//*Look at NSDate&#39;s Compare…*</span>
+    <span class="comment">//newDate = Date Due - Time Remaining</span>
+    
+    
+    <span class="keywordflow">return</span> [NSDate dateWithTimeInterval:-[<span class="keyword">self</span> timeRemaining] 
+                              sinceDate:[<span class="keyword">self</span> dateDue]];
 }
 </pre></div>
 </div>
@@ -304,19 +323,19 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Designated initializer. </p>
+<p>The designated initializer for setting up a new task. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>Desired name for the new task </td></tr>
-    <tr><td class="paramname">description</td><td>Desired description/details for the new task </td></tr>
-    <tr><td class="paramname">dueDate</td><td>Date when the new task will be due </td></tr>
-    <tr><td class="paramname">seconds</td><td>Amount of actively-working time (in seconds) the task is expected to require </td></tr>
+    <tr><td class="paramname">name</td><td>The name for the task </td></tr>
+    <tr><td class="paramname">description</td><td>The description for the task </td></tr>
+    <tr><td class="paramname">dueDate</td><td>The deadline for the task </td></tr>
+    <tr><td class="paramname">seconds</td><td>The amount of working-time the task is expected to tak </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the initialized task </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The now-initialized task </dd></dl>
 
-<p>Definition at line <a class="el" href="_c_s132_task_8m_source.html#l00039">39</a> of file <a class="el" href="_c_s132_task_8m_source.html">CS132Task.m</a>.</p>
+<p>Definition at line <a class="el" href="_c_s132_task_8m_source.html#l00040">40</a> of file <a class="el" href="_c_s132_task_8m_source.html">CS132Task.m</a>.</p>
 <div class="fragment"><pre class="fragment">                  : (NSString*) aName
     andDescription: (NSString*) aDescription
         andDueDate: (NSDate*) dueDate
@@ -345,11 +364,21 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_c_s132_task_8m_source.html#l00064">64</a> of file <a class="el" href="_c_s132_task_8m_source.html">CS132Task.m</a>.</p>
+<p>Determines whether the task has been completed or not. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Yes if the task has been completed and No if the task is not complete </dd></dl>
+
+<p>Definition at line <a class="el" href="_c_s132_task_8m_source.html#l00071">71</a> of file <a class="el" href="_c_s132_task_8m_source.html">CS132Task.m</a>.</p>
+
+<p>References <a class="el" href="_c_s132_task_8h_source.html#l00041">dateCompleted</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    BOOL retval = NO;
-    NSLog(<span class="stringliteral">@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;</span>, <span class="stringliteral">@&quot;Stubulous&quot;</span>, NSStringFromClass([<span class="keyword">self</span> <span class="keyword">class</span>]), NSStringFromSelector(_cmd));
-    <span class="keywordflow">return</span> retval;
+    <span class="keywordflow">if</span> ([<span class="keyword">self</span> <a class="code" href="interface_c_s132_task.html#a00ab823e601f4a87e221648d6c10d9bf" title="Date when the task was finished. If the task hasn&#39;t been finished yet, this should be nil...">dateCompleted</a>] == nil) 
+    {
+        <span class="keywordflow">return</span> NO;
+    }
+    <span class="keywordflow">else</span>
+    {
+        <span class="keywordflow">return</span> YES;
+    }
 }
 </pre></div>
 </div>
@@ -379,7 +408,18 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_c_s132_task_8m_source.html#l00086">86</a> of file <a class="el" href="_c_s132_task_8m_source.html">CS132Task.m</a>.</p>
+<p>Computes the time in progress from start to finish. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">none</td><td>the low end of the scale you want to use </td></tr>
+    <tr><td class="paramname">done</td><td>the high end of the scale you want to use </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the integer representing progress (between none and done)</dd></dl>
+<p>For example, if you use [someTask progressOfCompletionFrom:0 to:100] then you'll get get the completion level on a scale from 0 to 100 For a scale from -5 to 5, use [someTask progressOfCompletionFrom:-5 to 5] </p>
+
+<p>Definition at line <a class="el" href="_c_s132_task_8m_source.html#l00098">98</a> of file <a class="el" href="_c_s132_task_8m_source.html">CS132Task.m</a>.</p>
 
 <p>Referenced by <a class="el" href="_t_m_document_8m_source.html#l00176">TMDocument::updateCurrentTaskDisplay</a>.</p>
 <div class="fragment"><pre class="fragment">                               :(int) none
@@ -427,7 +467,17 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_c_s132_task_8m_source.html#l00093">93</a> of file <a class="el" href="_c_s132_task_8m_source.html">CS132Task.m</a>.</p>
+<p>Computes the progress of the date from start to finish. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">none</td><td>the low end of the scale you want to use </td></tr>
+    <tr><td class="paramname">done</td><td>the high end of the scale you want to use </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the integer representing progress (between none and done) </dd></dl>
+
+<p>Definition at line <a class="el" href="_c_s132_task_8m_source.html#l00105">105</a> of file <a class="el" href="_c_s132_task_8m_source.html">CS132Task.m</a>.</p>
 
 <p>Referenced by <a class="el" href="_t_m_document_8m_source.html#l00176">TMDocument::updateCurrentTaskDisplay</a>.</p>
 <div class="fragment"><pre class="fragment">                         :(int) none
@@ -463,9 +513,11 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Date when the task was finished. If the task hasn't been finished yet, this should be nil. </p>
+
 <p>Definition at line <a class="el" href="_c_s132_task_8h_source.html#l00041">41</a> of file <a class="el" href="_c_s132_task_8h_source.html">CS132Task.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_t_m_document_8m_source.html#l00240">TMDocument::tableView:objectValueForTableColumn:row:</a>.</p>
+<p>Referenced by <a class="el" href="_c_s132_task_8m_source.html#l00071">isCompleted</a>, and <a class="el" href="_t_m_document_8m_source.html#l00240">TMDocument::tableView:objectValueForTableColumn:row:</a>.</p>
 
 </div>
 </div>
@@ -479,6 +531,8 @@ Properties</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Date the task was created. </p>
 
 <p>Definition at line <a class="el" href="_c_s132_task_8h_source.html#l00031">31</a> of file <a class="el" href="_c_s132_task_8h_source.html">CS132Task.h</a>.</p>
 
@@ -501,7 +555,7 @@ Properties</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_c_s132_task_8h_source.html#l00026">26</a> of file <a class="el" href="_c_s132_task_8h_source.html">CS132Task.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_t_m_document_8m_source.html#l00240">TMDocument::tableView:objectValueForTableColumn:row:</a>, and <a class="el" href="_t_m_document_8m_source.html#l00176">TMDocument::updateCurrentTaskDisplay</a>.</p>
+<p>Referenced by <a class="el" href="_c_s132_task_8m_source.html#l00058">effectiveDate</a>, <a class="el" href="_t_m_document_8m_source.html#l00240">TMDocument::tableView:objectValueForTableColumn:row:</a>, and <a class="el" href="_t_m_document_8m_source.html#l00176">TMDocument::updateCurrentTaskDisplay</a>.</p>
 
 </div>
 </div>
@@ -554,6 +608,8 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Original amount of actively-working-time the task was expected to take. </p>
+
 <p>Definition at line <a class="el" href="_c_s132_task_8h_source.html#l00051">51</a> of file <a class="el" href="_c_s132_task_8h_source.html">CS132Task.h</a>.</p>
 
 <p>Referenced by <a class="el" href="_t_m_document_8m_source.html#l00240">TMDocument::tableView:objectValueForTableColumn:row:</a>.</p>
@@ -571,11 +627,11 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>The (estimated) amount of active worktime left until the task is completed. </p>
+<p>Amount of remaining work-time currently forecast before the task will be completed. </p>
 
 <p>Definition at line <a class="el" href="_c_s132_task_8h_source.html#l00036">36</a> of file <a class="el" href="_c_s132_task_8h_source.html">CS132Task.h</a>.</p>
 
-<p>Referenced by <a class="el" href="_t_m_document_8m_source.html#l00176">TMDocument::updateCurrentTaskDisplay</a>.</p>
+<p>Referenced by <a class="el" href="_c_s132_task_8m_source.html#l00058">effectiveDate</a>, and <a class="el" href="_t_m_document_8m_source.html#l00176">TMDocument::updateCurrentTaskDisplay</a>.</p>
 
 </div>
 </div>
@@ -589,6 +645,8 @@ Properties</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Amount of work-time that has been spent on the task so far. </p>
 
 <p>Definition at line <a class="el" href="_c_s132_task_8h_source.html#l00046">46</a> of file <a class="el" href="_c_s132_task_8h_source.html">CS132Task.h</a>.</p>
 
@@ -605,7 +663,7 @@ Properties</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="interface_c_s132_task.html">CS132Task</a>      </li>
-      <li class="footer">Generated on Sun May 13 2012 02:20:51 for Task Master by&#160;
+      <li class="footer">Generated on Wed May 16 2012 15:49:22 for Task Master by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
@@ -615,7 +673,7 @@ Properties</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
