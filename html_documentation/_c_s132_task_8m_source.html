@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Task Master: CS132Task.m Source File</title>
+<title>Task Master: TaskMaster/TaskMaster/CS132Task.m Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -64,7 +64,7 @@ function toggleVisibility(linkObj) {
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="TaskMaster_Icon.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Task Master</div>
+   <div id="projectname">Task Master&#160;<span id="projectnumber">fab5ea8</span></div>
    <div id="projectbrief">CS132 Final Project - Task Tracking Application</div>
   </td>
  </tr>
@@ -116,7 +116,7 @@ function toggleVisibility(linkObj) {
 <div id="doc-content">
 <div class="header">
   <div class="headertitle">
-<div class="title">CS132Task.m</div>  </div>
+<div class="title">TaskMaster/TaskMaster/CS132Task.m</div>  </div>
 </div>
 <div class="contents">
 <a href="_c_s132_task_8m.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
@@ -141,21 +141,21 @@ function toggleVisibility(linkObj) {
 <a name="l00020"></a>00020     NSTimeInterval DNU_timeSpent;
 <a name="l00021"></a>00021 }
 <a name="l00022"></a>00022 
-<a name="l00023"></a>00023 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_task.html#a8a8cfbf68d3666849068a3c12ddb530e">taskName</a>=DNU_taskName;
+<a name="l00023"></a>00023 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_task.html#a8a8cfbf68d3666849068a3c12ddb530e" title="Short name for the task.">taskName</a>=DNU_taskName;
 <a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_task.html#ad58f65c4131c9bd2ff864701f3fc2812">taskDescription</a>=DNU_taskDescription;
+<a name="l00025"></a>00025 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_task.html#ad58f65c4131c9bd2ff864701f3fc2812" title="Description of the task.">taskDescription</a>=DNU_taskDescription;
 <a name="l00026"></a>00026 
-<a name="l00027"></a>00027 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_task.html#a580b64debb0b27061e686fdf3567a1b6">dateDue</a>=DNU_dateDue;
+<a name="l00027"></a>00027 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_task.html#a580b64debb0b27061e686fdf3567a1b6" title="Date the task is due.">dateDue</a>=DNU_dateDue;
 <a name="l00028"></a>00028 
-<a name="l00029"></a>00029 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_task.html#a09ad0124856e996f59d47b41f081cc5e">dateCreated</a>=DNU_dateCreated;
+<a name="l00029"></a>00029 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_task.html#a09ad0124856e996f59d47b41f081cc5e" title="Date the task was created.">dateCreated</a>=DNU_dateCreated;
 <a name="l00030"></a>00030 
-<a name="l00031"></a>00031 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_task.html#aa42785b1cd6f0f504d91a6c39a27c9a2">timeRemaining</a>=DNU_timeRemaining;
+<a name="l00031"></a>00031 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_task.html#aa42785b1cd6f0f504d91a6c39a27c9a2" title="Amount of remaining work-time currently forecast before the task will be completed.">timeRemaining</a>=DNU_timeRemaining;
 <a name="l00032"></a>00032 
-<a name="l00033"></a>00033 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_task.html#a00ab823e601f4a87e221648d6c10d9bf">dateCompleted</a>=DNU_dateCompleted;
+<a name="l00033"></a>00033 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_task.html#a00ab823e601f4a87e221648d6c10d9bf" title="Date when the task was finished. If the task hasn&#39;t been finished yet, this should be nil...">dateCompleted</a>=DNU_dateCompleted;
 <a name="l00034"></a>00034 
-<a name="l00035"></a>00035 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_task.html#a64503a688df342de8240397cc9b68bc2">timeExpected</a>=DNU_timeExpected;
+<a name="l00035"></a>00035 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_task.html#a64503a688df342de8240397cc9b68bc2" title="Original amount of actively-working-time the task was expected to take.">timeExpected</a>=DNU_timeExpected;
 <a name="l00036"></a>00036 
-<a name="l00037"></a>00037 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_task.html#ac780519437dad9335b26cec9582643a5">timeSpent</a>=DNU_timeSpent;
+<a name="l00037"></a>00037 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_task.html#ac780519437dad9335b26cec9582643a5" title="Amount of work-time that has been spent on the task so far.">timeSpent</a>=DNU_timeSpent;
 <a name="l00038"></a>00038 
 <a name="l00039"></a><a class="code" href="interface_c_s132_task.html#ae61dbe68371b2fb5f2b4a34da8e42785">00039</a> -(id) initWithName: (NSString*) aName
 <a name="l00040"></a>00040     andDescription: (NSString*) aDescription
@@ -169,20 +169,20 @@ function toggleVisibility(linkObj) {
 <a name="l00048"></a>00048     <span class="keywordflow">return</span> <span class="keyword">self</span>;
 <a name="l00049"></a>00049 }
 <a name="l00050"></a>00050 
-<a name="l00051"></a><a class="code" href="interface_c_s132_task.html#a701ae619ee160981490b1fb35f801d26">00051</a> -(NSDate*) <a class="code" href="interface_c_s132_task.html#a701ae619ee160981490b1fb35f801d26">dateEffective</a>
+<a name="l00051"></a><a class="code" href="interface_c_s132_task.html#a701ae619ee160981490b1fb35f801d26">00051</a> -(NSDate*) <a class="code" href="interface_c_s132_task.html#a701ae619ee160981490b1fb35f801d26" title="Calls effectiveDate.">dateEffective</a>
 <a name="l00052"></a>00052 {
 <a name="l00053"></a>00053     NSDate* modifiedDueDate = nil;
 <a name="l00054"></a>00054     NSLog(<span class="stringliteral">@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;</span>, <span class="stringliteral">@&quot;Stubulous&quot;</span>, NSStringFromClass([<span class="keyword">self</span> <span class="keyword">class</span>]), NSStringFromSelector(_cmd));
 <a name="l00055"></a>00055     <span class="keywordflow">return</span> modifiedDueDate;
 <a name="l00056"></a>00056 }
-<a name="l00057"></a><a class="code" href="interface_c_s132_task.html#af527761c2fd231266890cd66fa47b2c2">00057</a> -(NSDate*) <a class="code" href="interface_c_s132_task.html#af527761c2fd231266890cd66fa47b2c2">effectiveDate</a> 
+<a name="l00057"></a><a class="code" href="interface_c_s132_task.html#af527761c2fd231266890cd66fa47b2c2">00057</a> -(NSDate*) <a class="code" href="interface_c_s132_task.html#af527761c2fd231266890cd66fa47b2c2" title="Compares dateDue to timeRemaining (dateDute - timeRemaining)">effectiveDate</a> 
 <a name="l00058"></a>00058 {
 <a name="l00059"></a>00059     NSDate* retval = nil;
 <a name="l00060"></a>00060     NSLog(<span class="stringliteral">@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;</span>, <span class="stringliteral">@&quot;Stubulous&quot;</span>, NSStringFromClass([<span class="keyword">self</span> <span class="keyword">class</span>]), NSStringFromSelector(_cmd));
 <a name="l00061"></a>00061     <span class="keywordflow">return</span> retval;
 <a name="l00062"></a>00062 }
 <a name="l00063"></a>00063 
-<a name="l00064"></a><a class="code" href="interface_c_s132_task.html#a9f0b4fd9fa4d694a75ec743f848fe795">00064</a> -(BOOL) <a class="code" href="interface_c_s132_task.html#a9f0b4fd9fa4d694a75ec743f848fe795">isCompleted</a>
+<a name="l00064"></a><a class="code" href="interface_c_s132_task.html#a9f0b4fd9fa4d694a75ec743f848fe795">00064</a> -(BOOL) <a class="code" href="interface_c_s132_task.html#a9f0b4fd9fa4d694a75ec743f848fe795" title="Determines whether the task has been completed or not.">isCompleted</a>
 <a name="l00065"></a>00065 {
 <a name="l00066"></a>00066     BOOL retval = NO;
 <a name="l00067"></a>00067     NSLog(<span class="stringliteral">@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;</span>, <span class="stringliteral">@&quot;Stubulous&quot;</span>, NSStringFromClass([<span class="keyword">self</span> <span class="keyword">class</span>]), NSStringFromSelector(_cmd));
@@ -226,7 +226,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_c_s132_task_8m.html">CS132Task.m</a>      </li>
-      <li class="footer">Generated on Fri May 11 2012 01:56:47 for Task Master by&#160;
+      <li class="footer">Generated on Wed May 16 2012 12:55:17 for Task Master by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

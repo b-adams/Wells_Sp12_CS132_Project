@@ -2,6 +2,6 @@
 <area shape="rect" id="node3" href="$interface_t_m_document.html#a6f48e6c4df3092e243818a5185744836" title="&#45;[TMDocument multiplierForUnitSelector:]" alt="" coords="351,5,617,33"/>
 <area shape="rect" id="node5" href="$interface_t_m_document.html#a610c3fb1762b5fffcafbd42efd352857" title="&#45;[TMDocument updateCurrentTaskDisplay]" alt="" coords="347,57,621,85"/>
 <area shape="rect" id="node7" href="$interface_c_s132_manager.html#a3cb78bf1a26a76ef98b251c549286db4" title="&#45;[CS132Manager countTasksToDo]" alt="" coords="699,5,927,33"/>
-<area shape="rect" id="node9" href="$interface_c_s132_task.html#a84862ca83e6adbd32f02cc5e95cb3ef6" title="&#45;[CS132Task progressOfCompletionFrom:to:]" alt="" coords="669,57,957,85"/>
-<area shape="rect" id="node11" href="$interface_c_s132_task.html#a30da4f4f532bb33c104cd1da88438ee2" title="&#45;[CS132Task progressOfDateFrom:to:]" alt="" coords="689,109,938,137"/>
+<area shape="rect" id="node9" href="$interface_c_s132_task.html#a84862ca83e6adbd32f02cc5e95cb3ef6" title="Computes the time in progress from start to finish." alt="" coords="669,57,957,85"/>
+<area shape="rect" id="node11" href="$interface_c_s132_task.html#a30da4f4f532bb33c104cd1da88438ee2" title="Computes the progress of the date from start to finish." alt="" coords="689,109,938,137"/>
 </map>

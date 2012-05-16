@@ -1,6 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$_c_s132_heap_8m.html" title="CS132Heap.m" alt="" coords="4,83,112,111"/>
-<area shape="rect" id="node5" href="$_c_s132_manager_8m.html" title="CS132Manager.m" alt="" coords="137,83,265,111"/>
-<area shape="rect" id="node7" href="$_c_s132_task_8m.html" title="CS132Task.m" alt="" coords="289,83,393,111"/>
-<area shape="rect" id="node9" href="$_t_m_document_8m.html" title="TMDocument.m" alt="" coords="418,83,533,111"/>
+<area shape="rect" id="node3" href="$_c_s132_heap_8m.html" title="TaskMaster/TaskMaster/CS132Heap.m" alt="" coords="4,83,256,111"/>
+<area shape="rect" id="node5" href="$_c_s132_manager_8m.html" title="TaskMaster/TaskMaster/CS132Manager.m" alt="" coords="281,83,553,111"/>
+<area shape="rect" id="node7" href="$_c_s132_task_8m.html" title="TaskMaster/TaskMaster/CS132Task.m" alt="" coords="577,83,825,111"/>
+<area shape="rect" id="node9" href="$_t_m_document_8m.html" title="TaskMaster/TaskMaster/TMDocument.m" alt="" coords="849,83,1108,111"/>
 </map>

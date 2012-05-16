@@ -10,15 +10,15 @@ var NAVTREE =
     [ "Class Index", "classes.html", null ],
     [ "Class Members", "functions.html", null ],
     [ "File List", "files.html", [
-      [ "CS132Heap.h", "_c_s132_heap_8h.html", null ],
-      [ "CS132Heap.m", "_c_s132_heap_8m.html", null ],
-      [ "CS132Manager.h", "_c_s132_manager_8h.html", null ],
-      [ "CS132Manager.m", "_c_s132_manager_8m.html", null ],
-      [ "CS132Task.h", "_c_s132_task_8h.html", null ],
-      [ "CS132Task.m", "_c_s132_task_8m.html", null ],
-      [ "main.m", "main_8m.html", null ],
-      [ "TMDocument.h", "_t_m_document_8h.html", null ],
-      [ "TMDocument.m", "_t_m_document_8m.html", null ]
+      [ "TaskMaster/TaskMaster/CS132Heap.h", "_c_s132_heap_8h.html", null ],
+      [ "TaskMaster/TaskMaster/CS132Heap.m", "_c_s132_heap_8m.html", null ],
+      [ "TaskMaster/TaskMaster/CS132Manager.h", "_c_s132_manager_8h.html", null ],
+      [ "TaskMaster/TaskMaster/CS132Manager.m", "_c_s132_manager_8m.html", null ],
+      [ "TaskMaster/TaskMaster/CS132Task.h", "_c_s132_task_8h.html", null ],
+      [ "TaskMaster/TaskMaster/CS132Task.m", "_c_s132_task_8m.html", null ],
+      [ "TaskMaster/TaskMaster/main.m", "main_8m.html", null ],
+      [ "TaskMaster/TaskMaster/TMDocument.h", "_t_m_document_8h.html", null ],
+      [ "TaskMaster/TaskMaster/TMDocument.m", "_t_m_document_8m.html", null ]
     ] ],
     [ "File Members", "globals.html", null ]
   ] ]
