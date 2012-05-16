@@ -64,7 +64,7 @@ function toggleVisibility(linkObj) {
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="TaskMaster_Icon.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Task Master&#160;<span id="projectnumber">ce3365f</span></div>
+   <div id="projectname">Task Master&#160;<span id="projectnumber">ad25f24</span></div>
    <div id="projectbrief">CS132 Final Project - Task Tracking Application</div>
   </td>
  </tr>
@@ -158,72 +158,72 @@ function toggleVisibility(linkObj) {
 <a name="l00037"></a>00037 
 <a name="l00038"></a>00038 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_task.html#ac780519437dad9335b26cec9582643a5" title="Amount of work-time that has been spent on the task so far.">timeSpent</a>=DNU_timeSpent;
 <a name="l00039"></a>00039 
-<a name="l00040"></a><a class="code" href="interface_c_s132_task.html#ae61dbe68371b2fb5f2b4a34da8e42785">00040</a> -(id) initWithName: (NSString*) aName
-<a name="l00041"></a>00041     andDescription: (NSString*) aDescription
-<a name="l00042"></a>00042         andDueDate: (NSDate*) dueDate
-<a name="l00043"></a>00043    andTimeEstimate: (NSTimeInterval) seconds
-<a name="l00044"></a>00044 {
-<a name="l00045"></a>00045     <span class="keyword">self</span> = [<span class="keyword">super</span> init];
-<a name="l00046"></a>00046     <span class="keywordflow">if</span> (<span class="keyword">self</span>) {
-<a name="l00047"></a>00047         NSLog(<span class="stringliteral">@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;</span>, <span class="stringliteral">@&quot;Stubulous&quot;</span>, NSStringFromClass([<span class="keyword">self</span> <span class="keyword">class</span>]), NSStringFromSelector(_cmd));
-<a name="l00048"></a>00048     }
-<a name="l00049"></a>00049     <span class="keywordflow">return</span> <span class="keyword">self</span>;
-<a name="l00050"></a>00050 }
-<a name="l00051"></a>00051 
-<a name="l00052"></a><a class="code" href="interface_c_s132_task.html#a701ae619ee160981490b1fb35f801d26">00052</a> -(NSDate*) <a class="code" href="interface_c_s132_task.html#a701ae619ee160981490b1fb35f801d26" title="Calls effectiveDate.">dateEffective</a>
-<a name="l00053"></a>00053 {
-<a name="l00054"></a>00054     NSDate* modifiedDueDate = nil;
-<a name="l00055"></a>00055     NSLog(<span class="stringliteral">@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;</span>, <span class="stringliteral">@&quot;Stubulous&quot;</span>, NSStringFromClass([<span class="keyword">self</span> <span class="keyword">class</span>]), NSStringFromSelector(_cmd));
-<a name="l00056"></a>00056     <span class="keywordflow">return</span> modifiedDueDate;
-<a name="l00057"></a>00057 }
-<a name="l00058"></a><a class="code" href="interface_c_s132_task.html#af527761c2fd231266890cd66fa47b2c2">00058</a> -(NSDate*) <a class="code" href="interface_c_s132_task.html#af527761c2fd231266890cd66fa47b2c2" title="Compares dateDue to timeRemaining (dateDute - timeRemaining)">effectiveDate</a> 
-<a name="l00059"></a>00059 {
-<a name="l00060"></a>00060     <span class="comment">//effectiveDate is when it needs to be start...</span>
-<a name="l00061"></a>00061     <span class="comment">//Compare: dateDue - timeRemaining </span>
-<a name="l00062"></a>00062              <span class="comment">//NSDate  - NSTimeInterval -&gt; NSDate</span>
-<a name="l00063"></a>00063              <span class="comment">//*Look at NSDate&#39;s Compare…*</span>
-<a name="l00064"></a>00064     <span class="comment">//newDate = Date Due - Time Remaining</span>
-<a name="l00065"></a>00065     
-<a name="l00066"></a>00066     
-<a name="l00067"></a>00067     <span class="keywordflow">return</span> [NSDate dateWithTimeInterval:-[<span class="keyword">self</span> <a class="code" href="interface_c_s132_task.html#aa42785b1cd6f0f504d91a6c39a27c9a2" title="Amount of remaining work-time currently forecast before the task will be completed.">timeRemaining</a>] 
-<a name="l00068"></a>00068                               sinceDate:[<span class="keyword">self</span> <a class="code" href="interface_c_s132_task.html#a580b64debb0b27061e686fdf3567a1b6" title="The date when the task is due.">dateDue</a>]];
-<a name="l00069"></a>00069 }
-<a name="l00070"></a>00070 
-<a name="l00071"></a><a class="code" href="interface_c_s132_task.html#a9f0b4fd9fa4d694a75ec743f848fe795">00071</a> -(BOOL) <a class="code" href="interface_c_s132_task.html#a9f0b4fd9fa4d694a75ec743f848fe795" title="Determines whether the task has been completed or not.">isCompleted</a>
-<a name="l00072"></a>00072 {
-<a name="l00073"></a>00073     <span class="keywordflow">if</span> ([<span class="keyword">self</span> <a class="code" href="interface_c_s132_task.html#a00ab823e601f4a87e221648d6c10d9bf" title="Date when the task was finished. If the task hasn&#39;t been finished yet, this should be nil...">dateCompleted</a>] == nil) 
-<a name="l00074"></a>00074     {
-<a name="l00075"></a>00075         <span class="keywordflow">return</span> NO;
-<a name="l00076"></a>00076     }
-<a name="l00077"></a>00077     <span class="keywordflow">else</span>
-<a name="l00078"></a>00078     {
-<a name="l00079"></a>00079         <span class="keywordflow">return</span> YES;
-<a name="l00080"></a>00080     }
-<a name="l00081"></a>00081 }
-<a name="l00082"></a>00082 
-<a name="l00083"></a>00083 
-<a name="l00084"></a><a class="code" href="interface_c_s132_task.html#a9584be95fbe2c4d6ff7ba2ec96d3d201">00084</a> -(NSString*) <a class="code" href="interface_c_s132_task.html#a9584be95fbe2c4d6ff7ba2ec96d3d201">description</a> 
-<a name="l00085"></a>00085 {
-<a name="l00086"></a>00086     NSString* retval = nil;
-<a name="l00087"></a>00087     NSLog(<span class="stringliteral">@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;</span>, <span class="stringliteral">@&quot;Stubulous&quot;</span>, NSStringFromClass([<span class="keyword">self</span> <span class="keyword">class</span>]), NSStringFromSelector(_cmd));
-<a name="l00088"></a>00088     <span class="keywordflow">return</span> retval;
-<a name="l00089"></a>00089 }
-<a name="l00090"></a>00090 
-<a name="l00091"></a><a class="code" href="interface_c_s132_task.html#a294847cfafdd403dcdc074072cd88e68">00091</a> -(NSComparisonResult) compare: (<a class="code" href="interface_c_s132_task.html">CS132Task</a>*) anotherTask
-<a name="l00092"></a>00092 {
-<a name="l00093"></a>00093     NSComparisonResult retval = NAN;
-<a name="l00094"></a>00094     NSLog(<span class="stringliteral">@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;</span>, <span class="stringliteral">@&quot;Stubulous&quot;</span>, NSStringFromClass([<span class="keyword">self</span> <span class="keyword">class</span>]), NSStringFromSelector(_cmd));
-<a name="l00095"></a>00095     <span class="keywordflow">return</span> retval;
-<a name="l00096"></a>00096 }
-<a name="l00097"></a>00097 
-<a name="l00098"></a><a class="code" href="interface_c_s132_task.html#a84862ca83e6adbd32f02cc5e95cb3ef6">00098</a> -(int) progressOfCompletionFrom:(<span class="keywordtype">int</span>) none
-<a name="l00099"></a>00099                              to:(<span class="keywordtype">int</span>) done
-<a name="l00100"></a>00100 {
-<a name="l00101"></a>00101     <span class="keywordtype">int</span> retval = NAN;
-<a name="l00102"></a>00102     <span class="keywordflow">return</span> retval;
-<a name="l00103"></a>00103 }
-<a name="l00104"></a>00104 
-<a name="l00105"></a><a class="code" href="interface_c_s132_task.html#a30da4f4f532bb33c104cd1da88438ee2">00105</a> -(int) progressOfDateFrom:(<span class="keywordtype">int</span>) none
+<a name="l00040"></a>00040 <span class="preprocessor">#warning Implementation needed (KEvans)</span>
+<a name="l00041"></a><a class="code" href="interface_c_s132_task.html#ae61dbe68371b2fb5f2b4a34da8e42785">00041</a> <span class="preprocessor"></span>-(id) initWithName: (NSString*) aName
+<a name="l00042"></a>00042     andDescription: (NSString*) aDescription
+<a name="l00043"></a>00043         andDueDate: (NSDate*) dueDate
+<a name="l00044"></a>00044    andTimeEstimate: (NSTimeInterval) seconds
+<a name="l00045"></a>00045 {
+<a name="l00046"></a>00046     <span class="keyword">self</span> = [<span class="keyword">super</span> init];
+<a name="l00047"></a>00047     <span class="keywordflow">if</span> (<span class="keyword">self</span>) {
+<a name="l00048"></a>00048         NSLog(<span class="stringliteral">@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;</span>, <span class="stringliteral">@&quot;Stubulous&quot;</span>, NSStringFromClass([<span class="keyword">self</span> <span class="keyword">class</span>]), NSStringFromSelector(_cmd));
+<a name="l00049"></a>00049     }
+<a name="l00050"></a>00050     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00051"></a>00051 }
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053 <span class="preprocessor">#warning Implementation needed (DLittle)</span>
+<a name="l00054"></a><a class="code" href="interface_c_s132_task.html#a701ae619ee160981490b1fb35f801d26">00054</a> <span class="preprocessor"></span>-(NSDate*) <a class="code" href="interface_c_s132_task.html#a701ae619ee160981490b1fb35f801d26" title="Calls effectiveDate.">dateEffective</a>
+<a name="l00055"></a>00055 {
+<a name="l00056"></a>00056     NSDate* modifiedDueDate = nil;
+<a name="l00057"></a>00057     NSLog(<span class="stringliteral">@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;</span>, <span class="stringliteral">@&quot;Stubulous&quot;</span>, NSStringFromClass([<span class="keyword">self</span> <span class="keyword">class</span>]), NSStringFromSelector(_cmd));
+<a name="l00058"></a>00058     <span class="keywordflow">return</span> modifiedDueDate;
+<a name="l00059"></a>00059 }
+<a name="l00060"></a>00060 
+<a name="l00061"></a><a class="code" href="interface_c_s132_task.html#af527761c2fd231266890cd66fa47b2c2">00061</a> -(NSDate*) <a class="code" href="interface_c_s132_task.html#af527761c2fd231266890cd66fa47b2c2" title="Compares dateDue to timeRemaining (dateDute - timeRemaining)">effectiveDate</a> 
+<a name="l00062"></a>00062 {
+<a name="l00063"></a>00063     <span class="comment">//effectiveDate is when it needs to be start...</span>
+<a name="l00064"></a>00064     <span class="comment">//Compare: dateDue - timeRemaining </span>
+<a name="l00065"></a>00065              <span class="comment">//NSDate  - NSTimeInterval -&gt; NSDate</span>
+<a name="l00066"></a>00066              <span class="comment">//*Look at NSDate&#39;s Compare…*</span>
+<a name="l00067"></a>00067     <span class="comment">//newDate = Date Due - Time Remaining</span>
+<a name="l00068"></a>00068     
+<a name="l00069"></a>00069     <span class="keywordflow">return</span> [NSDate dateWithTimeInterval:-[<span class="keyword">self</span> <a class="code" href="interface_c_s132_task.html#aa42785b1cd6f0f504d91a6c39a27c9a2" title="Amount of remaining work-time currently forecast before the task will be completed.">timeRemaining</a>] 
+<a name="l00070"></a>00070                               sinceDate:[<span class="keyword">self</span> <a class="code" href="interface_c_s132_task.html#a580b64debb0b27061e686fdf3567a1b6" title="The date when the task is due.">dateDue</a>]];
+<a name="l00071"></a>00071 }
+<a name="l00072"></a>00072 
+<a name="l00073"></a><a class="code" href="interface_c_s132_task.html#a9f0b4fd9fa4d694a75ec743f848fe795">00073</a> -(BOOL) <a class="code" href="interface_c_s132_task.html#a9f0b4fd9fa4d694a75ec743f848fe795" title="Determines whether the task has been completed or not.">isCompleted</a>
+<a name="l00074"></a>00074 {
+<a name="l00075"></a>00075     <span class="keywordflow">return</span> [<span class="keyword">self</span> <a class="code" href="interface_c_s132_task.html#a00ab823e601f4a87e221648d6c10d9bf" title="Date when the task was finished. If the task hasn&#39;t been finished yet, this should be nil...">dateCompleted</a>] != nil;
+<a name="l00076"></a>00076 }
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079 <span class="preprocessor">#warning Implementation needed (DLittle)</span>
+<a name="l00080"></a><a class="code" href="interface_c_s132_task.html#a9584be95fbe2c4d6ff7ba2ec96d3d201">00080</a> <span class="preprocessor"></span>-(NSString*) <a class="code" href="interface_c_s132_task.html#a9584be95fbe2c4d6ff7ba2ec96d3d201">description</a> 
+<a name="l00081"></a>00081 {
+<a name="l00082"></a>00082     NSString* retval = nil;
+<a name="l00083"></a>00083     NSLog(<span class="stringliteral">@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;</span>, <span class="stringliteral">@&quot;Stubulous&quot;</span>, NSStringFromClass([<span class="keyword">self</span> <span class="keyword">class</span>]), NSStringFromSelector(_cmd));
+<a name="l00084"></a>00084     <span class="keywordflow">return</span> retval;
+<a name="l00085"></a>00085 }
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087 <span class="preprocessor">#warning Implementation needed (CLeBerth)</span>
+<a name="l00088"></a><a class="code" href="interface_c_s132_task.html#a294847cfafdd403dcdc074072cd88e68">00088</a> <span class="preprocessor"></span>-(NSComparisonResult) compare: (<a class="code" href="interface_c_s132_task.html">CS132Task</a>*) anotherTask
+<a name="l00089"></a>00089 {
+<a name="l00090"></a>00090     NSComparisonResult retval = NAN;
+<a name="l00091"></a>00091     NSLog(<span class="stringliteral">@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;</span>, <span class="stringliteral">@&quot;Stubulous&quot;</span>, NSStringFromClass([<span class="keyword">self</span> <span class="keyword">class</span>]), NSStringFromSelector(_cmd));
+<a name="l00092"></a>00092     <span class="keywordflow">return</span> retval;
+<a name="l00093"></a>00093 }
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095 <span class="preprocessor">#warning Implementation needed (KEvans)</span>
+<a name="l00096"></a><a class="code" href="interface_c_s132_task.html#a84862ca83e6adbd32f02cc5e95cb3ef6">00096</a> <span class="preprocessor"></span>-(int) progressOfCompletionFrom:(<span class="keywordtype">int</span>) none
+<a name="l00097"></a>00097                              to:(<span class="keywordtype">int</span>) done
+<a name="l00098"></a>00098 {
+<a name="l00099"></a>00099     <span class="keywordtype">int</span> retval = NAN;
+<a name="l00100"></a>00100     NSLog(<span class="stringliteral">@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;</span>, <span class="stringliteral">@&quot;Stubulous&quot;</span>, NSStringFromClass([<span class="keyword">self</span> <span class="keyword">class</span>]), NSStringFromSelector(_cmd));
+<a name="l00101"></a>00101     <span class="keywordflow">return</span> retval;
+<a name="l00102"></a>00102 }
+<a name="l00103"></a>00103 
+<a name="l00104"></a>00104 <span class="preprocessor">#warning Implementation needed (DLittle)</span>
+<a name="l00105"></a><a class="code" href="interface_c_s132_task.html#a30da4f4f532bb33c104cd1da88438ee2">00105</a> <span class="preprocessor"></span>-(int) progressOfDateFrom:(<span class="keywordtype">int</span>) none
 <a name="l00106"></a>00106                        to:(<span class="keywordtype">int</span>) done
 <a name="l00107"></a>00107 {
 <a name="l00108"></a>00108     <span class="keywordtype">int</span> retval = NAN;
@@ -238,7 +238,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_c_s132_task_8m.html">CS132Task.m</a>      </li>
-      <li class="footer">Generated on Wed May 16 2012 15:49:22 for Task Master by&#160;
+      <li class="footer">Generated on Wed May 16 2012 16:13:10 for Task Master by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
