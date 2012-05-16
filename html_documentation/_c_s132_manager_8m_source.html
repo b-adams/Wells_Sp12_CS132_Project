@@ -132,12 +132,12 @@ function toggleVisibility(linkObj) {
 <a name="l00011"></a>00011 <span class="preprocessor">#import &quot;<a class="code" href="_c_s132_task_8h.html">CS132Task.h</a>&quot;</span>
 <a name="l00012"></a>00012 
 <a name="l00013"></a>00013 <span class="keyword">@implementation </span><a class="code" href="interface_c_s132_manager.html">CS132Manager</a>
-<a name="l00014"></a>00014 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_manager.html#ac82d5a25cb649d47f9801ed531593f2a">tasksCompleted</a>;
-<a name="l00015"></a>00015 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_manager.html#aa6ae7c331eb1187d4139baf33153282b">tasksToDo</a>;
-<a name="l00016"></a>00016 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_manager.html#a5d7496204ad69073d0f27c597d441233">topTask</a>;
+<a name="l00014"></a>00014 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_manager_ac82d5a25cb649d47f9801ed531593f2a.html#ac82d5a25cb649d47f9801ed531593f2a">tasksCompleted</a>;
+<a name="l00015"></a>00015 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_manager_aa6ae7c331eb1187d4139baf33153282b.html#aa6ae7c331eb1187d4139baf33153282b">tasksToDo</a>;
+<a name="l00016"></a>00016 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_manager_a5d7496204ad69073d0f27c597d441233.html#a5d7496204ad69073d0f27c597d441233">topTask</a>;
 <a name="l00017"></a>00017 
 <a name="l00018"></a>00018 <span class="preprocessor">#warning Implementation needed (Dlittle)</span>
-<a name="l00019"></a><a class="code" href="interface_c_s132_manager.html#a4e3231aa22f633d37b9955f09768c162">00019</a> <span class="preprocessor"></span>- (id)<a class="code" href="interface_c_s132_manager.html#a4e3231aa22f633d37b9955f09768c162">init</a> {
+<a name="l00019"></a><a class="code" href="interface_c_s132_manager_a4e3231aa22f633d37b9955f09768c162.html#a4e3231aa22f633d37b9955f09768c162">00019</a> <span class="preprocessor"></span>- (id)<a class="code" href="interface_c_s132_manager_a4e3231aa22f633d37b9955f09768c162.html#a4e3231aa22f633d37b9955f09768c162">init</a> {
 <a name="l00020"></a>00020     <span class="keyword">self</span> = [<span class="keyword">super</span> init];
 <a name="l00021"></a>00021     <span class="keywordflow">if</span> (<span class="keyword">self</span>) {
 <a name="l00022"></a>00022         NSLog(<span class="stringliteral">@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;</span>, <span class="stringliteral">@&quot;Stubulous&quot;</span>, NSStringFromClass([<span class="keyword">self</span> <span class="keyword">class</span>]), NSStringFromSelector(_cmd));
@@ -145,31 +145,31 @@ function toggleVisibility(linkObj) {
 <a name="l00024"></a>00024     <span class="keywordflow">return</span> <span class="keyword">self</span>;
 <a name="l00025"></a>00025 }
 <a name="l00026"></a>00026 
-<a name="l00027"></a><a class="code" href="interface_c_s132_manager.html#a3cb78bf1a26a76ef98b251c549286db4">00027</a> -(int) <a class="code" href="interface_c_s132_manager.html#a3cb78bf1a26a76ef98b251c549286db4">countTasksToDo</a>
+<a name="l00027"></a><a class="code" href="interface_c_s132_manager_a3cb78bf1a26a76ef98b251c549286db4.html#a3cb78bf1a26a76ef98b251c549286db4">00027</a> -(int) <a class="code" href="interface_c_s132_manager_a3cb78bf1a26a76ef98b251c549286db4.html#a3cb78bf1a26a76ef98b251c549286db4">countTasksToDo</a>
 <a name="l00028"></a>00028 {
-<a name="l00029"></a>00029     <span class="keywordflow">return</span> [<a class="code" href="interface_c_s132_manager.html#aa6ae7c331eb1187d4139baf33153282b">tasksToDo</a> <a class="code" href="interface_c_s132_heap.html#ad2b9df2685054576d0c69b7803d49e63" title="find number of tasks in array">numberOfTasks</a>];
+<a name="l00029"></a>00029     <span class="keywordflow">return</span> [<a class="code" href="interface_c_s132_manager_aa6ae7c331eb1187d4139baf33153282b.html#aa6ae7c331eb1187d4139baf33153282b">tasksToDo</a> <a class="code" href="interface_c_s132_heap_ad2b9df2685054576d0c69b7803d49e63.html#ad2b9df2685054576d0c69b7803d49e63" title="find number of tasks in array">numberOfTasks</a>];
 <a name="l00030"></a>00030 }
 <a name="l00031"></a>00031 
 <a name="l00032"></a>00032 <span class="preprocessor">#warning Implementation needed (CLeBerth)</span>
-<a name="l00033"></a><a class="code" href="interface_c_s132_manager.html#aa521edc7a88f12e4d3e188407f960d98">00033</a> <span class="preprocessor"></span>-(void) <a class="code" href="interface_c_s132_manager.html#aa521edc7a88f12e4d3e188407f960d98">fixTopTask</a>
+<a name="l00033"></a><a class="code" href="interface_c_s132_manager_aa521edc7a88f12e4d3e188407f960d98.html#aa521edc7a88f12e4d3e188407f960d98">00033</a> <span class="preprocessor"></span>-(void) <a class="code" href="interface_c_s132_manager_aa521edc7a88f12e4d3e188407f960d98.html#aa521edc7a88f12e4d3e188407f960d98">fixTopTask</a>
 <a name="l00034"></a>00034 {
 <a name="l00035"></a>00035     NSLog(<span class="stringliteral">@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;</span>, <span class="stringliteral">@&quot;Stubulous&quot;</span>, NSStringFromClass([<span class="keyword">self</span> <span class="keyword">class</span>]), NSStringFromSelector(_cmd));
 <a name="l00036"></a>00036 }
 <a name="l00037"></a>00037 
 <a name="l00038"></a>00038 <span class="preprocessor">#warning Implementation needed (DLittle)</span>
-<a name="l00039"></a><a class="code" href="interface_c_s132_manager.html#abb6a5d768ced586c65cc6666e9983e46">00039</a> <span class="preprocessor"></span>-(void) spendTimeOnTopTask:(<span class="keywordtype">int</span>) seconds
+<a name="l00039"></a><a class="code" href="interface_c_s132_manager_abb6a5d768ced586c65cc6666e9983e46.html#abb6a5d768ced586c65cc6666e9983e46">00039</a> <span class="preprocessor"></span>-(void) spendTimeOnTopTask:(<span class="keywordtype">int</span>) seconds
 <a name="l00040"></a>00040 {
 <a name="l00041"></a>00041     NSLog(<span class="stringliteral">@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;</span>, <span class="stringliteral">@&quot;Stubulous&quot;</span>, NSStringFromClass([<span class="keyword">self</span> <span class="keyword">class</span>]), NSStringFromSelector(_cmd));
 <a name="l00042"></a>00042 }
 <a name="l00043"></a>00043 
 <a name="l00044"></a>00044 <span class="preprocessor">#warning Implementation needed (DLittle)</span>
-<a name="l00045"></a><a class="code" href="interface_c_s132_manager.html#af7af5f105b747483aa81f02577b1a69f">00045</a> <span class="preprocessor"></span>-(void) changeRemainingTimeTo:(<span class="keywordtype">int</span>) seconds
+<a name="l00045"></a><a class="code" href="interface_c_s132_manager_af7af5f105b747483aa81f02577b1a69f.html#af7af5f105b747483aa81f02577b1a69f">00045</a> <span class="preprocessor"></span>-(void) changeRemainingTimeTo:(<span class="keywordtype">int</span>) seconds
 <a name="l00046"></a>00046 {
 <a name="l00047"></a>00047     NSLog(<span class="stringliteral">@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;</span>, <span class="stringliteral">@&quot;Stubulous&quot;</span>, NSStringFromClass([<span class="keyword">self</span> <span class="keyword">class</span>]), NSStringFromSelector(_cmd));
 <a name="l00048"></a>00048 }
 <a name="l00049"></a>00049 
 <a name="l00050"></a>00050 <span class="preprocessor">#warning Implementation needed (CLeBerth)</span>
-<a name="l00051"></a><a class="code" href="interface_c_s132_manager.html#ad6cda86592385271cd8abcf7017ee8fb">00051</a> <span class="preprocessor"></span>-(void) addTaskWithName: (NSString*) newName
+<a name="l00051"></a><a class="code" href="interface_c_s132_manager_ad6cda86592385271cd8abcf7017ee8fb.html#ad6cda86592385271cd8abcf7017ee8fb">00051</a> <span class="preprocessor"></span>-(void) addTaskWithName: (NSString*) newName
 <a name="l00052"></a>00052          andDescription: (NSString*) newDesc
 <a name="l00053"></a>00053                  andDue: (NSDate*) newDue
 <a name="l00054"></a>00054         andTimeRequired: (<span class="keywordtype">int</span>) newTimeNeeded
@@ -178,7 +178,7 @@ function toggleVisibility(linkObj) {
 <a name="l00057"></a>00057 }
 <a name="l00058"></a>00058 
 <a name="l00059"></a>00059 <span class="preprocessor">#warning Implementation needed (KEvans)</span>
-<a name="l00060"></a><a class="code" href="interface_c_s132_manager.html#ad0ab46b84abf26fa5554eb24e87f8d77">00060</a> <span class="preprocessor"></span>-(NSString*) <a class="code" href="interface_c_s132_manager.html#ad0ab46b84abf26fa5554eb24e87f8d77">description</a>
+<a name="l00060"></a><a class="code" href="interface_c_s132_manager_ad0ab46b84abf26fa5554eb24e87f8d77.html#ad0ab46b84abf26fa5554eb24e87f8d77">00060</a> <span class="preprocessor"></span>-(NSString*) <a class="code" href="interface_c_s132_manager_ad0ab46b84abf26fa5554eb24e87f8d77.html#ad0ab46b84abf26fa5554eb24e87f8d77">description</a>
 <a name="l00061"></a>00061 {
 <a name="l00062"></a>00062     NSString* retval = nil;
 <a name="l00063"></a>00063     NSLog(<span class="stringliteral">@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;</span>, <span class="stringliteral">@&quot;Stubulous&quot;</span>, NSStringFromClass([<span class="keyword">self</span> <span class="keyword">class</span>]), NSStringFromSelector(_cmd));
@@ -190,7 +190,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_c_s132_manager_8m.html">CS132Manager.m</a>      </li>
-      <li class="footer">Generated on Wed May 16 2012 16:13:10 for Task Master by&#160;
+      <li class="footer">Generated on Wed May 16 2012 16:28:04 for Task Master by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$interface_t_m_document_a6f48e6c4df3092e243818a5185744836.html#a6f48e6c4df3092e243818a5185744836" title="&#45;[TMDocument multiplierForUnitSelector:]" alt="" coords="276,5,543,33"/>
+<area shape="rect" id="node5" href="$interface_t_m_document_a610c3fb1762b5fffcafbd42efd352857.html#a610c3fb1762b5fffcafbd42efd352857" title="&#45;[TMDocument updateCurrentTaskDisplay]" alt="" coords="273,57,546,85"/>
+<area shape="rect" id="node7" href="$interface_c_s132_manager_a3cb78bf1a26a76ef98b251c549286db4.html#a3cb78bf1a26a76ef98b251c549286db4" title="&#45;[CS132Manager countTasksToDo]" alt="" coords="625,5,853,33"/>
+<area shape="rect" id="node11" href="$interface_c_s132_task_a84862ca83e6adbd32f02cc5e95cb3ef6.html#a84862ca83e6adbd32f02cc5e95cb3ef6" title="Computes the time in progress from start to finish." alt="" coords="595,57,883,85"/>
+<area shape="rect" id="node13" href="$interface_c_s132_task_a30da4f4f532bb33c104cd1da88438ee2.html#a30da4f4f532bb33c104cd1da88438ee2" title="Computes the progress of the date from start to finish." alt="" coords="614,109,863,137"/>
+<area shape="rect" id="node9" href="$interface_c_s132_heap_ad2b9df2685054576d0c69b7803d49e63.html#ad2b9df2685054576d0c69b7803d49e63" title="find number of tasks in array" alt="" coords="931,5,1133,33"/>
+</map>

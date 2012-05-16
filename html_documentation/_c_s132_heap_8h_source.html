@@ -122,15 +122,15 @@ function toggleVisibility(linkObj) {
 <a href="_c_s132_heap_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
 <a name="l00009"></a>00009 <span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span>
 <a name="l00010"></a>00010 
-<a name="l00014"></a><a class="code" href="_c_s132_heap_8h.html#a75666a6f2c5d710b4fa0845c5cf24552">00014</a> <span class="preprocessor">#define ROOT_INDEX 1</span>
+<a name="l00014"></a><a class="code" href="_c_s132_heap_8h_a75666a6f2c5d710b4fa0845c5cf24552.html#a75666a6f2c5d710b4fa0845c5cf24552">00014</a> <span class="preprocessor">#define ROOT_INDEX 1</span>
 <a name="l00015"></a>00015 <span class="preprocessor"></span>
 <a name="l00016"></a>00016 <span class="keyword">@class</span> <a class="code" href="interface_c_s132_task.html">CS132Task</a>;
 <a name="l00017"></a>00017 
 <a name="l00018"></a><a class="code" href="interface_c_s132_heap.html">00018</a> <span class="keyword">@interface </span><a class="code" href="interface_c_s132_heap.html">CS132Heap</a> : NSObject
 <a name="l00019"></a>00019 
-<a name="l00023"></a><a class="code" href="interface_c_s132_heap.html#a0c5e0e70f31e6ba12f83cb058cef7601">00023</a> @property int <a class="code" href="interface_c_s132_heap.html#a0c5e0e70f31e6ba12f83cb058cef7601" title="last used index in array">lastUsedIndex</a>;
+<a name="l00023"></a><a class="code" href="interface_c_s132_heap_a0c5e0e70f31e6ba12f83cb058cef7601.html#a0c5e0e70f31e6ba12f83cb058cef7601">00023</a> @property int <a class="code" href="interface_c_s132_heap_a0c5e0e70f31e6ba12f83cb058cef7601.html#a0c5e0e70f31e6ba12f83cb058cef7601" title="last used index in array">lastUsedIndex</a>;
 <a name="l00024"></a>00024 
-<a name="l00028"></a><a class="code" href="interface_c_s132_heap.html#ab1fd29726787863cc325097cc28d3a2c">00028</a> @property (strong) NSMutableArray* <a class="code" href="interface_c_s132_heap.html#ab1fd29726787863cc325097cc28d3a2c" title="the entire array of tasks (note: index-0 unused)">taskArray</a>;
+<a name="l00028"></a><a class="code" href="interface_c_s132_heap_ab1fd29726787863cc325097cc28d3a2c.html#ab1fd29726787863cc325097cc28d3a2c">00028</a> @property (strong) NSMutableArray* <a class="code" href="interface_c_s132_heap_ab1fd29726787863cc325097cc28d3a2c.html#ab1fd29726787863cc325097cc28d3a2c" title="the entire array of tasks (note: index-0 unused)">taskArray</a>;
 <a name="l00029"></a>00029 
 <a name="l00030"></a>00030 <span class="preprocessor">#pragma mark Bubbling </span>
 <a name="l00031"></a>00031 <span class="preprocessor"></span>
@@ -142,13 +142,13 @@ function toggleVisibility(linkObj) {
 <a name="l00045"></a>00045 <span class="preprocessor"></span>
 <a name="l00049"></a>00049 -(void) addTask: (<a class="code" href="interface_c_s132_task.html">CS132Task</a>*) taskToAdd;
 <a name="l00050"></a>00050 
-<a name="l00054"></a>00054 -(void) <a class="code" href="interface_c_s132_heap.html#af6dd3361c506c7b538c1492a49d87658" title="delete the top task of the heap">deleteTopTask</a>;
+<a name="l00054"></a>00054 -(void) <a class="code" href="interface_c_s132_heap_af6dd3361c506c7b538c1492a49d87658.html#af6dd3361c506c7b538c1492a49d87658" title="delete the top task of the heap">deleteTopTask</a>;
 <a name="l00055"></a>00055 
-<a name="l00060"></a>00060 -(<a class="code" href="interface_c_s132_task.html">CS132Task</a>*) <a class="code" href="interface_c_s132_heap.html#a96e361766f2872fc9501220afe388060" title="find the top task of the heap">topTask</a>;
+<a name="l00060"></a>00060 -(<a class="code" href="interface_c_s132_task.html">CS132Task</a>*) <a class="code" href="interface_c_s132_heap_a96e361766f2872fc9501220afe388060.html#a96e361766f2872fc9501220afe388060" title="find the top task of the heap">topTask</a>;
 <a name="l00061"></a>00061 
-<a name="l00066"></a>00066 -(int) <a class="code" href="interface_c_s132_heap.html#ad2b9df2685054576d0c69b7803d49e63" title="find number of tasks in array">numberOfTasks</a>;
+<a name="l00066"></a>00066 -(int) <a class="code" href="interface_c_s132_heap_ad2b9df2685054576d0c69b7803d49e63.html#ad2b9df2685054576d0c69b7803d49e63" title="find number of tasks in array">numberOfTasks</a>;
 <a name="l00067"></a>00067 
-<a name="l00072"></a>00072 -(BOOL) <a class="code" href="interface_c_s132_heap.html#ab535e433b28e3ed21f3893f7f0128e5b" title="determine fi the heap is empty">isEmpty</a>;
+<a name="l00072"></a>00072 -(BOOL) <a class="code" href="interface_c_s132_heap_ab535e433b28e3ed21f3893f7f0128e5b.html#ab535e433b28e3ed21f3893f7f0128e5b" title="determine fi the heap is empty">isEmpty</a>;
 <a name="l00073"></a>00073 
 <a name="l00074"></a>00074 <span class="preprocessor">#pragma mark Index manipulation</span>
 <a name="l00075"></a>00075 <span class="preprocessor"></span>
@@ -174,7 +174,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_c_s132_heap_8h.html">CS132Heap.h</a>      </li>
-      <li class="footer">Generated on Wed May 16 2012 16:13:10 for Task Master by&#160;
+      <li class="footer">Generated on Wed May 16 2012 16:28:04 for Task Master by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
