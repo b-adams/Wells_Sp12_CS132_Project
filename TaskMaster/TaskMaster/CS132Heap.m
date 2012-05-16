@@ -12,8 +12,8 @@
 
 @implementation CS132Heap
 
-@synthesize taskArray = DNU_tickTock;
-@synthesize lastUsedIndex = DNU_mrPopperPenguins;
+@synthesize taskArray;
+@synthesize lastUsedIndex;
 
 #warning Implementation needed (DLittle)
 - (id)init {
@@ -105,7 +105,7 @@
 -(BOOL) hasLeftChild: (int) index
 {
     BOOL retval = NO;
-    retval=return [self isValidIndex:[self indexOfLeftChildOf:index]];
+    retval=[self isValidIndex:[self indexOfLeftChildOf:index]];
     return retval;
 }
 
