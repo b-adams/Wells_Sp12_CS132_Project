@@ -15,6 +15,7 @@
 @synthesize taskArray = DNU_tickTock;
 @synthesize lastUsedIndex = DNU_mrPopperPenguins;
 
+#warning Implementation needed (DLittle)
 - (id)init {
     self = [super init];
     if (self) {
@@ -23,6 +24,7 @@
     return self;
 }
 
+#warning Implementation needed (CLeBerth)
 -(int) numberOfTasks
 {
     int retval = NAN;
@@ -30,16 +32,19 @@
     return retval;
 }
 
+#warning Implementation needed (KEvans)
 -(void) bubbleDown: (int) indexOfTooBigNode
 {
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
 
+#warning Implementation needed (CLeBerth)
 -(void) bubbleUp: (int) indexOfTooSmallNode
 {
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
 
+#warning Implementation needed (CLeBerth)
 -(BOOL) isEmpty
 {
     BOOL retval = NO;
@@ -50,19 +55,17 @@
 -(void) deleteTopTask
 {
     [taskArray exchangeObjectAtIndex:[taskArray indexOfObject:[self topTask]] withObjectAtIndex:[self lastUsedIndex]];
-    
     [taskArray replaceObjectAtIndex: lastUsedIndex withObject:[NSNull null]];
-    
     [self bubbleDown: ROOT_INDEX];
-    
-    return;
 }
 
+#warning Implementation needed (CLeBarth)
 -(void) addTask: (CS132Task*) taskToAdd
 {
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
 
+#warning Implementation needed (KEvans)
 -(BOOL) isValidIndex: (int) index
 {
     BOOL retval = NO;
@@ -70,18 +73,21 @@
     return retval;
 }
 
+#warning Implementation needed (CLeBerth)
 -(int) indexOfParentOf: (int) index
 {
     int retval = NAN;
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     return retval;
 }
+#warning Implementation needed (DLittle)
 -(int) indexOfLeftChildOf: (int) index
 {
     int retval = NAN;
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     return retval;
 }
+#warning Implementation needed (CLeBerth)
 -(int) indexOfRightChildOf: (int) index
 {
     int retval = NAN;
@@ -103,6 +109,7 @@
     return retval;
 }
 
+#warning Implementation needed (DLittle)
 -(BOOL) hasRightChild: (int) index
 {
     BOOL retval = NO;
@@ -110,6 +117,7 @@
     return retval;
 }
 
+#warning Implementation needed (DLittle)
 -(CS132Task*) taskAtIndex: (int) index
 {
     CS132Task* retval = nil;
@@ -117,6 +125,7 @@
     return retval;
 }
 
+#warning Implementation needed (DLittle)
 -(CS132Task*) topTask
 {
     CS132Task* retval = nil;

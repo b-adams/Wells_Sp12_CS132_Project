@@ -15,6 +15,7 @@
 @synthesize tasksToDo;
 @synthesize topTask;
 
+#warning Implementation needed (Dlittle)
 - (id)init {
     self = [super init];
     if (self) {
@@ -28,21 +29,25 @@
     return [tasksToDo numberOfTasks];
 }
 
+#warning Implementation needed (CLeBerth)
 -(void) fixTopTask
 {
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
 
+#warning Implementation needed (DLittle)
 -(void) spendTimeOnTopTask:(int) seconds
 {
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
 
+#warning Implementation needed (DLittle)
 -(void) changeRemainingTimeTo:(int) seconds
 {
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
 
+#warning Implementation needed (CLeBerth)
 -(void) addTaskWithName: (NSString*) newName
          andDescription: (NSString*) newDesc
                  andDue: (NSDate*) newDue
@@ -51,6 +56,7 @@
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
 
+#warning Implementation needed (KEvans)
 -(NSString*) description
 {
     NSString* retval = nil;

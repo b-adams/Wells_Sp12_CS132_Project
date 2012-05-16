@@ -37,6 +37,7 @@
 
 @synthesize timeSpent=DNU_timeSpent;
 
+#warning Implementation needed (KEvans)
 -(id) initWithName: (NSString*) aName
     andDescription: (NSString*) aDescription
         andDueDate: (NSDate*) dueDate
@@ -49,12 +50,14 @@
     return self;
 }
 
+#warning Implementation needed (DLittle)
 -(NSDate*) dateEffective
 {
     NSDate* modifiedDueDate = nil;
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     return modifiedDueDate;
 }
+
 -(NSDate*) effectiveDate 
 {
     //effectiveDate is when it needs to be start...
@@ -73,6 +76,7 @@
 }
 
 
+#warning Implementation needed (DLittle)
 -(NSString*) description 
 {
     NSString* retval = nil;
@@ -80,6 +84,7 @@
     return retval;
 }
 
+#warning Implementation needed (CLeBerth)
 -(NSComparisonResult) compare: (CS132Task*) anotherTask
 {
     NSComparisonResult retval = NAN;
@@ -87,6 +92,7 @@
     return retval;
 }
 
+#warning Implementation needed (KEvans)
 -(int) progressOfCompletionFrom:(int) none
                              to:(int) done
 {
@@ -95,6 +101,7 @@
     return retval;
 }
 
+#warning Implementation needed (DLittle)
 -(int) progressOfDateFrom:(int) none
                        to:(int) done
 {
