@@ -63,21 +63,13 @@
              //*Look at NSDate's Compare…*
     //newDate = Date Due - Time Remaining
     
-    
     return [NSDate dateWithTimeInterval:-[self timeRemaining] 
                               sinceDate:[self dateDue]];
 }
 
 -(BOOL) isCompleted
 {
-    if ([self dateCompleted] == nil) 
-    {
-        return NO;
-    }
-    else
-    {
-        return YES;
-    }
+    return [self dateCompleted] != nil;
 }
 
 
@@ -99,6 +91,7 @@
                              to:(int) done
 {
     int retval = NAN;
+    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     return retval;
 }
 

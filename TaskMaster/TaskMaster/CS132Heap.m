@@ -1,9 +1,8 @@
 /**
  @file CS132Heap.m
- @author CS132 Class and Bryant Adams
+ @author CS132 Class
  @date 5/15/12
  @brief Heap implementation
- @assistant Professor Adams
  */
 
 
@@ -12,13 +11,6 @@
 
 
 @implementation CS132Heap
-
--(int) numberOfTasks
-{
-    int retval = NAN;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;
-}
 
 @synthesize taskArray = DNU_tickTock;
 @synthesize lastUsedIndex = DNU_mrPopperPenguins;
@@ -29,6 +21,13 @@
         NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     }
     return self;
+}
+
+-(int) numberOfTasks
+{
+    int retval = NAN;
+    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    return retval;
 }
 
 -(void) bubbleDown: (int) indexOfTooBigNode
@@ -50,11 +49,11 @@
 
 -(void) deleteTopTask
 {
-   [taskArray exchangeObjectAtIndex:[taskArray indexOfObject:[self topTask]] withObjectAtIndex:[self lastUsedIndex]];
+    [taskArray exchangeObjectAtIndex:[taskArray indexOfObject:[self topTask]] withObjectAtIndex:[self lastUsedIndex]];
     
     [taskArray replaceObjectAtIndex: lastUsedIndex withObject:[NSNull null]];
     
-    [self bubbleDown: [taskArray indexOfObject: [self topTask]]];
+    [self bubbleDown: ROOT_INDEX];
     
     return;
 }
@@ -63,8 +62,6 @@
 {
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
-
-
 
 -(BOOL) isValidIndex: (int) index
 {
@@ -94,27 +91,18 @@
 
 -(BOOL) hasParent:(int) index
 {
-    if([self isValidIndex:[self indexOfParentOf:index]]==YES)
-    {
-        return YES;
-    }
-    else
-    {
-        return NO;
-    }
+    BOOL retval = NO;
+    retval=[self isValidIndex:[self indexOfParentOf:index]];
+    return retval;
 }
+
 -(BOOL) hasLeftChild: (int) index
 {
-    if([self isValidIndex:[self indexOfLeftChildOf:index]]==YES)
-    {
-        return YES;
-    }
-    else
-    {
-        return NO;
-    }
-    
+    BOOL retval = NO;
+    retval=return [self isValidIndex:[self indexOfLeftChildOf:index]];
+    return retval;
 }
+
 -(BOOL) hasRightChild: (int) index
 {
     BOOL retval = NO;
