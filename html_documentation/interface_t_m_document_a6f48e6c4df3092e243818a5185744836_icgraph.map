@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$interface_t_m_document.html#a7fa17b92266b7cf083f3579d231977a3" title="&#45;[TMDocument dAddTask:]" alt="" coords="377,5,556,33"/>
-<area shape="rect" id="node5" href="$interface_t_m_document.html#ab1a27882dee2939d278f801045a6cca8" title="&#45;[TMDocument dChangeOfUnits:]" alt="" coords="357,57,576,85"/>
-<area shape="rect" id="node7" href="$interface_t_m_document.html#a1e5db77b55078111e5bcecd07da55a39" title="&#45;[TMDocument windowControllerDidLoadNib:]" alt="" coords="320,109,613,137"/>
-</map>

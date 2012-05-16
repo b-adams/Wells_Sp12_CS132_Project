@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$interface_c_s132_manager.html#abb6a5d768ced586c65cc6666e9983e46" title="&#45;[CS132Manager spendTimeOnTopTask:]" alt="" coords="242,5,508,33"/>
-<area shape="rect" id="node5" href="$interface_t_m_document.html#a610c3fb1762b5fffcafbd42efd352857" title="&#45;[TMDocument updateCurrentTaskDisplay]" alt="" coords="238,57,511,85"/>
-<area shape="rect" id="node7" href="$interface_c_s132_manager.html#a3cb78bf1a26a76ef98b251c549286db4" title="&#45;[CS132Manager countTasksToDo]" alt="" coords="590,5,818,33"/>
-<area shape="rect" id="node9" href="$interface_c_s132_task.html#a84862ca83e6adbd32f02cc5e95cb3ef6" title="&#45;[CS132Task progressOfCompletionFrom:to:]" alt="" coords="560,57,848,85"/>
-<area shape="rect" id="node11" href="$interface_c_s132_task.html#a30da4f4f532bb33c104cd1da88438ee2" title="&#45;[CS132Task progressOfDateFrom:to:]" alt="" coords="580,109,828,137"/>
-</map>
