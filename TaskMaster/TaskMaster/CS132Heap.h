@@ -13,112 +13,117 @@
 @interface CS132Heap : NSObject
 
 /**
- @brief object created to represent last used index in array
+ @brief last used index in array
  */
 @property int lastUsedIndex;
+
 /**
- @brief object created to represent the entire task Array
+ @brief the entire array of tasks (note: index-0 unused)
  */
 @property (strong) NSMutableArray* taskArray;
 
 #pragma mark Bubbling 
 
 /**
- @brief takes the index at the top of the array and places it down in the correct spot of the heap
- @param indexOfTooBigNode
- @return nothing
+ @brief takes the task at the given index and moves it down to the correct spot of the heap
+ @param indexOfTooBigNode The index of the node to try to move down
 */
 -(void) bubbleDown: (int) indexOfTooBigNode;
+
 /**
- @brief take the lowest index in the array and bubble up the node that is too small to the correct spot in the heap
- @param indexOfTooSmallNode
- @return nothing
+ @brief take the task at the given index and bubbles it up to the correct spot in the heap
+ @param indexOfTooSmallNode The index of the node to try to move up
  */
 -(void) bubbleUp: (int) indexOfTooSmallNode;
 
 #pragma mark Main heap methods
 /**
  @brief add a task to the heap
- @param taskToAdd
- @return nothing
+ @param taskToAdd The task to insert into the heap
  */
 -(void) addTask: (CS132Task*) taskToAdd;
+
 /**
  @brief delete the top task of the heap
- @param none
- @return none
  */
 -(void) deleteTopTask;
+
 /**
  @brief find the top task of the heap
- @param none
- @return the top task
+ @returns the top task
  */
 -(CS132Task*) topTask;
 
 /**
  @brief find number of tasks in array
- @param none
- @return the number of tasks
+ @returns the number of tasks
  */
 -(int) numberOfTasks;
+
 /**
  @brief determine fi the heap is empty
- @param none
- @return YES/No
+ @returns YES (heap empty) or NO (heap has contents)
  */
 -(BOOL) isEmpty;
 
 #pragma mark Index manipulation
 /**
- @brief Represents a single task at a certain index
+ @brief Retrieve the task object based upon given index
  @param the index given
- @return a CS132Task object
+ @returns the CS132Task object at index
  */
 -(CS132Task*) taskAtIndex: (int) index;
 
 /**
  @brief determine if there is a task at an index
- @param index
- @return Yes/no
+ @param index to check validity of
+ @returns YES if the index has an task, NO if not
  */
 -(BOOL) isValidIndex: (int) index;
 
 /**
  @brief find the index of the parent of a given index
  @param the given index
- @return the index of that parent
+ @returns the index of that index's parent
  */
 -(int) indexOfParentOf: (int) index;
+
 /**
  @brief find the index of the left child of a given index
  @param the given index
- @return the index of the left child
+ @returns the index of that index's left child
  */
 -(int) indexOfLeftChildOf: (int) index;
 
 /**
  @brief Compare the priority level of two tasks
  @param the given index
- @return the index of the right child
- */-(int) indexOfRightChildOf: (int) index;
+ @returns the index of that index's right child
+ */
+-(int) indexOfRightChildOf: (int) index;
 
 /**
  @brief determine if a certain index has a parent
  @param the index that might have a parent
- @return Yes/No
+ @returns YES if a parent is present, NO if not
+ 
+ Note: NO will be returned for the root node, but will also be returned for 
+ most invalid indices. YES will be returned for non-root nodes, as well as
+ for indices corresponding to children of valid nodes.
  */
 -(BOOL) hasParent: (int) index;
+
 /**
  @brief determine if a certain index has a left child
  @param the index that might have a left child
- @return Yes/No
+ @returns Yes/No
  */
 -(BOOL) hasLeftChild: (int) index;
+
 /**
  @brief determine if a certain index has a right child
  @param the index that might have a right child
- @return Yes/No
+ @returns Yes/No
  */
 -(BOOL) hasRightChild: (int) index;
 
