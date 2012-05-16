@@ -56,9 +56,15 @@
 }
 -(NSDate*) effectiveDate 
 {
-    NSDate* retval = nil;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;
+    //effectiveDate is when it needs to be start...
+    //Compare: dateDue - timeRemaining 
+             //NSDate  - NSTimeInterval -> NSDate
+             //*Look at NSDate's Compare…*
+    //newDate = Date Due - Time Remaining
+    
+    
+    return [NSDate dateWithTimeInterval:-[self timeRemaining] 
+                              sinceDate:[self dateDue]];
 }
 
 -(BOOL) isCompleted
