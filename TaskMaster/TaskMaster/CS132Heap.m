@@ -1,10 +1,11 @@
-//
-//  CS132Heap.m
-//  TaskMaster
-//
-//  Created by Bryant Adams on 5/6/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
+/**
+ @file CS132Heap.m
+ @author CS132 Class and Bryant Adams
+ @date 5/15/12
+ @brief Heap implementation
+ @assistant Professor Adams
+ */
+
 
 #import "CS132Heap.h"
 #import "CS132Task.h"
@@ -12,17 +13,15 @@
 
 @implementation CS132Heap
 
+@synthesize taskArray = DNU_tickTock;
+@synthesize lastUsedIndex = DNU_mrPopperPenguins;
+
 -(int) numberOfTasks
 {
     int retval = NAN;
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     return retval;
 }
-
-@synthesize taskArray;
-@synthesize lastUsedIndex;
-@synthesize mrPopperPenguins;
-@synthesize tickTock;
 
 - (id)init {
     self = [super init];
@@ -48,9 +47,16 @@
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     return retval;
 }
+
 -(void) deleteTopTask
 {
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    [taskArray exchangeObjectAtIndex:[taskArray indexOfObject:[self topTask]] withObjectAtIndex:[self lastUsedIndex]];
+    
+    [taskArray replaceObjectAtIndex: lastUsedIndex withObject:[NSNull null]];
+    
+    [self bubbleDown: [taskArray indexOfObject: [self topTask]]];
+    
+    return;
 }
 
 -(void) addTask: (CS132Task*) taskToAdd
@@ -88,15 +94,26 @@
 
 -(BOOL) hasParent:(int) index
 {
-    BOOL retval = NO;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;
+    if([self isValidIndex:[self indexOfParentOf:index]]==YES)
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
 }
 -(BOOL) hasLeftChild: (int) index
 {
-    BOOL retval = NO;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;
+    if([self isValidIndex:[self indexOfLeftChildOf:index]]==YES)
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
+    
 }
 -(BOOL) hasRightChild: (int) index
 {
@@ -119,7 +136,7 @@
     point = [self dateDue];
     
     
-   
+    
     return retval;
 }
 
@@ -133,8 +150,6 @@
 
 -(NSString*) description
 {
-    NSString* retval = nil;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;    
+    return [taskArray description];
 }
 @end

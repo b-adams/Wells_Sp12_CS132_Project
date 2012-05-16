@@ -25,9 +25,7 @@
 
 -(int) countTasksToDo
 {
-    int retval = NAN;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;
+    return [tasksToDo numberOfTasks];
 }
 
 -(void) fixTopTask
