@@ -1,9 +1,8 @@
 /**
  @file CS132Heap.h
- @author CS132 Class and Bryant Adams
+ @author CS132 Class
  @date 5/15/12
  @brief Heap interface
- @assistant Professor Adams
  */
 
 #import <Foundation/Foundation.h>
