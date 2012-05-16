@@ -9,6 +9,7 @@
 #import "CS132Task.h"
 
 @implementation CS132Task
+
 {
     NSString* DNU_taskName;
     NSString* DNU_taskDescription;
@@ -69,9 +70,14 @@
 
 -(BOOL) isCompleted
 {
-    BOOL retval = NO;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;
+    if ([self dateCompleted] == nil) 
+    {
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
 }
 
 
