@@ -25,56 +25,56 @@
  */
 @property (strong) NSDate* dateDue;
 
-/*
- Represents an NSDate pointer to the dateCreated
+/**
+ @brief Date the task was created
  */
 @property (strong) NSDate* dateCreated;
 
 /**
- @brief The (estimated) amount of active worktime left until the task is completed.
+ @brief Amount of remaining work-time currently forecast before the task will be completed.
  */
 @property NSTimeInterval timeRemaining;
 
-/*
- Represents an NSDate pointer to the dateCompleted
+/**
+ @brief Date when the task was finished. If the task hasn't been finished yet, this should be nil.
  */
 @property (strong) NSDate* dateCompleted;
 
-/*
- Represents an NSTimeInterval of timeSpent
+/**
+ @brief Amount of work-time that has been spent on the task so far. 
  */
 @property NSTimeInterval timeSpent;
 
-/*
- Represents an NSTimeInterval of timeExpected
+/**
+ @brief Original amount of actively-working-time the task was expected to take.
  */
 @property NSTimeInterval timeExpected;
 
 /**
- @brief An autocompletion-friendly shell for effectiveDate
- @returns the same thing as effectiveDate
+ @brief Calls effectiveDate
+ @return see effectiveDate
  */
 -(NSDate*) dateEffective;
 
-/*
- Compares dateDue to timeRemaining (dateDute - timeRemaining)
- returns an NSDate pointer to the newly generated date
+/**
+ @brief Compares dateDue to timeRemaining (dateDute - timeRemaining)
+ @return The latest date at which you could start the task and have any hope of finishing on time, given current remaining-time estimates.
  */
 -(NSDate*) effectiveDate;
 
-/*
- Determines whether the task has been completed or not
- returns Yes if the task has been completed and No if the taskis not complete
+/**
+ @brief Determines whether the task has been completed or not
+ @return Yes if the task has been completed and No if the task is not complete
  */
 -(BOOL) isCompleted;
 
 /**
- @brief Designated initializer
- @param name Desired name for the new task
- @param description Desired description/details for the new task
- @param dueDate Date when the new task will be due
- @param seconds Amount of actively-working time (in seconds) the task is expected to require
- @returns the initialized task
+ @brief The designated initializer for setting up a new task
+ @param name The name for the task
+ @param description The description for the task
+ @param dueDate The deadline for the task
+ @param seconds The amount of working-time the task is expected to tak
+ @returns The now-initialized task
  */
 -(id) initWithName: (NSString*) name
     andDescription: (NSString*) description
@@ -83,27 +83,31 @@
 
 /**
  @brief Compare the priority level of two tasks
- @param anotherTask The task to compare the receiver against
- @returns NSOrderedAscending, NSOrderedSame, or NSOrderedDescending, as appropriate
+ @param anoterTask the task that the receiver task will be compared to
+ @returns an NSComparisionResult indicating whether the receiver should be before, after, or the same as anotherTask
  
- For more information, see <a href="https://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Constants/Reference/reference.html#//apple_ref/c/tdef/NSComparisonResult">NSComparisonResult</a>
+ \see <a href="https://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Constants/Reference/reference.html#//apple_ref/c/tdef/NSComparisonResult">NSComparisonResult documentation</a> for more information on NSComparisonResult
  */
 -(NSComparisonResult) compare: (CS132Task*) anotherTask;
 
-/*
- Computes the time in progress from start to finish
- param none the value of the current progress
- param done the value of the progress to the completion
- returns the integer representing progress (between 0-100)
+/**
+ @brief Computes the time in progress from start to finish
+ @param none the low end of the scale you want to use
+ @param done the high end of the scale you want to use
+ @return the integer representing progress (between none and done)
+
+ For example, if you use [someTask progressOfCompletionFrom:0 to:100]
+ then you'll get get the completion level on a scale from 0 to 100
+ For a scale from -5 to 5, use [someTask progressOfCompletionFrom:-5 to 5]
  */
 -(int) progressOfCompletionFrom:(int) none
                              to:(int) done;
 
-/*
- Computes the progress of the date from start to finish
- param none the value of the current progress from the date
- param done the value of the progress to the completion date
- returns the integer representing progress (between 0-100)
+/**
+ @brief Computes the progress of the date from start to finish
+ @param none the low end of the scale you want to use
+ @param done the high end of the scale you want to use
+ @return the integer representing progress (between none and done)
  */
 -(int) progressOfDateFrom:(int) none
                        to:(int) done;
