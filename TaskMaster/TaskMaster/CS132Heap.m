@@ -14,10 +14,23 @@
 
 -(int) numberOfTasks
 {
-    int retval = NAN;
+    int counter = NAN;
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    //
-    return retval;
+    //Ask Task heap how many items it has
+    /*
+	for(int i; i < [; i++)
+	{
+		counter = counter + 1;
+	}
+    return counter;*/
+    
+    BOOL emptyList = [self isEmpty];
+    while (emptyList == NO) 
+    {
+        counter = counter + 1;
+    }
+    
+    return counter;
 }
 
 @synthesize taskArray;
@@ -39,14 +52,20 @@
 -(void) bubbleUp: (int) indexOfTooSmallNode
 {
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    //
+    //indexOfTooSmallNode has to be moved up into the place of its parent.... ?
+    
+    
 }
 
 -(BOOL) isEmpty
 {
     BOOL retval = NO;
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    //
+    //isEmtpty... Returns No if it has takss... Returns Yes if it has no tasks...
+    //Tasks list is a Heap.... How do we know when it is Empty? When Children are Nil?
+    //Left child is first?... No Left child = No right Child....
+    
+    
     return retval;
 }
 -(void) deleteTopTask
@@ -57,10 +76,10 @@
 -(void) addTask: (CS132Task*) taskToAdd
 {
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    //
+    //Add task to the heap... (Bottom or top... Could it be added at the topTask?)
+    //Ask task to add itself? Or ask Heap to add the new task...?
+    
 }
-
-
 
 -(BOOL) isValidIndex: (int) index
 {
@@ -73,20 +92,26 @@
 {
     int retval = NAN;
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    //
+    //index is Child... Must return the index of the Parent...
+    
+    
     return retval;
 }
+
 -(int) indexOfLeftChildOf: (int) index
 {
     int retval = NAN;
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     return retval;
 }
+
 -(int) indexOfRightChildOf: (int) index
 {
     int retval = NAN;
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    //
+    //index is the index of the Parent... Must return index of Child....
+    
+    
     return retval;
 }
 
@@ -96,12 +121,14 @@
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     return retval;
 }
+
 -(BOOL) hasLeftChild: (int) index
 {
     BOOL retval = NO;
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     return retval;
 }
+
 -(BOOL) hasRightChild: (int) index
 {
     BOOL retval = NO;
