@@ -16,7 +16,6 @@
 {
     int retval = NAN;
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    //
     return retval;
 }
 
@@ -39,14 +38,12 @@
 -(void) bubbleUp: (int) indexOfTooSmallNode
 {
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    //
 }
 
 -(BOOL) isEmpty
 {
     BOOL retval = NO;
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    //
     return retval;
 }
 -(void) deleteTopTask
@@ -57,7 +54,6 @@
 -(void) addTask: (CS132Task*) taskToAdd
 {
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    //
 }
 
 
@@ -73,7 +69,6 @@
 {
     int retval = NAN;
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    //
     return retval;
 }
 -(int) indexOfLeftChildOf: (int) index
@@ -86,7 +81,6 @@
 {
     int retval = NAN;
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    //
     return retval;
 }
 
