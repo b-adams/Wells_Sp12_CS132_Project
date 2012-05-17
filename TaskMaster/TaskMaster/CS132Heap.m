@@ -61,12 +61,19 @@
 {
     BOOL retval = NO;
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    //isEmtpty... Returns No if it has takss... Returns Yes if it has no tasks...
+    //isEmtpty... Returns No if it has tasks... Returns Yes if it has no tasks...
     //Tasks list is a Heap.... How do we know when it is Empty? When Children are Nil?
     //Left child is first?... No Left child = No right Child....
+        //This only checks if the top task has a tasks? Is it supposed to run through them all in order to check? Does it call another method?
+    if ([self topTask] != nil) 
+    {
+        return retval = YES;
+    }
+    else
+    {
+        return retval;
+    }
     
-    
-    return retval;
 }
 -(void) deleteTopTask
 {
@@ -78,6 +85,7 @@
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     //Add task to the heap... (Bottom or top... Could it be added at the topTask?)
     //Ask task to add itself? Or ask Heap to add the new task...?
+    
     
 }
 
