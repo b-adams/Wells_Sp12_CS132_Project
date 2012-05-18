@@ -99,7 +99,9 @@
     //Ask task to add itself? Or ask Heap to add the new task...?
     //taskToAdd = [[CS132Task alloc] init];
     //[self taskAtIndex:[self lastUsedIndex]]; Must set taskToAdd at the index AFTER the last Used Index..... How?
+    // Might need to call Left or Right index of Child Of.... ?? Yes... No?
     
+     
     
 }
 
