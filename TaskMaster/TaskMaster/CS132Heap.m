@@ -20,8 +20,8 @@
     return retval;
 }
 
-@synthesize taskArray = DNU_tickTock;
-@synthesize lastUsedIndex = DNU_mrPopperPenguins;
+@synthesize taskArray;
+@synthesize lastUsedIndex;
 
 - (id)init {
     self = [super init];
@@ -33,7 +33,36 @@
 
 -(void) bubbleDown: (int) indexOfTooBigNode
 {
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    if ([self indexOfLeftChildOf:indexOfTooBigNode] == NAN) 
+    {
+        return;
+    }
+    
+    
+    if (indexOfTooBigNode > [self indexOfLeftChildOf:indexOfTooBigNode]) 
+    {
+        if (indexOfTooBigNode > [self indexOfRightChildOf:indexOfTooBigNode])
+        {
+            if ([self indexOfLeftChildOf:indexOfTooBigNode] > [self indexOfRightChildOf:indexOfTooBigNode])
+            {
+                [taskArray exchangeObjectAtIndex:[self indexOfRightChildOf:indexOfTooBigNode]withObjectAtIndex:indexOfTooBigNode];
+            }
+            else
+            {
+                [taskArray exchangeObjectAtIndex:[self indexOfLeftChildOf:indexOfTooBigNode]withObjectAtIndex:indexOfTooBigNode];
+                
+            }
+        }
+        else
+        {
+            [taskArray exchangeObjectAtIndex:[self indexOfLeftChildOf:indexOfTooBigNode]withObjectAtIndex:indexOfTooBigNode];
+            
+        }
+    }
+    else
+    {
+        return;
+    }
 }
 
 -(void) bubbleUp: (int) indexOfTooSmallNode
@@ -54,7 +83,7 @@
     
     [taskArray replaceObjectAtIndex: lastUsedIndex withObject:[NSNull null]];
     
-    [self bubbleDown: [taskArray indexOfObject: [self topTask]]];
+    [self bubbleDown: ROOT_INDEX];
     
     return;
 }
@@ -68,9 +97,21 @@
 
 -(BOOL) isValidIndex: (int) index
 {
-    BOOL retval = NO;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;
+    if (index < ROOT_INDEX)
+    {
+        return NO;
+    }
+    else
+    {
+        if(index <= [self lastUsedIndex])
+        {
+            return YES;
+        }
+        else
+        {
+            return NO;
+        }
+    }
 }
 
 -(int) indexOfParentOf: (int) index
