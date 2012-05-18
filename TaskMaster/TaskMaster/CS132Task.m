@@ -90,14 +90,17 @@
 
 -(NSComparisonResult) compare: (CS132Task*) anotherTask
 {
-    NSComparisonResult retval = NAN;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    //NSComparisonResult NDOrder = NAN;
+    //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     //Needs to compare the dateEffective of one task to another
     //must use/call dateEffective...
         //[anotherTask dateEffective];
         //[self dateEffective];
     //How do you compare two tasks and produce a number....Got it Answered
-    return retval;
+    
+    NDOrder = [[self dateEffective] compare: [anotherTask dateEffective]];
+    
+    return NDOrder;
 }
 
 -(int) progressOfCompletionFrom:(int) none

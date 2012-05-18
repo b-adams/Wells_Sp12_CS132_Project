@@ -50,19 +50,19 @@
 
 /**
  @brief find the top task of the heap
- @returns the top task
+ @return the top task
  */
 -(CS132Task*) topTask;
 
 /**
  @brief find number of tasks in array
- @returns the number of tasks
+ @return the number of tasks
  */
 -(int) numberOfTasks;
 
 /**
  @brief determine fi the heap is empty
- @returns YES (heap empty) or NO (heap has contents)
+ @return YES (heap empty) or NO (heap has contents)
  */
 -(BOOL) isEmpty;
 
@@ -70,42 +70,42 @@
 /**
  @brief Retrieve the task object based upon given index
  @param the index given
- @returns the CS132Task object at index
+ @return the CS132Task object at index
  */
 -(CS132Task*) taskAtIndex: (int) index;
 
 /**
  @brief determine if there is a task at an index
  @param index to check validity of
- @returns YES if the index has an task, NO if not
+ @return YES if the index has an task, NO if not
  */
 -(BOOL) isValidIndex: (int) index;
 
 /**
  @brief find the index of the parent of a given index
  @param the given index
- @returns the index of that index's parent
+ @return the index of that index's parent
  */
 -(int) indexOfParentOf: (int) index;
 
 /**
  @brief find the index of the left child of a given index
  @param the given index
- @returns the index of that index's left child
+ @return the index of that index's left child
  */
 -(int) indexOfLeftChildOf: (int) index;
 
 /**
  @brief Compare the priority level of two tasks
  @param the given index
- @returns the index of that index's right child
+ @return the index of that index's right child
  */
 -(int) indexOfRightChildOf: (int) index;
 
 /**
  @brief determine if a certain index has a parent
  @param the index that might have a parent
- @returns YES if a parent is present, NO if not
+ @return YES if a parent is present, NO if not
  
  Note: NO will be returned for the root node, but will also be returned for 
  most invalid indices. YES will be returned for non-root nodes, as well as
@@ -116,14 +116,14 @@
 /**
  @brief determine if a certain index has a left child
  @param the index that might have a left child
- @returns Yes/No
+ @return Yes/No
  */
 -(BOOL) hasLeftChild: (int) index;
 
 /**
  @brief determine if a certain index has a right child
  @param the index that might have a right child
- @returns Yes/No
+ @return Yes/No
  */
 -(BOOL) hasRightChild: (int) index;
 

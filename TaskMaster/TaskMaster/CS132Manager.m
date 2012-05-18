@@ -30,7 +30,11 @@
 
 -(void) fixTopTask
 {
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    //Put the pointer pointing to the task that is now finished to point to the root of the heap...
+    
+    [self setTopTask: [[self tasksToDo] topTask]];
+    
 }
 
 -(void) spendTimeOnTopTask:(int) seconds
@@ -48,9 +52,15 @@
                  andDue: (NSDate*) newDue
         andTimeRequired: (int) newTimeNeeded
 {
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    //Set up name, description, due dat, and time needed.... How? Do I use initWith... ??
-    //[[[[ alloc] initWithName:newName andDescription:newDesc andDueDate:newDue andTimeEstimate:newTimeNeeded]]];
+    //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    //Set up name, description, due date, and time needed.... How? Do I use initWith... ??
+    CS132Task* taskCreated = [[CS132Task alloc] 
+                       initWithName:newName 
+                     andDescription:newDesc 
+                         andDueDate:newDue 
+                    andTimeEstimate:newTimeNeeded];
+    [[self tasksToDo] addTask:taskCreated];
+    
 }
 
 -(NSString*) description
