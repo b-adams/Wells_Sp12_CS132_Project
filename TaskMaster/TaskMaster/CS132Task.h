@@ -1,10 +1,15 @@
-//
-//  CS132Task.h
-//  TaskMaster
-//
-//  Created by Bryant Adams on 5/6/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
+/**
+ * @file CS132Task.h
+ * @author Professor Adams
+ * @author Dauris Little
+ * @author Constance LeBerth
+ * @author Keegan Evans
+ * @brief TaskMaster
+ * @date 5/18/12
+ * @status Program is complete 
+ * @assistance Professor Adams
+ * @assistant Constance LeBerth
+ */
 
 #import <Foundation/Foundation.h>
 

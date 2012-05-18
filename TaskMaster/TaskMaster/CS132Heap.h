@@ -1,11 +1,15 @@
 /**
- @file CS132Heap.h
- @author CS132 Class and Bryant Adams
- @date 5/15/12
- @brief Heap interface
- @assistant Professor Adams
+ * @file CS132Heap.h
+ * @author Professor Adams
+ * @author Dauris Little
+ * @author Constance LeBerth
+ * @author Keegan Evans
+ * @brief TaskMaster
+ * @date 5/18/12
+ * @status Program is complete 
+ * @assistance Professor Adams
+ * @assistant Constance LeBerth
  */
-
 #import <Foundation/Foundation.h>
 #define ROOT_INDEX 1
 @class CS132Task;
@@ -21,8 +25,7 @@
  @brief the entire array of tasks (note: index-0 unused)
  */
 @property (strong) NSMutableArray* taskArray;
-@property (strong) NSMutableArray* mrPopperPenguins;
-@property int tickTock;
+
 
 #pragma mark Bubbling 
 

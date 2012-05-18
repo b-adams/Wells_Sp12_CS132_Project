@@ -1,10 +1,15 @@
-//
-//  CS132Task.m
-//  TaskMaster
-//
-//  Created by Bryant Adams on 5/6/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
+/**
+ * @file CS132Task.m
+ * @author Professor Adams
+ * @author Dauris Little
+ * @author Constance LeBerth
+ * @author Keegan Evans
+ * @brief TaskMaster
+ * @date 5/18/12
+ * @status Program is complete 
+ * @assistance Professor Adams
+ * @assistant Constance LeBerth
+ */
 
 #import "CS132Task.h"
 #import "CS132Heap.h"
@@ -54,7 +59,8 @@
 -(NSDate*) dateEffective
 {
     NSDate* modifiedDueDate = nil;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    modifiedDueDate = [self effectiveDate];
     return modifiedDueDate;
 }
 -(NSDate*) effectiveDate 
@@ -85,21 +91,11 @@
 
 -(NSString*) description 
 {
-    //NSString* retval = nil;
-    //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    
-    NSString* retval = [[NSString alloc] init];
-    
-    BOOL going = YES;
-    
-    while (going == YES) {
-        if (retval != Nil) {
-            retval = //[NSStringWithFormat: @"%@%c", retval, [retval cs132Task description];
-        } else {
-            going = NO;
-        }
-    }
+    NSString* retval = nil;
+
+    retval = [NSString stringWithFormat:@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd)];
     return retval;
+    
 }
 
 -(NSComparisonResult) compare: (CS132Task*) anotherTask
@@ -120,7 +116,12 @@
                        to:(int) done
 {
     int retval = NAN;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    int outPutRange = done - none;
+    NSTimeInterval inPutRange = [[self dateDue] timeIntervalSinceDate:[self dateCreated]];
+    NSTimeInterval inPutValue = [[NSDate date] timeIntervalSinceDate:[self dateCreated]];
+    
+    retval = (inPutValue / inPutRange) * outPutRange + none;
+    //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     return retval;
 }
 

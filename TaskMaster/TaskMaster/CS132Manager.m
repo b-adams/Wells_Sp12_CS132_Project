@@ -1,10 +1,15 @@
-//
-//  CS132Manager.m
-//  TaskMaster
-//
-//  Created by Bryant Adams on 5/6/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
+/**
+ * @file CS132Manager.m
+ * @author Professor Adams
+ * @author Dauris Little
+ * @author Constance LeBerth
+ * @author Keegan Evans
+ * @brief TaskMaster 
+ * @date 5/18/12
+ * @status Program is complete 
+ * @assistance Professor Adams
+ * @assistance Constance LeBerth
+ */
 
 #import "CS132Manager.h"
 #import "CS132Heap.h"
@@ -18,7 +23,9 @@
 - (id)init {
     self = [super init];
     if (self) {
-        NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+        [self setTasksCompleted:[NSMutableArray array]];
+        [self setTasksToDo:[[CS132Heap alloc] init]];
+        [self setTopTask:[[CS132Task alloc] init]];
     }
     return self;
 }
@@ -35,12 +42,21 @@
 
 -(void) spendTimeOnTopTask:(int) seconds
 {
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    [[self topTask] setTimeSpent:[[self topTask] timeSpent] + seconds];
+    
+    [[self topTask] setTimeRemaining:[[self topTask] timeRemaining] - seconds];
+    //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+     
 }
 
 -(void) changeRemainingTimeTo:(int) seconds
 {
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    [[self topTask] setTimeRemaining:seconds];
+    
+    [[self tasksToDo] bubbleDown:ROOT_INDEX];
+    
+    [self fixTopTask]; 
+      //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
 
 -(void) addTaskWithName: (NSString*) newName

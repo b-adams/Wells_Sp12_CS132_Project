@@ -1,11 +1,15 @@
 /**
- @file CS132Heap.m
- @author CS132 Class and Bryant Adams
- @date 5/15/12
- @brief Heap implementation
- @assistant Professor Adams
+ * @file CS132Heap.m
+ * @author Professor Adams
+ * @author Dauris Little
+ * @author Constance LeBerth
+ * @author Keegan Evans
+ * @brief TaskMaster
+ * @date 5/18/12
+ * @status Program is complete 
+ * @assistance Professor Adams
+ * @assistant Constance LeBerth
  */
-
 
 #import "CS132Heap.h"
 #import "CS132Task.h"
@@ -13,8 +17,9 @@
 
 @implementation CS132Heap
 
-@synthesize taskArray = DNU_tickTock;
-@synthesize lastUsedIndex = DNU_mrPopperPenguins;
+@synthesize taskArray;
+@synthesize lastUsedIndex;
+
 
 -(int) numberOfTasks
 {
@@ -26,10 +31,12 @@
 - (id)init {
     self = [super init];
     if (self) {
-        [self setTickTock:NAN];
+        [self setLastUsedIndex:0];
+        [self setTaskArray:[NSMutableArray arrayWithObject:[NSNull null]]];
     }
     return self;
 }
+
 
 -(void) bubbleDown: (int) indexOfTooBigNode
 {
@@ -50,11 +57,12 @@
 
 -(void) deleteTopTask
 {
-    [taskArray exchangeObjectAtIndex:[taskArray indexOfObject:[self topTask]] withObjectAtIndex:[self lastUsedIndex]];
+    [taskArray exchangeObjectAtIndex:[taskArray indexOfObject:[self topTask]] 
+                   withObjectAtIndex:[self lastUsedIndex]];
     
     [taskArray replaceObjectAtIndex: lastUsedIndex withObject:[NSNull null]];
     
-    [self bubbleDown: [taskArray indexOfObject: [self topTask]]];
+    [self bubbleDown: ROOT_INDEX];
     
     return;
 }
@@ -82,7 +90,9 @@
 -(int) indexOfLeftChildOf: (int) index
 {
     int retval = NAN;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    
+    retval = index * 2;
+    
     return retval;
 }
 -(int) indexOfRightChildOf: (int) index
@@ -119,7 +129,7 @@
 {
     BOOL retval = NO;
     
-    if ([self taskAtIndex:[self indexOfRightChildOf:index]]) {
+    if ([self isValidIndex:[self indexOfRightChildOf:index]] == YES) {
         return YES;
     } else {
         return NO;
@@ -130,19 +140,15 @@
 
 -(CS132Task*) taskAtIndex: (int) index
 {
-    CS132Task* retval = nil;
+    return [[self taskArray] objectAtIndex:index];    
+
     //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    CS132Task* point = [[CS132Task alloc] init];
-    point = [self dateDue];
-    
-    
-    
-    return retval;
 }
 
 -(CS132Task*) topTask
 {
-    CS132Task* retval = nil;
+    CS132Task* retval = [self taskAtIndex:ROOT_INDEX];
+
     //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     //CS132Task* get =
     return retval;
@@ -150,6 +156,8 @@
 
 -(NSString*) description
 {
-    return [taskArray description];
+    NSString* retval = nil;
+    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    return retval;
 }
 @end
