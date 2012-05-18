@@ -53,7 +53,6 @@
 {
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     //Set up name, description, due dat, and time needed.... How? Do I use initWith... ??
-    
     //[[[[ alloc] initWithName:newName andDescription:newDesc andDueDate:newDue andTimeEstimate:newTimeNeeded]]];
     
     
