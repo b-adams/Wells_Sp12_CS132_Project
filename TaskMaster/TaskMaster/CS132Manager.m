@@ -1,10 +1,11 @@
-//
-//  CS132Manager.m
-//  TaskMaster
-//
-//  Created by Bryant Adams on 5/6/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
+/**
+ @file CS132Manager.m
+ @author CS132 Class and Bryant Adams
+ @date 5/18/12
+ @brief Heap implementation
+ @assistant Professor Adams
+ @assistant Dauris Little
+ */
 
 #import "CS132Manager.h"
 #import "CS132Heap.h"

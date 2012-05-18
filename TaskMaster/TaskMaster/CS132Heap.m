@@ -1,11 +1,11 @@
 /**
  @file CS132Heap.m
  @author CS132 Class and Bryant Adams
- @date 5/15/12
+ @date 5/18/12
  @brief Heap implementation
  @assistant Professor Adams
+ @assistant Dauris Little
  */
-
 
 #import "CS132Heap.h"
 #import "CS132Task.h"
