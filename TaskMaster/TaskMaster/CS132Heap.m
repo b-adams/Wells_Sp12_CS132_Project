@@ -83,7 +83,7 @@
     
     [taskArray replaceObjectAtIndex: lastUsedIndex withObject:[NSNull null]];
     
-    [self bubbleDown: [taskArray indexOfObject: [self topTask]]];
+    [self bubbleDown: ROOT_INDEX];
     
     return;
 }
@@ -103,7 +103,7 @@
     }
     else
     {
-        if(index < [self lastUsedIndex])
+        if(index <= [self lastUsedIndex])
         {
             return YES;
         }

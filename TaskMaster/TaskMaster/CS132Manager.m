@@ -53,6 +53,6 @@
 
 -(NSString*) description
 {
-    return [NSString stringWithFormat:@"%l, %l, %l", [self topTask],[self tasksToDo], [self tasksCompleted]];
+    return [NSString stringWithFormat:@"Top Task: %@, Tasks to Do: %@, Tasks Completed: %@", [self topTask],[self tasksToDo], [self tasksCompleted]];
 }
 @end

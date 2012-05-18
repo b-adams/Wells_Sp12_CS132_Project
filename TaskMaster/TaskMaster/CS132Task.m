@@ -105,7 +105,7 @@
 -(int) progressOfCompletionFrom:(int) none
                              to:(int) done
 {
-    int amountOfProgress;
+    float amountOfProgress;
     amountOfProgress=([self timeSpent] / ([self timeRemaining] + [self timeSpent]));
     
     return (none + amountOfProgress*(done-none));
