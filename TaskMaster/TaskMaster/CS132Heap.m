@@ -1,10 +1,11 @@
-//
-//  CS132Heap.m
-//  TaskMaster
-//
-//  Created by Bryant Adams on 5/6/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
+/**
+ @file CS132Heap.m
+ @author CS132 Class and Bryant Adams
+ @date 5/15/12
+ @brief Heap implementation
+ @assistant Professor Adams
+ */
+
 
 #import "CS132Heap.h"
 #import "CS132Task.h"
@@ -33,8 +34,8 @@
     return counter;
 }
 
-@synthesize taskArray;
-@synthesize lastUsedIndex;
+@synthesize taskArray = DNU_tickTock;
+@synthesize lastUsedIndex = DNU_mrPopperPenguins;
 
 - (id)init {
     self = [super init];
@@ -54,9 +55,6 @@
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     //indexOfTooSmallNode has to be moved up into the place of its parent.... ?
     //Uses Compare method... ?
-    
-    
-    
 }
 
 -(BOOL) isEmpty
@@ -87,9 +85,16 @@
     }
     
 }
+
 -(void) deleteTopTask
 {
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+   [taskArray exchangeObjectAtIndex:[taskArray indexOfObject:[self topTask]] withObjectAtIndex:[self lastUsedIndex]];
+    
+    [taskArray replaceObjectAtIndex: lastUsedIndex withObject:[NSNull null]];
+    
+    [self bubbleDown: [taskArray indexOfObject: [self topTask]]];
+    
+    return;
 }
 
 -(void) addTask: (CS132Task*) taskToAdd
@@ -100,8 +105,6 @@
     //taskToAdd = [[CS132Task alloc] init];
     //[self taskAtIndex:[self lastUsedIndex]]; Must set taskToAdd at the index AFTER the last Used Index..... How?
     // Might need to call Left or Right index of Child Of.... ?? Yes... No?
-    
-     
     
 }
 
@@ -118,9 +121,6 @@
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     //index is Child... Must return the index of the Parent...
     //Things are linking in a Heap in a way where they know only their children? Or do they know their parents too....?
-    
-    
-    
     return retval;
 }
 
@@ -136,23 +136,32 @@
     int retval = NAN;
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     //index is the index of the Parent... Must return index of Child....
-    
-    
     return retval;
 }
 
 -(BOOL) hasParent:(int) index
 {
-    BOOL retval = NO;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;
+    if([self isValidIndex:[self indexOfParentOf:index]]==YES)
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
 }
 
 -(BOOL) hasLeftChild: (int) index
 {
-    BOOL retval = NO;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;
+    if([self isValidIndex:[self indexOfLeftChildOf:index]]==YES)
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
+    
 }
 
 -(BOOL) hasRightChild: (int) index
@@ -178,8 +187,6 @@
 
 -(NSString*) description
 {
-    NSString* retval = nil;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;    
+    return [taskArray description];
 }
 @end

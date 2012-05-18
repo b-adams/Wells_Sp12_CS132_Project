@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$interface_t_m_document.html#a610c3fb1762b5fffcafbd42efd352857" title="&#45;[TMDocument updateCurrentTaskDisplay]" alt="" coords="342,135,615,163"/>
-<area shape="rect" id="node5" href="$interface_t_m_document.html#a7fa17b92266b7cf083f3579d231977a3" title="&#45;[TMDocument dAddTask:]" alt="" coords="721,5,900,33"/>
-<area shape="rect" id="node7" href="$interface_t_m_document.html#ab1a27882dee2939d278f801045a6cca8" title="&#45;[TMDocument dChangeOfUnits:]" alt="" coords="701,57,920,85"/>
-<area shape="rect" id="node9" href="$interface_t_m_document.html#a3da833174a15d573c3fb95367b2a0115" title="&#45;[TMDocument dChangeTaskActivity:]" alt="" coords="688,109,933,137"/>
-<area shape="rect" id="node11" href="$interface_t_m_document.html#aede60a3222114b9be9cdda8eae94ca40" title="&#45;[TMDocument dUpdateTimeRemaining:]" alt="" coords="679,161,943,189"/>
-<area shape="rect" id="node13" href="$interface_t_m_document.html#a1e5db77b55078111e5bcecd07da55a39" title="&#45;[TMDocument windowControllerDidLoadNib:]" alt="" coords="664,213,957,241"/>
-<area shape="rect" id="node15" href="$interface_t_m_document.html#a0c47d35fde176ba4b8d593c6d464357f" title="&#45;[TMDocument workTicker:]" alt="" coords="718,265,903,293"/>
-</map>

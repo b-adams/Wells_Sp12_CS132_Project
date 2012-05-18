@@ -25,15 +25,12 @@
 
 -(int) countTasksToDo
 {
-    int retval = NAN;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;
+    return [tasksToDo numberOfTasks];
 }
 
 -(void) fixTopTask
 {
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    //Point topTaks to the heap...
 }
 
 -(void) spendTimeOnTopTask:(int) seconds
@@ -54,8 +51,6 @@
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     //Set up name, description, due dat, and time needed.... How? Do I use initWith... ??
     //[[[[ alloc] initWithName:newName andDescription:newDesc andDueDate:newDue andTimeEstimate:newTimeNeeded]]];
-    
-    
 }
 
 -(NSString*) description
