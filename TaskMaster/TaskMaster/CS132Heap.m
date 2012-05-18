@@ -43,9 +43,9 @@
     {
         if (indexOfTooBigNode > [self indexOfRightChildOf:indexOfTooBigNode])
         {
-            if ([self indexOfLeftChildOf:indexOfTooBigNode] > [self indexOfRightChildOf:indexOfTooBigNode])
+            if([self indexOfLeftChildOf:indexOfTooBigNode] > [self indexOfRightChildOf:indexOfTooBigNode])
             {
-                [taskArray exchangeObjectAtIndex:[self indexOfRightChildOf:indexOfTooBigNode]withObjectAtIndex:indexOfTooBigNode];
+                [taskArray exchangeObjectAtIndex:[self indexOfRightChildOf:indexOfTooBigNode] withObjectAtIndex:indexOfTooBigNode];
             }
             else
             {

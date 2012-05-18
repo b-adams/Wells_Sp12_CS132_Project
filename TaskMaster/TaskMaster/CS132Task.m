@@ -48,7 +48,7 @@
         [self setTaskName: aName];
         [self setTaskDescription: aDescription];
         [self setDateDue: dueDate];
-        [self setTimeExpected: expected];
+        [self setTimeExpected: seconds];
         [self setTimeRemaining: seconds]; 
         [self setDateCreated: [NSDate date]];
         [self setTimeSpent: 0];
