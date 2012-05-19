@@ -10,7 +10,9 @@
 @class CS132Heap;
 @class CS132Task;
 
-
+/**
+ @brief Tracks completed, current, and to-do tasks.
+ */
 @interface CS132Manager : NSObject
 /**
  @brief It represent a NSMutableArray pointer that keep track of task completed 

@@ -7,6 +7,9 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ @brief Represents a completable task, with description, time estimates, and relevant dates
+ */
 @interface CS132Task : NSObject
 
 /**

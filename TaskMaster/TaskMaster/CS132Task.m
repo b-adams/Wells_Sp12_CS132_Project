@@ -9,38 +9,21 @@
 
 @implementation CS132Task
 
-{
-    NSString* DNU_taskName;
-    NSString* DNU_taskDescription;
-    NSDate* DNU_dateDue;
-    NSDate* DNU_dateCreated;
-    NSTimeInterval DNU_timeRemaining;
-    NSDate* DNU_dateCompleted;
-    NSTimeInterval DNU_timeExpected;
-    NSTimeInterval DNU_timeSpent;
-}
-
-@synthesize taskName = DNU_taskName;
-
-@synthesize taskDescription = DNU_taskDescription;
-
-@synthesize dateDue = DNU_dateDue;
-
-@synthesize dateCreated = DNU_dateCreated;
-
-@synthesize timeRemaining = DNU_timeRemaining;
-
-@synthesize dateCompleted = DNU_dateCompleted;
-
-@synthesize timeExpected = DNU_timeExpected;
-
-@synthesize timeSpent = DNU_timeSpent;
+@synthesize taskName;
+@synthesize taskDescription;
+@synthesize dateDue;
+@synthesize dateCreated;
+@synthesize timeRemaining;
+@synthesize dateCompleted;
+@synthesize timeExpected;
+@synthesize timeSpent;
 
 -(id) initWithName: (NSString*) aName
     andDescription: (NSString*) aDescription
         andDueDate: (NSDate*) dueDate
    andTimeEstimate: (NSTimeInterval) seconds
 {
+//    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     self = [super init];
     if (self) 
     {
@@ -48,83 +31,61 @@
         [self setTaskDescription: aDescription];
         [self setDateDue: dueDate];
         [self setTimeExpected: seconds];
-        [self setTimeRemaining: seconds]; 
-        [self setDateCreated: [NSDate date]];
-        [self setTimeSpent: 0];
-        [self setDateCompleted: nil];
+        [self setTimeRemaining: seconds]; //Same as estimate
+        [self setDateCreated: [NSDate date]]; //Now
+        [self setTimeSpent: 0]; //New task, no time spent yet
+        [self setDateCompleted: nil]; //Not yet completed
     }
     return self;
 }
 
 -(NSDate*) dateEffective
 {
-    NSDate* modifiedDueDate = nil;
-    //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    modifiedDueDate = [self effectiveDate];
-    return modifiedDueDate;
+    return [self effectiveDate];
 }
 
 -(NSDate*) effectiveDate 
 {
-    //effectiveDate is when it needs to be start...
-    //Compare: dateDue - timeRemaining 
-             //NSDate  - NSTimeInterval -> NSDate
-             //*Look at NSDate's Compare…*
-    //newDate = Date Due - Time Remaining
-    
-    return [NSDate dateWithTimeInterval:-[self timeRemaining] 
+    return [NSDate dateWithTimeInterval:-[self timeRemaining] //subtracting time
                               sinceDate:[self dateDue]];
 }
 
 -(BOOL) isCompleted
 {
     return [self dateCompleted] != nil;
-    }
+}
 
 
 -(NSString*) description 
 {
-    NSString* retval = nil;
-
-    retval = [NSString stringWithFormat:@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd)];
-    return retval;
+    return [NSString stringWithFormat:@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", 
+            @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd)];
 }
 
 -(NSComparisonResult) compare: (CS132Task*) anotherTask
 {
-    NSComparisonResult NDOrder = NAN;
-    //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    //Needs to compare the dateEffective of one task to another
-    //must use/call dateEffective...
-        //[anotherTask dateEffective];
-        //[self dateEffective];
-    //How do you compare two tasks and produce a number....Got it Answered
-    
-    NDOrder = [[self dateEffective] compare: [anotherTask dateEffective]];
-    
-    return NDOrder;
+    return [[self dateEffective] compare: [anotherTask dateEffective]];
 }
 
 -(int) progressOfCompletionFrom:(int) none
                              to:(int) done
 {
     float amountOfProgress;
-    amountOfProgress=([self timeSpent] / ([self timeRemaining] + [self timeSpent]));
+    int range = done - none;
+    NSTimeInterval totalTime = ([self timeRemaining] + [self timeSpent]);
+    amountOfProgress=([self timeSpent] / totalTime);
     
-    return (none + amountOfProgress*(done-none));
+    return (none + amountOfProgress*range);
 }
 
 -(int) progressOfDateFrom:(int) none
                        to:(int) done
 {
-    int retval = NAN;
     int outPutRange = done - none;
     NSTimeInterval inPutRange = [[self dateDue] timeIntervalSinceDate:[self dateCreated]];
     NSTimeInterval inPutValue = [[NSDate date] timeIntervalSinceDate:[self dateCreated]];
     
-    retval = (inPutValue / inPutRange) * outPutRange + none;
-    //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;
+    return (inPutValue / inPutRange) * outPutRange + none;
 }
 
 
