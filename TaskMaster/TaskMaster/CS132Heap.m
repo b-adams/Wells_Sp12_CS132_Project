@@ -14,11 +14,11 @@
 @synthesize taskArray;
 @synthesize lastUsedIndex;
 
-#warning Implementation needed (DLittle)
 - (id)init {
     self = [super init];
     if (self) {
-        NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+        [self setLastUsedIndex:0];
+        [self setTaskArray:[NSMutableArray arrayWithObject:[NSNull null]]];
     }
     return self;
 }
@@ -66,7 +66,7 @@
             [[self taskArray] exchangeObjectAtIndex:indexOfTooSmallNode 
                                   withObjectAtIndex:parentIndex];
             [self bubbleUp:parentIndex];
-        }
+}
 
     }
 }
@@ -83,12 +83,12 @@
     if ([self topTask] != nil) 
     {
         return empty = YES;
-    }
+}
     else
     {
         return empty;
     }*/
-    
+
     if ([self numberOfTasks] != 0) 
     {
         return empty;
@@ -121,7 +121,7 @@
     if([self lastUsedIndex] == [self numberOfTasks]-1)
     {
         [[self taskArray] addObject:taskToAdd];
-    }
+}
     else if([self lastUsedIndex] < [self numberOfTasks])
     {
         [[self taskArray] replaceObjectAtIndex: index 
@@ -131,7 +131,7 @@
     {
         NSLog(@"Ummmm... Yeah. No. Not allowed to Happen... Ever...");
     }
-    
+
 }
 
 #warning Implementation needed (KEvans)
@@ -151,11 +151,12 @@
     
     return parent;
 }
-#warning Implementation needed (DLittle)
 -(int) indexOfLeftChildOf: (int) index
 {
     int retval = NAN;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    
+    retval = index * 2;
+    
     return retval;
 }
 
@@ -166,7 +167,7 @@
     //index is the index of the Parent... Must return index of Child....
     /*
     if( == YES)
-    {
+{
         return child;
     }
     else
@@ -175,7 +176,7 @@
     }*/
     return child;
     
-}
+    }
 
 -(BOOL) hasParent:(int) index
 {
@@ -194,29 +195,34 @@
     {
         return NO;
     }
+    
 }
-
-#warning Implementation needed (DLittle)
 -(BOOL) hasRightChild: (int) index
 {
     BOOL retval = NO;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    
+    if ([self isValidIndex:[self indexOfRightChildOf:index]] == YES) {
+        return YES;
+    } else {
+        return NO;
+    }
+    //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     return retval;
 }
 
-#warning Implementation needed (DLittle)
 -(CS132Task*) taskAtIndex: (int) index
 {
-    CS132Task* retval = nil;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;
+    return [[self taskArray] objectAtIndex:index];    
+
+    //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
 
-#warning Implementation needed (DLittle)
 -(CS132Task*) topTask
 {
-    CS132Task* retval = nil;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    CS132Task* retval = [self taskAtIndex:ROOT_INDEX];
+
+    //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    //CS132Task* get =
     return retval;
 }
 

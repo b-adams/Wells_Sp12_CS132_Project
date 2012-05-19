@@ -14,11 +14,12 @@
 @synthesize tasksToDo;
 @synthesize topTask;
 
-#warning Implementation needed (Dlittle)
 - (id)init {
     self = [super init];
     if (self) {
-        NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+        [self setTasksCompleted:[NSMutableArray array]];
+        [self setTasksToDo:[[CS132Heap alloc] init]];
+        [self setTopTask:[[CS132Task alloc] init]];
     }
     return self;
 }
@@ -28,7 +29,6 @@
     return [tasksToDo numberOfTasks];
 }
 
-#warning Implementation needed (CLeBerth)
 -(void) fixTopTask
 {
     //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
@@ -38,19 +38,25 @@
     
 }
 
-#warning Implementation needed (DLittle)
 -(void) spendTimeOnTopTask:(int) seconds
 {
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    [[self topTask] setTimeSpent:[[self topTask] timeSpent] + seconds];
+    
+    [[self topTask] setTimeRemaining:[[self topTask] timeRemaining] - seconds];
+    //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+     
 }
 
-#warning Implementation needed (DLittle)
 -(void) changeRemainingTimeTo:(int) seconds
 {
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    [[self topTask] setTimeRemaining:seconds];
+    
+    [[self tasksToDo] bubbleDown:ROOT_INDEX];
+    
+    [self fixTopTask]; 
+      //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
 
-#warning Implementation needed (CLeBerth)
 -(void) addTaskWithName: (NSString*) newName
          andDescription: (NSString*) newDesc
                  andDue: (NSDate*) newDue

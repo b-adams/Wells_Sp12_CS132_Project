@@ -49,11 +49,11 @@
     return self;
 }
 
-#warning Implementation needed (DLittle)
 -(NSDate*) dateEffective
 {
     NSDate* modifiedDueDate = nil;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    modifiedDueDate = [self effectiveDate];
     return modifiedDueDate;
 }
 
@@ -72,14 +72,14 @@
 -(BOOL) isCompleted
 {
     return [self dateCompleted] != nil;
-}
+    }
 
 
-#warning Implementation needed (DLittle)
 -(NSString*) description 
 {
     NSString* retval = nil;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+
+    retval = [NSString stringWithFormat:@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd)];
     return retval;
 }
 
@@ -107,12 +107,16 @@
     return retval;
 }
 
-#warning Implementation needed (DLittle)
 -(int) progressOfDateFrom:(int) none
                        to:(int) done
 {
     int retval = NAN;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    int outPutRange = done - none;
+    NSTimeInterval inPutRange = [[self dateDue] timeIntervalSinceDate:[self dateCreated]];
+    NSTimeInterval inPutValue = [[NSDate date] timeIntervalSinceDate:[self dateCreated]];
+    
+    retval = (inPutValue / inPutRange) * outPutRange + none;
+    //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     return retval;
 }
 
