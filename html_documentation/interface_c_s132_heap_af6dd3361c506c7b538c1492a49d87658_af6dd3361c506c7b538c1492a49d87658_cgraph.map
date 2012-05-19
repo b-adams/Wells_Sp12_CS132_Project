@@ -1,4 +1,7 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$interface_c_s132_heap_af1da7a3fdbc4691e504b7033732cfedf.html#af1da7a3fdbc4691e504b7033732cfedf" title="takes the task at the given index and moves it down to the correct spot of the heap" alt="" coords="249,5,436,33"/>
-<area shape="rect" id="node5" href="$interface_c_s132_heap_a96e361766f2872fc9501220afe388060.html#a96e361766f2872fc9501220afe388060" title="find the top task of the heap" alt="" coords="265,57,420,85"/>
+<area shape="rect" id="node3" href="$interface_c_s132_heap_af1da7a3fdbc4691e504b7033732cfedf.html#af1da7a3fdbc4691e504b7033732cfedf" title="takes the task at the given index and moves it down to the correct spot of the heap" alt="" coords="249,57,436,85"/>
+<area shape="rect" id="node9" href="$interface_c_s132_heap_a96e361766f2872fc9501220afe388060.html#a96e361766f2872fc9501220afe388060" title="find the top task of the heap" alt="" coords="265,109,420,137"/>
+<area shape="rect" id="node5" href="$interface_c_s132_heap_a9518f12f9d556ff62fa7d63b4411b865.html#a9518f12f9d556ff62fa7d63b4411b865" title="find the index of the left child of a given index" alt="" coords="490,5,716,33"/>
+<area shape="rect" id="node7" href="$interface_c_s132_heap_a61ef008d35dd55720347ed9b2c547e76.html#a61ef008d35dd55720347ed9b2c547e76" title="Compare the priority level of two tasks." alt="" coords="485,57,720,85"/>
+<area shape="rect" id="node11" href="$interface_c_s132_heap_a577d6f097dac732ff3e054f66b0dd599.html#a577d6f097dac732ff3e054f66b0dd599" title="Retrieve the task object based upon given index." alt="" coords="511,109,694,137"/>
 </map>

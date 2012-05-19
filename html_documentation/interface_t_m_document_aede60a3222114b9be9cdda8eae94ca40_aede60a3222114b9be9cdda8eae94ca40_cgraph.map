@@ -1,10 +1,16 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$interface_c_s132_manager_af7af5f105b747483aa81f02577b1a69f.html#af7af5f105b747483aa81f02577b1a69f" title="&#45;[CS132Manager changeRemainingTimeTo:]" alt="" coords="318,5,602,33"/>
-<area shape="rect" id="node5" href="$interface_t_m_document_a36efaf255be712c2f6ff19a7461d22bd.html#a36efaf255be712c2f6ff19a7461d22bd" title="&#45;[TMDocument stopWorkOnCurrentTask]" alt="" coords="329,57,591,85"/>
-<area shape="rect" id="node9" href="$interface_t_m_document_a610c3fb1762b5fffcafbd42efd352857.html#a610c3fb1762b5fffcafbd42efd352857" title="&#45;[TMDocument updateCurrentTaskDisplay]" alt="" coords="323,134,597,162"/>
-<area shape="rect" id="node7" href="$interface_c_s132_manager_aa521edc7a88f12e4d3e188407f960d98.html#aa521edc7a88f12e4d3e188407f960d98" title="&#45;[CS132Manager fixTopTask]" alt="" coords="698,43,891,71"/>
-<area shape="rect" id="node11" href="$interface_c_s132_manager_a3cb78bf1a26a76ef98b251c549286db4.html#a3cb78bf1a26a76ef98b251c549286db4" title="&#45;[CS132Manager countTasksToDo]" alt="" coords="681,95,909,123"/>
-<area shape="rect" id="node15" href="$interface_c_s132_task_a84862ca83e6adbd32f02cc5e95cb3ef6.html#a84862ca83e6adbd32f02cc5e95cb3ef6" title="Computes the time in progress from start to finish." alt="" coords="651,147,939,175"/>
-<area shape="rect" id="node17" href="$interface_c_s132_task_a30da4f4f532bb33c104cd1da88438ee2.html#a30da4f4f532bb33c104cd1da88438ee2" title="Computes the progress of the date from start to finish." alt="" coords="670,199,919,227"/>
-<area shape="rect" id="node13" href="$interface_c_s132_heap_ad2b9df2685054576d0c69b7803d49e63.html#ad2b9df2685054576d0c69b7803d49e63" title="find number of tasks in array" alt="" coords="987,95,1189,123"/>
+<area shape="rect" id="node3" href="$interface_c_s132_manager_af7af5f105b747483aa81f02577b1a69f.html#af7af5f105b747483aa81f02577b1a69f" title="Adjust remaining time to a new time remaining for topTask." alt="" coords="318,70,602,98"/>
+<area shape="rect" id="node17" href="$interface_t_m_document_a36efaf255be712c2f6ff19a7461d22bd.html#a36efaf255be712c2f6ff19a7461d22bd" title="&#45;[TMDocument stopWorkOnCurrentTask]" alt="" coords="329,122,591,150"/>
+<area shape="rect" id="node20" href="$interface_t_m_document_a610c3fb1762b5fffcafbd42efd352857.html#a610c3fb1762b5fffcafbd42efd352857" title="&#45;[TMDocument updateCurrentTaskDisplay]" alt="" coords="323,199,597,227"/>
+<area shape="rect" id="node5" href="$interface_c_s132_heap_af1da7a3fdbc4691e504b7033732cfedf.html#af1da7a3fdbc4691e504b7033732cfedf" title="takes the task at the given index and moves it down to the correct spot of the heap" alt="" coords="701,57,888,85"/>
+<area shape="rect" id="node11" href="$interface_c_s132_manager_aa521edc7a88f12e4d3e188407f960d98.html#aa521edc7a88f12e4d3e188407f960d98" title="&#45;[CS132Manager fixTopTask]" alt="" coords="698,109,891,137"/>
+<area shape="rect" id="node7" href="$interface_c_s132_heap_a9518f12f9d556ff62fa7d63b4411b865.html#a9518f12f9d556ff62fa7d63b4411b865" title="find the index of the left child of a given index" alt="" coords="991,5,1217,33"/>
+<area shape="rect" id="node9" href="$interface_c_s132_heap_a61ef008d35dd55720347ed9b2c547e76.html#a61ef008d35dd55720347ed9b2c547e76" title="Compare the priority level of two tasks." alt="" coords="987,57,1221,85"/>
+<area shape="rect" id="node13" href="$interface_c_s132_heap_a96e361766f2872fc9501220afe388060.html#a96e361766f2872fc9501220afe388060" title="find the top task of the heap" alt="" coords="1026,109,1182,137"/>
+<area shape="rect" id="node15" href="$interface_c_s132_heap_a577d6f097dac732ff3e054f66b0dd599.html#a577d6f097dac732ff3e054f66b0dd599" title="Retrieve the task object based upon given index." alt="" coords="1270,109,1453,137"/>
+<area shape="rect" id="node22" href="$interface_c_s132_manager_a3cb78bf1a26a76ef98b251c549286db4.html#a3cb78bf1a26a76ef98b251c549286db4" title="Count how many task there are to do." alt="" coords="681,161,909,189"/>
+<area shape="rect" id="node29" href="$interface_c_s132_task_a84862ca83e6adbd32f02cc5e95cb3ef6.html#a84862ca83e6adbd32f02cc5e95cb3ef6" title="Computes the time in progress from start to finish." alt="" coords="651,213,939,241"/>
+<area shape="rect" id="node31" href="$interface_c_s132_task_a30da4f4f532bb33c104cd1da88438ee2.html#a30da4f4f532bb33c104cd1da88438ee2" title="Computes the progress of the date from start to finish." alt="" coords="670,265,919,293"/>
+<area shape="rect" id="node24" href="$interface_c_s132_heap_ad2b9df2685054576d0c69b7803d49e63.html#ad2b9df2685054576d0c69b7803d49e63" title="find number of tasks in array" alt="" coords="1003,161,1205,189"/>
+<area shape="rect" id="node26" href="$interface_c_s132_heap_ab535e433b28e3ed21f3893f7f0128e5b.html#ab535e433b28e3ed21f3893f7f0128e5b" title="determine fi the heap is empty" alt="" coords="1283,161,1440,189"/>
 </map>

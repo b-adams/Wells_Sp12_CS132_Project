@@ -64,7 +64,7 @@ function toggleVisibility(linkObj) {
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="TaskMaster_Icon.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Task Master&#160;<span id="projectnumber">ad25f24</span></div>
+   <div id="projectname">Task Master&#160;<span id="projectnumber">9bd4317</span></div>
    <div id="projectbrief">CS132 Final Project - Task Tracking Application</div>
   </td>
  </tr>
@@ -153,13 +153,16 @@ function toggleVisibility(linkObj) {
 
 <p>delete the top task of the heap </p>
 
-<p>Definition at line <a class="el" href="_c_s132_heap_8m_source.html#l00055">55</a> of file <a class="el" href="_c_s132_heap_8m_source.html">CS132Heap.m</a>.</p>
+<p>Definition at line <a class="el" href="_c_s132_heap_8m_source.html#l00132">132</a> of file <a class="el" href="_c_s132_heap_8m_source.html">CS132Heap.m</a>.</p>
 
-<p>References <a class="el" href="_c_s132_heap_8m_source.html#l00036">bubbleDown:</a>, <a class="el" href="_c_s132_heap_8h_source.html#l00022">lastUsedIndex</a>, <a class="el" href="_c_s132_heap_8h_source.html#l00027">taskArray</a>, and <a class="el" href="_c_s132_heap_8m_source.html#l00129">topTask</a>.</p>
+<p>References <a class="el" href="_c_s132_heap_8m_source.html#l00049">bubbleDown:</a>, <a class="el" href="_c_s132_heap_8h_source.html#l00022">lastUsedIndex</a>, <a class="el" href="_c_s132_heap_8h_source.html#l00027">taskArray</a>, and <a class="el" href="_c_s132_heap_8m_source.html#l00264">topTask</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    [taskArray exchangeObjectAtIndex:[taskArray indexOfObject:[<span class="keyword">self</span> topTask]] withObjectAtIndex:[<span class="keyword">self</span> lastUsedIndex]];
+   [taskArray exchangeObjectAtIndex:[taskArray indexOfObject:[<span class="keyword">self</span> topTask]] withObjectAtIndex:[<span class="keyword">self</span> lastUsedIndex]];
     [taskArray replaceObjectAtIndex: lastUsedIndex withObject:[NSNull null]];
+    
     [<span class="keyword">self</span> bubbleDown: ROOT_INDEX];
+    
+    <span class="keywordflow">return</span>;
 }
 </pre></div>
 <p><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -169,7 +172,7 @@ function toggleVisibility(linkObj) {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="interface_c_s132_heap_af6dd3361c506c7b538c1492a49d87658_af6dd3361c506c7b538c1492a49d87658_cgraph.png" border="0" usemap="#interface_c_s132_heap_af6dd3361c506c7b538c1492a49d87658_af6dd3361c506c7b538c1492a49d87658_cgraph" alt=""/></div>
 <map name="interface_c_s132_heap_af6dd3361c506c7b538c1492a49d87658_af6dd3361c506c7b538c1492a49d87658_cgraph" id="interface_c_s132_heap_af6dd3361c506c7b538c1492a49d87658_af6dd3361c506c7b538c1492a49d87658_cgraph">
-<area shape="rect" id="node3" href="interface_c_s132_heap_af1da7a3fdbc4691e504b7033732cfedf.html#af1da7a3fdbc4691e504b7033732cfedf" title="takes the task at the given index and moves it down to the correct spot of the heap" alt="" coords="249,5,436,33"/><area shape="rect" id="node5" href="interface_c_s132_heap_a96e361766f2872fc9501220afe388060.html#a96e361766f2872fc9501220afe388060" title="find the top task of the heap" alt="" coords="265,57,420,85"/></map>
+<area shape="rect" id="node3" href="interface_c_s132_heap_af1da7a3fdbc4691e504b7033732cfedf.html#af1da7a3fdbc4691e504b7033732cfedf" title="takes the task at the given index and moves it down to the correct spot of the heap" alt="" coords="249,57,436,85"/><area shape="rect" id="node9" href="interface_c_s132_heap_a96e361766f2872fc9501220afe388060.html#a96e361766f2872fc9501220afe388060" title="find the top task of the heap" alt="" coords="265,109,420,137"/><area shape="rect" id="node5" href="interface_c_s132_heap_a9518f12f9d556ff62fa7d63b4411b865.html#a9518f12f9d556ff62fa7d63b4411b865" title="find the index of the left child of a given index" alt="" coords="490,5,716,33"/><area shape="rect" id="node7" href="interface_c_s132_heap_a61ef008d35dd55720347ed9b2c547e76.html#a61ef008d35dd55720347ed9b2c547e76" title="Compare the priority level of two tasks." alt="" coords="485,57,720,85"/><area shape="rect" id="node11" href="interface_c_s132_heap_a577d6f097dac732ff3e054f66b0dd599.html#a577d6f097dac732ff3e054f66b0dd599" title="Retrieve the task object based upon given index." alt="" coords="511,109,694,137"/></map>
 </div>
 </p>
 
@@ -183,7 +186,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="interface_c_s132_heap.html">CS132Heap</a>      </li>
-      <li class="footer">Generated on Wed May 16 2012 16:43:39 for Task Master by&#160;
+      <li class="footer">Generated on Fri May 18 2012 20:32:30 for Task Master by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

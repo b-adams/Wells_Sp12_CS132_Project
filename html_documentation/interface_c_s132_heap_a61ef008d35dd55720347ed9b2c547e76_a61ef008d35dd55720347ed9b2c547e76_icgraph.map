@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$interface_c_s132_heap_af1da7a3fdbc4691e504b7033732cfedf.html#af1da7a3fdbc4691e504b7033732cfedf" title="takes the task at the given index and moves it down to the correct spot of the heap" alt="" coords="289,57,476,85"/>
+<area shape="rect" id="node5" href="$interface_c_s132_manager_af7af5f105b747483aa81f02577b1a69f.html#af7af5f105b747483aa81f02577b1a69f" title="Adjust remaining time to a new time remaining for topTask." alt="" coords="526,30,810,58"/>
+<area shape="rect" id="node11" href="$interface_c_s132_heap_af6dd3361c506c7b538c1492a49d87658.html#af6dd3361c506c7b538c1492a49d87658" title="delete the top task of the heap" alt="" coords="571,82,765,110"/>
+<area shape="rect" id="node7" href="$interface_t_m_document_a3da833174a15d573c3fb95367b2a0115.html#a3da833174a15d573c3fb95367b2a0115" title="&#45;[TMDocument dChangeTaskActivity:]" alt="" coords="868,5,1113,33"/>
+<area shape="rect" id="node9" href="$interface_t_m_document_aede60a3222114b9be9cdda8eae94ca40.html#aede60a3222114b9be9cdda8eae94ca40" title="&#45;[TMDocument dUpdateTimeRemaining:]" alt="" coords="859,57,1123,85"/>
+</map>

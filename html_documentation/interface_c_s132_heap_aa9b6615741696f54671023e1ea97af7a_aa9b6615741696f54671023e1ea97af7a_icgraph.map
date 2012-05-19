@@ -1,3 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$interface_c_s132_heap_abcd39dd4ee705e15fc12f85c8fa39da7.html#abcd39dd4ee705e15fc12f85c8fa39da7" title="determine if a certain index has a parent" alt="" coords="268,5,442,33"/>
+<area shape="rect" id="node3" href="$interface_c_s132_heap_a774d0c9b23644a85e6dda42d5d3366c3.html#a774d0c9b23644a85e6dda42d5d3366c3" title="take the task at the given index and bubbles it up to the correct spot in the heap" alt="" coords="270,29,440,57"/>
+<area shape="rect" id="node6" href="$interface_c_s132_heap_abcd39dd4ee705e15fc12f85c8fa39da7.html#abcd39dd4ee705e15fc12f85c8fa39da7" title="determine if a certain index has a parent" alt="" coords="268,81,442,109"/>
 </map>

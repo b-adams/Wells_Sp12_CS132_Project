@@ -1,3 +1,5 @@
 <map id="G" name="G">
 <area shape="rect" id="node3" href="$interface_c_s132_manager_aa521edc7a88f12e4d3e188407f960d98.html#aa521edc7a88f12e4d3e188407f960d98" title="&#45;[CS132Manager fixTopTask]" alt="" coords="317,5,510,33"/>
+<area shape="rect" id="node5" href="$interface_c_s132_heap_a96e361766f2872fc9501220afe388060.html#a96e361766f2872fc9501220afe388060" title="find the top task of the heap" alt="" coords="558,5,714,33"/>
+<area shape="rect" id="node7" href="$interface_c_s132_heap_a577d6f097dac732ff3e054f66b0dd599.html#a577d6f097dac732ff3e054f66b0dd599" title="Retrieve the task object based upon given index." alt="" coords="763,5,946,33"/>
 </map>
