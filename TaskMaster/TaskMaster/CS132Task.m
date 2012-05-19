@@ -1,10 +1,8 @@
 /**
  @file CS132Task.m
- @author CS132 Class and Bryant Adams
+ @author CS132 Class
  @date 5/18/12
  @brief Heap implementation
- @assistant Professor Adams
- @assistant Dauris Little
  */
 
 #import "CS132Task.h"
@@ -85,10 +83,9 @@
     return retval;
 }
 
-#warning Implementation needed (CLeBerth)
 -(NSComparisonResult) compare: (CS132Task*) anotherTask
 {
-    //NSComparisonResult NDOrder = NAN;
+    NSComparisonResult NDOrder = NAN;
     //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     //Needs to compare the dateEffective of one task to another
     //must use/call dateEffective...

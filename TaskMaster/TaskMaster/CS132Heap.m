@@ -13,29 +13,6 @@
 
 @synthesize taskArray;
 @synthesize lastUsedIndex;
--(int) numberOfTasks
-{
-    int counter = NAN;
-    //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    //Ask Task heap how many items it has
-    /*
-	for(int i; i < [; i++)
-	{
-		counter = counter + 1;
-	}
-    return counter;*/
-    
-    BOOL emptyList = [self isEmpty];
-    while (emptyList == NO) 
-    {
-        counter = counter + 1;
-    }
-    
-    return counter;
-}
-
-@synthesize taskArray = DNU_tickTock;
-@synthesize lastUsedIndex = DNU_mrPopperPenguins;
 
 #warning Implementation needed (DLittle)
 - (id)init {
@@ -49,9 +26,23 @@
 #warning Implementation needed (CLeBerth)
 -(int) numberOfTasks
 {
-    int retval = NAN;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;
+    int counter = NAN;
+    //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    //Ask Task heap how many items it has
+    /*
+     for(int i; i < [; i++)
+     {
+     counter = counter + 1;
+     }
+     return counter;*/
+    
+    BOOL emptyList = [self isEmpty];
+    while (emptyList == NO) 
+    {
+        counter = counter + 1;
+    }
+    
+    return counter;
 }
 
 #warning Implementation needed (KEvans)
@@ -60,7 +51,6 @@
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
 
-#warning Implementation needed (CLeBerth)
 -(void) bubbleUp: (int) indexOfTooSmallNode
 {
     //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
@@ -73,14 +63,14 @@
         
         if([[self taskAtIndex:indexOfTooSmallNode] compare:parentTask] == NSOrderedAscending) 
         {
-            [[self taskArray] exchangeObjectAtIndex:indexOfTooSmallNode withObjectAtIndex:parentIndex];
+            [[self taskArray] exchangeObjectAtIndex:indexOfTooSmallNode 
+                                  withObjectAtIndex:parentIndex];
             [self bubbleUp:parentIndex];
         }
 
     }
 }
 
-#warning Implementation needed (CLeBerth)
 -(BOOL) isEmpty
 {
     BOOL empty = NO;
@@ -112,12 +102,11 @@
 
 -(void) deleteTopTask
 {
-    [taskArrayexchangeObjectAtIndex:[taskArray indexOfObject:[self topTask]] withObjectAtIndex:[self lastUsedIndex]];
+    [taskArray exchangeObjectAtIndex:[taskArray indexOfObject:[self topTask]] withObjectAtIndex:[self lastUsedIndex]];
     [taskArray replaceObjectAtIndex: lastUsedIndex withObject:[NSNull null]];
     [self bubbleDown: ROOT_INDEX];
 }
 
-#warning Implementation needed (CLeBarth)
 -(void) addTask: (CS132Task*) taskToAdd
 {
     //NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
@@ -135,7 +124,8 @@
     }
     else if([self lastUsedIndex] < [self numberOfTasks])
     {
-        [[self taskArray] replaceObjectAtIndex: index withObject:taskToAdd];
+        [[self taskArray] replaceObjectAtIndex: index 
+                                    withObject:taskToAdd];
     }
     else
     {
@@ -152,7 +142,6 @@
     return retval;
 }
 
-#warning Implementation needed (CLeBerth)
 -(int) indexOfParentOf: (int) index
 {
     int parent = index / 2;
@@ -169,7 +158,7 @@
     NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     return retval;
 }
-#warning Implementation needed (CLeBerth)
+
 -(int) indexOfRightChildOf: (int) index
 {
     int child = index * 2 + 1;
@@ -193,11 +182,6 @@
     BOOL retval = NO;
     retval=[self isValidIndex:[self indexOfParentOf:index]];
     return retval;
-    }
-    else
-    {
-        return NO;
-    }
 }
 
 -(BOOL) hasLeftChild: (int) index
@@ -210,7 +194,8 @@
     {
         return NO;
     }
-    
+}
+
 #warning Implementation needed (DLittle)
 -(BOOL) hasRightChild: (int) index
 {
