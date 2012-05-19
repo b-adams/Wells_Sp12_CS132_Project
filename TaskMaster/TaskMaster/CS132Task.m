@@ -23,7 +23,6 @@
         andDueDate: (NSDate*) dueDate
    andTimeEstimate: (NSTimeInterval) seconds
 {
-//    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     self = [super init];
     if (self) 
     {

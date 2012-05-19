@@ -36,15 +36,31 @@
 
 -(void) spendTimeOnTopTask:(int) seconds
 {
-    [[self topTask] setTimeSpent:[[self topTask] timeSpent] + seconds];
-    [[self topTask] setTimeRemaining:[[self topTask] timeRemaining] - seconds];
+    CS132Task* theTask = [self topTask];
+    if(!theTask) return; //No top task to spend time upon
+    [theTask setTimeSpent:[theTask timeSpent] + seconds];
+    [theTask setTimeRemaining:[theTask timeRemaining] - seconds];
 }
 
 -(void) changeRemainingTimeTo:(int) seconds
 {
-    [[self topTask] setTimeRemaining:seconds];
-    [[self tasksToDo] bubbleDown:ROOT_INDEX];
-    [self fixTopTask]; 
+    CS132Task* theTask = [self topTask];
+    if(!theTask) return; //No top task to spend time upon
+
+    NSTimeInterval newTime = 0.0+seconds;
+
+    [theTask setTimeRemaining:newTime];
+    if(newTime <= 0)
+    { //Task completed! Need to do stuff
+        [theTask setDateCompleted:[NSDate date]]; //Completion=NOW
+        [tasksCompleted addObject:theTask]; //Add to completed list
+        [tasksToDo deleteTopTask]; //Remove from todo list
+    } 
+    else 
+    { //Priority may have shifted and need adjustment
+        [[self tasksToDo] bubbleDown:ROOT_INDEX];
+    }
+    [self fixTopTask]; //We may have a new top task
 }
 
 -(void) addTaskWithName: (NSString*) newName
@@ -52,12 +68,12 @@
                  andDue: (NSDate*) newDue
         andTimeRequired: (int) newTimeNeeded
 {
-//    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     CS132Task* taskCreated = [[CS132Task alloc] initWithName:newName 
                                               andDescription:newDesc 
                                                   andDueDate:newDue 
                                              andTimeEstimate:newTimeNeeded];
     [[self tasksToDo] addTask:taskCreated];
+    [self fixTopTask]; //In case the new task is more important than the existing one
 }
 
 -(NSString*) description

@@ -123,17 +123,16 @@
 
 -(void) addTask: (CS132Task*) taskToAdd
 {
-//    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     int newLastUsed = [self lastUsedIndex] + 1;
-    
-    if(newLastUsed == [self numberOfTasks])
-    { //No spare space
-        [[self taskArray] addObject:taskToAdd]; //Add to end
-    }
-    else if(newLastUsed < [self numberOfTasks])
+    NSLog(@"Number of tasks: %d, newLastUsed: %d", [self numberOfTasks], newLastUsed );
+    if(newLastUsed < [taskArray count])
     { //Spare space available for use
         [[self taskArray] replaceObjectAtIndex: newLastUsed 
                                     withObject:taskToAdd]; //Use empty space
+    } 
+    else
+    { //No spare space
+        [[self taskArray] addObject:taskToAdd]; //Add to end
     }
     
     [self setLastUsedIndex:newLastUsed]; //Update content counter (before bubbling)
@@ -184,7 +183,12 @@
 
 -(CS132Task*) topTask
 {
-    return [self taskAtIndex:ROOT_INDEX];
+    if([self isValidIndex:ROOT_INDEX])
+    {
+        return [self taskAtIndex:ROOT_INDEX];
+    } else {
+        return nil;
+    }
 }
 
 -(NSString*) description
