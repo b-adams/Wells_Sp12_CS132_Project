@@ -20,31 +20,38 @@
     NSTimeInterval DNU_timeSpent;
 }
 
-@synthesize taskName=DNU_taskName;
+@synthesize taskName = DNU_taskName;
 
-@synthesize taskDescription=DNU_taskDescription;
+@synthesize taskDescription = DNU_taskDescription;
 
-@synthesize dateDue=DNU_dateDue;
+@synthesize dateDue = DNU_dateDue;
 
-@synthesize dateCreated=DNU_dateCreated;
+@synthesize dateCreated = DNU_dateCreated;
 
-@synthesize timeRemaining=DNU_timeRemaining;
+@synthesize timeRemaining = DNU_timeRemaining;
 
-@synthesize dateCompleted=DNU_dateCompleted;
+@synthesize dateCompleted = DNU_dateCompleted;
 
-@synthesize timeExpected=DNU_timeExpected;
+@synthesize timeExpected = DNU_timeExpected;
 
-@synthesize timeSpent=DNU_timeSpent;
+@synthesize timeSpent = DNU_timeSpent;
 
-#warning Implementation needed (KEvans)
 -(id) initWithName: (NSString*) aName
     andDescription: (NSString*) aDescription
         andDueDate: (NSDate*) dueDate
    andTimeEstimate: (NSTimeInterval) seconds
 {
     self = [super init];
-    if (self) {
-        NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    if (self) 
+    {
+        [self setTaskName: aName];
+        [self setTaskDescription: aDescription];
+        [self setDateDue: dueDate];
+        [self setTimeExpected: seconds];
+        [self setTimeRemaining: seconds]; 
+        [self setDateCreated: [NSDate date]];
+        [self setTimeSpent: 0];
+        [self setDateCompleted: nil];
     }
     return self;
 }
@@ -98,13 +105,13 @@
     return NDOrder;
 }
 
-#warning Implementation needed (KEvans)
 -(int) progressOfCompletionFrom:(int) none
                              to:(int) done
 {
-    int retval = NAN;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;
+    float amountOfProgress;
+    amountOfProgress=([self timeSpent] / ([self timeRemaining] + [self timeSpent]));
+    
+    return (none + amountOfProgress*(done-none));
 }
 
 -(int) progressOfDateFrom:(int) none

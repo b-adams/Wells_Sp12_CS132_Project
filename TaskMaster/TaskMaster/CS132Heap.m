@@ -48,7 +48,36 @@
 #warning Implementation needed (KEvans)
 -(void) bubbleDown: (int) indexOfTooBigNode
 {
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    if ([self indexOfLeftChildOf:indexOfTooBigNode] == NAN) 
+    {
+        return;
+    }
+    
+    
+    if (indexOfTooBigNode > [self indexOfLeftChildOf:indexOfTooBigNode]) 
+    {
+        if (indexOfTooBigNode > [self indexOfRightChildOf:indexOfTooBigNode])
+        {
+            if([self indexOfLeftChildOf:indexOfTooBigNode] > [self indexOfRightChildOf:indexOfTooBigNode])
+            {
+                [taskArray exchangeObjectAtIndex:[self indexOfRightChildOf:indexOfTooBigNode] withObjectAtIndex:indexOfTooBigNode];
+            }
+            else
+            {
+                [taskArray exchangeObjectAtIndex:[self indexOfLeftChildOf:indexOfTooBigNode]withObjectAtIndex:indexOfTooBigNode];
+                
+            }
+        }
+        else
+        {
+            [taskArray exchangeObjectAtIndex:[self indexOfLeftChildOf:indexOfTooBigNode]withObjectAtIndex:indexOfTooBigNode];
+            
+        }
+    }
+    else
+    {
+        return;
+    }
 }
 
 -(void) bubbleUp: (int) indexOfTooSmallNode
@@ -102,9 +131,12 @@
 
 -(void) deleteTopTask
 {
-    [taskArray exchangeObjectAtIndex:[taskArray indexOfObject:[self topTask]] withObjectAtIndex:[self lastUsedIndex]];
+   [taskArray exchangeObjectAtIndex:[taskArray indexOfObject:[self topTask]] withObjectAtIndex:[self lastUsedIndex]];
     [taskArray replaceObjectAtIndex: lastUsedIndex withObject:[NSNull null]];
+    
     [self bubbleDown: ROOT_INDEX];
+    
+    return;
 }
 
 -(void) addTask: (CS132Task*) taskToAdd
@@ -134,12 +166,24 @@
 
 }
 
-#warning Implementation needed (KEvans)
+
 -(BOOL) isValidIndex: (int) index
 {
-    BOOL retval = NO;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;
+    if (index < ROOT_INDEX)
+    {
+        return NO;
+    }
+    else
+    {
+        if(index <= [self lastUsedIndex])
+        {
+            return YES;
+        }
+        else
+        {
+            return NO;
+        }
+    }
 }
 
 -(int) indexOfParentOf: (int) index

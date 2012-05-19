@@ -76,8 +76,6 @@
 #warning Implementation needed (KEvans)
 -(NSString*) description
 {
-    NSString* retval = nil;
-    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stubulous", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    return retval;    
+    return [NSString stringWithFormat:@"Top Task: %@, Tasks to Do: %@, Tasks Completed: %@", [self topTask],[self tasksToDo], [self tasksCompleted]];
 }
 @end
