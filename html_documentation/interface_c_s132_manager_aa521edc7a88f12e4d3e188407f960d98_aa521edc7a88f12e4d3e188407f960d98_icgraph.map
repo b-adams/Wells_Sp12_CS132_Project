@@ -1,6 +1,8 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$interface_c_s132_manager_af7af5f105b747483aa81f02577b1a69f.html#af7af5f105b747483aa81f02577b1a69f" title="Adjust remaining time to a new time remaining for topTask." alt="" coords="246,5,530,33"/>
-<area shape="rect" id="node9" href="$interface_t_m_document_a36efaf255be712c2f6ff19a7461d22bd.html#a36efaf255be712c2f6ff19a7461d22bd" title="&#45;[TMDocument stopWorkOnCurrentTask]" alt="" coords="257,57,519,85"/>
-<area shape="rect" id="node5" href="$interface_t_m_document_a3da833174a15d573c3fb95367b2a0115.html#a3da833174a15d573c3fb95367b2a0115" title="&#45;[TMDocument dChangeTaskActivity:]" alt="" coords="588,5,833,33"/>
-<area shape="rect" id="node7" href="$interface_t_m_document_aede60a3222114b9be9cdda8eae94ca40.html#aede60a3222114b9be9cdda8eae94ca40" title="&#45;[TMDocument dUpdateTimeRemaining:]" alt="" coords="579,57,843,85"/>
+<area shape="rect" id="node3" href="$interface_c_s132_manager_ad6cda86592385271cd8abcf7017ee8fb.html#ad6cda86592385271cd8abcf7017ee8fb" title="Add a task with necessary task information." alt="" coords="246,5,744,33"/>
+<area shape="rect" id="node7" href="$interface_c_s132_manager_af7af5f105b747483aa81f02577b1a69f.html#af7af5f105b747483aa81f02577b1a69f" title="Adjust remaining time to a new time remaining for topTask." alt="" coords="352,109,637,137"/>
+<area shape="rect" id="node13" href="$interface_t_m_document_a36efaf255be712c2f6ff19a7461d22bd.html#a36efaf255be712c2f6ff19a7461d22bd" title="Stop the timer and force the Task Manager to check its top entry." alt="" coords="363,57,626,85"/>
+<area shape="rect" id="node5" href="$interface_t_m_document_a7fa17b92266b7cf083f3579d231977a3.html#a7fa17b92266b7cf083f3579d231977a3" title="Executed in response to user clicking &quot;Add Task&quot; button." alt="" coords="834,5,1014,33"/>
+<area shape="rect" id="node9" href="$interface_t_m_document_a3da833174a15d573c3fb95367b2a0115.html#a3da833174a15d573c3fb95367b2a0115" title="Executed in response to user clicking &#39;working on it&#39; checkbox." alt="" coords="802,109,1046,137"/>
+<area shape="rect" id="node11" href="$interface_t_m_document_aede60a3222114b9be9cdda8eae94ca40.html#aede60a3222114b9be9cdda8eae94ca40" title="Executed in response to user entering a new time in the time&#45;remaining box." alt="" coords="792,57,1056,85"/>
 </map>

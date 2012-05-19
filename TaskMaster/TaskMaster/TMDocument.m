@@ -7,6 +7,10 @@
 #import "TMDocument.h"
 #import "CS132Manager.h"
 #import "CS132Task.h"
+
+/**
+ @brief Number of seconds between time-spent updates
+ */
 #define TICK_SIZE 5
 @implementation TMDocument
 {

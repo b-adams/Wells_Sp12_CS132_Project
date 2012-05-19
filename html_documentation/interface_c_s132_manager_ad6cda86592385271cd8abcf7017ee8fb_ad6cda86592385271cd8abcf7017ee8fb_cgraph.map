@@ -1,5 +1,9 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$interface_c_s132_heap_ad4d1ac1bebb1be8a89e2d2ad816234d0.html#ad4d1ac1bebb1be8a89e2d2ad816234d0" title="add a task to the heap" alt="" coords="552,5,715,33"/>
-<area shape="rect" id="node5" href="$interface_c_s132_heap_ad2b9df2685054576d0c69b7803d49e63.html#ad2b9df2685054576d0c69b7803d49e63" title="find number of tasks in array" alt="" coords="763,5,965,33"/>
-<area shape="rect" id="node7" href="$interface_c_s132_heap_ab535e433b28e3ed21f3893f7f0128e5b.html#ab535e433b28e3ed21f3893f7f0128e5b" title="determine fi the heap is empty" alt="" coords="1014,5,1170,33"/>
+<area shape="rect" id="node3" href="$interface_c_s132_heap_ad4d1ac1bebb1be8a89e2d2ad816234d0.html#ad4d1ac1bebb1be8a89e2d2ad816234d0" title="add a task to the heap" alt="" coords="567,81,729,109"/>
+<area shape="rect" id="node14" href="$interface_c_s132_manager_aa521edc7a88f12e4d3e188407f960d98.html#aa521edc7a88f12e4d3e188407f960d98" title="&#45;[CS132Manager fixTopTask]" alt="" coords="552,133,744,161"/>
+<area shape="rect" id="node5" href="$interface_c_s132_heap_a774d0c9b23644a85e6dda42d5d3366c3.html#a774d0c9b23644a85e6dda42d5d3366c3" title="take the task at the given index and bubbles it up to the correct spot in the heap" alt="" coords="808,29,978,57"/>
+<area shape="rect" id="node12" href="$interface_c_s132_heap_ad2b9df2685054576d0c69b7803d49e63.html#ad2b9df2685054576d0c69b7803d49e63" title="find number of tasks in array" alt="" coords="792,81,995,109"/>
+<area shape="rect" id="node8" href="$interface_c_s132_heap_aa9b6615741696f54671023e1ea97af7a.html#aa9b6615741696f54671023e1ea97af7a" title="find the index of the parent of a given index" alt="" coords="1043,29,1256,57"/>
+<area shape="rect" id="node10" href="$interface_c_s132_heap_a577d6f097dac732ff3e054f66b0dd599.html#a577d6f097dac732ff3e054f66b0dd599" title="Retrieve the task object based upon given index." alt="" coords="1058,106,1241,134"/>
+<area shape="rect" id="node16" href="$interface_c_s132_heap_a96e361766f2872fc9501220afe388060.html#a96e361766f2872fc9501220afe388060" title="find the top task of the heap" alt="" coords="816,133,971,161"/>
 </map>

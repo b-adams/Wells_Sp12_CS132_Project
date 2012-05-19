@@ -64,7 +64,7 @@ function toggleVisibility(linkObj) {
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="TaskMaster_Icon.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Task Master&#160;<span id="projectnumber">9bd4317</span></div>
+   <div id="projectname">Task Master&#160;<span id="projectnumber">c2073ec</span></div>
    <div id="projectbrief">CS132 Final Project - Task Tracking Application</div>
   </td>
  </tr>
@@ -119,67 +119,66 @@ function toggleVisibility(linkObj) {
 <div class="title">TaskMaster/TaskMaster/TMDocument.h</div>  </div>
 </div>
 <div class="contents">
-<a href="_t_m_document_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
-<a name="l00002"></a>00002 <span class="comment">//  TMDocument.h</span>
-<a name="l00003"></a>00003 <span class="comment">//  TaskMaster</span>
-<a name="l00004"></a>00004 <span class="comment">//</span>
-<a name="l00005"></a>00005 <span class="comment">//  Created by Bryant Adams on 5/1/12.</span>
-<a name="l00006"></a>00006 <span class="comment">//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.</span>
-<a name="l00007"></a>00007 <span class="comment">//</span>
-<a name="l00008"></a>00008 
-<a name="l00009"></a>00009 <span class="preprocessor">#import &lt;Cocoa/Cocoa.h&gt;</span>
-<a name="l00010"></a>00010 <span class="keyword">@class</span> <a class="code" href="interface_c_s132_manager.html">CS132Manager</a>;
-<a name="l00011"></a>00011 
-<a name="l00012"></a><a class="code" href="interface_t_m_document.html">00012</a> <span class="keyword">@interface </span><a class="code" href="interface_t_m_document.html">TMDocument</a> : NSDocument &lt;NSTableViewDataSource&gt;
-<a name="l00013"></a>00013 
-<a name="l00014"></a><a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630">00014</a> @property (strong) <a class="code" href="interface_c_s132_manager.html">CS132Manager</a>* <a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630">taskTracker</a>;
-<a name="l00015"></a>00015 
-<a name="l00016"></a>00016 
-<a name="l00017"></a>00017 <span class="preprocessor">#pragma mark AllTabs</span>
-<a name="l00018"></a><a class="code" href="interface_t_m_document_a30fbe3828a4ab82ebca94c52ae65ab6d.html#a30fbe3828a4ab82ebca94c52ae65ab6d">00018</a> <span class="preprocessor"></span>@property (weak) IBOutlet NSTextField *<a class="code" href="interface_t_m_document_a30fbe3828a4ab82ebca94c52ae65ab6d.html#a30fbe3828a4ab82ebca94c52ae65ab6d">dTasksRemaining</a>;
-<a name="l00019"></a>00019 
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="preprocessor">#pragma mark Current Task</span>
-<a name="l00022"></a><a class="code" href="interface_t_m_document_a42f2d6e56ca5a9829b53fe6e69d26a47.html#a42f2d6e56ca5a9829b53fe6e69d26a47">00022</a> <span class="preprocessor"></span>@property (unsafe_unretained) IBOutlet NSTextView *<a class="code" href="interface_t_m_document_a42f2d6e56ca5a9829b53fe6e69d26a47.html#a42f2d6e56ca5a9829b53fe6e69d26a47">dCurrentTaskDescription</a>;
-<a name="l00023"></a><a class="code" href="interface_t_m_document_ad77f6f5d694113eeb540701267308bdc.html#ad77f6f5d694113eeb540701267308bdc">00023</a> @property (weak) IBOutlet NSTextField *<a class="code" href="interface_t_m_document_ad77f6f5d694113eeb540701267308bdc.html#ad77f6f5d694113eeb540701267308bdc">dCurrentTaskName</a>;
-<a name="l00024"></a><a class="code" href="interface_t_m_document_a9955166beb41d7deff7cb8f33d1cd950.html#a9955166beb41d7deff7cb8f33d1cd950">00024</a> @property (weak) IBOutlet NSTextField *<a class="code" href="interface_t_m_document_a9955166beb41d7deff7cb8f33d1cd950.html#a9955166beb41d7deff7cb8f33d1cd950">dCurrentTaskTimeRemaining</a>;
-<a name="l00025"></a><a class="code" href="interface_t_m_document_a4b60fe71abb4800ac8ed81eed3cf5e91.html#a4b60fe71abb4800ac8ed81eed3cf5e91">00025</a> @property (weak) IBOutlet NSButton *<a class="code" href="interface_t_m_document_a4b60fe71abb4800ac8ed81eed3cf5e91.html#a4b60fe71abb4800ac8ed81eed3cf5e91">dTaskInProgress</a>;
-<a name="l00026"></a>00026 - (IBAction)dChangeTaskActivity:(<span class="keywordtype">id</span>)sender;
-<a name="l00027"></a>00027 
-<a name="l00028"></a><a class="code" href="interface_t_m_document_af070986feb7c9e2c9877262b1a46fe68.html#af070986feb7c9e2c9877262b1a46fe68">00028</a> <span class="keyword">@property</span> (weak) IBOutlet NSTextField *<a class="code" href="interface_t_m_document_af070986feb7c9e2c9877262b1a46fe68.html#af070986feb7c9e2c9877262b1a46fe68">dCurrentTaskTimeSpent</a>;
-<a name="l00029"></a><a class="code" href="interface_t_m_document_a1c242af51a55d7daf71790287f300304.html#a1c242af51a55d7daf71790287f300304">00029</a> <span class="keyword">@property</span> (weak) IBOutlet NSProgressIndicator *<a class="code" href="interface_t_m_document_a1c242af51a55d7daf71790287f300304.html#a1c242af51a55d7daf71790287f300304">dCurrentTaskCompletion</a>;
-<a name="l00030"></a><a class="code" href="interface_t_m_document_a1d62860615418da61be5acefdcc66c92.html#a1d62860615418da61be5acefdcc66c92">00030</a> <span class="keyword">@property</span> (weak) IBOutlet NSPopUpButton *<a class="code" href="interface_t_m_document_a1d62860615418da61be5acefdcc66c92.html#a1d62860615418da61be5acefdcc66c92">dCurrentTaskTimeUnits</a>;
-<a name="l00031"></a>00031 - (IBAction)dChangeOfUnits:(<span class="keywordtype">id</span>)sender;
-<a name="l00032"></a>00032 
-<a name="l00033"></a><a class="code" href="interface_t_m_document_a0340f33a7627abdcda26e36982145328.html#a0340f33a7627abdcda26e36982145328">00033</a> <span class="keyword">@property</span> (weak) IBOutlet NSDatePicker *<a class="code" href="interface_t_m_document_a0340f33a7627abdcda26e36982145328.html#a0340f33a7627abdcda26e36982145328">dCurrentTaskDateEntered</a>;
-<a name="l00034"></a><a class="code" href="interface_t_m_document_ace784700531a4104c71d6a284b46ef24.html#ace784700531a4104c71d6a284b46ef24">00034</a> <span class="keyword">@property</span> (weak) IBOutlet NSDatePicker *<a class="code" href="interface_t_m_document_ace784700531a4104c71d6a284b46ef24.html#ace784700531a4104c71d6a284b46ef24">dCurrentTaskDateDue</a>;
-<a name="l00035"></a><a class="code" href="interface_t_m_document_a32b747dadc236b7a650f0b3253ef03b5.html#a32b747dadc236b7a650f0b3253ef03b5">00035</a> <span class="keyword">@property</span> (weak) IBOutlet NSProgressIndicator *<a class="code" href="interface_t_m_document_a32b747dadc236b7a650f0b3253ef03b5.html#a32b747dadc236b7a650f0b3253ef03b5">dCurrentTaskDateProgress</a>;
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037 <span class="preprocessor">#pragma mark New Task</span>
-<a name="l00038"></a><a class="code" href="interface_t_m_document_a840c1f38388715bce459c3eca3cac4b3.html#a840c1f38388715bce459c3eca3cac4b3">00038</a> <span class="preprocessor"></span><span class="keyword">@property</span> (weak) IBOutlet NSTextField *<a class="code" href="interface_t_m_document_a840c1f38388715bce459c3eca3cac4b3.html#a840c1f38388715bce459c3eca3cac4b3">dNewTaskName</a>;
-<a name="l00039"></a><a class="code" href="interface_t_m_document_ac61ff044c04e7912ddb9028562c9f715.html#ac61ff044c04e7912ddb9028562c9f715">00039</a> <span class="keyword">@property</span> (unsafe_unretained) IBOutlet NSTextView *<a class="code" href="interface_t_m_document_ac61ff044c04e7912ddb9028562c9f715.html#ac61ff044c04e7912ddb9028562c9f715">dNewTaskDescription</a>;
-<a name="l00040"></a><a class="code" href="interface_t_m_document_a054855ca82083707d905719e9b99b5f1.html#a054855ca82083707d905719e9b99b5f1">00040</a> <span class="keyword">@property</span> (weak) IBOutlet NSTextField *<a class="code" href="interface_t_m_document_a054855ca82083707d905719e9b99b5f1.html#a054855ca82083707d905719e9b99b5f1">dNewTaskDuration</a>;
-<a name="l00041"></a><a class="code" href="interface_t_m_document_a0e4e0c8ce53324297e2e4fb86774ba71.html#a0e4e0c8ce53324297e2e4fb86774ba71">00041</a> <span class="keyword">@property</span> (weak) IBOutlet NSDatePicker *<a class="code" href="interface_t_m_document_a0e4e0c8ce53324297e2e4fb86774ba71.html#a0e4e0c8ce53324297e2e4fb86774ba71">dNewTaskDueDate</a>;
-<a name="l00042"></a><a class="code" href="interface_t_m_document_ae9193b826e1c38733f627621ce827879.html#ae9193b826e1c38733f627621ce827879">00042</a> <span class="keyword">@property</span> (weak) IBOutlet NSPopUpButton *<a class="code" href="interface_t_m_document_ae9193b826e1c38733f627621ce827879.html#ae9193b826e1c38733f627621ce827879">dNewTaskTimeUnit</a>;
-<a name="l00043"></a>00043 - (IBAction)dAddTask:(<span class="keywordtype">id</span>)sender;
-<a name="l00044"></a>00044 
-<a name="l00045"></a>00045 - (IBAction)dUpdateTimeRemaining:(<span class="keywordtype">id</span>)sender;
-<a name="l00046"></a>00046 - (void) <a class="code" href="interface_t_m_document_a610c3fb1762b5fffcafbd42efd352857.html#a610c3fb1762b5fffcafbd42efd352857">updateCurrentTaskDisplay</a>;
-<a name="l00047"></a>00047 - (void)workTicker:(NSTimer*)theTimer;
+<a href="_t_m_document_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00007"></a>00007 <span class="preprocessor">#import &lt;Cocoa/Cocoa.h&gt;</span>
+<a name="l00008"></a>00008 <span class="keyword">@class</span> <a class="code" href="interface_c_s132_manager.html" title="Tracks completed, current, and to-do tasks.">CS132Manager</a>;
+<a name="l00009"></a>00009 
+<a name="l00016"></a><a class="code" href="interface_t_m_document.html">00016</a> <span class="keyword">@interface </span><a class="code" href="interface_t_m_document.html" title="User interface window controller.">TMDocument</a> : NSDocument &lt;NSTableViewDataSource&gt;
+<a name="l00017"></a>00017 
+<a name="l00021"></a><a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630">00021</a> @property (strong) <a class="code" href="interface_c_s132_manager.html" title="Tracks completed, current, and to-do tasks.">CS132Manager</a>* <a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630" title="The task-tracking brains of the operation.">taskTracker</a>;
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024 <span class="preprocessor">#pragma mark AllTabs</span>
+<a name="l00025"></a>00025 <span class="preprocessor"></span>
+<a name="l00028"></a><a class="code" href="interface_t_m_document_a30fbe3828a4ab82ebca94c52ae65ab6d.html#a30fbe3828a4ab82ebca94c52ae65ab6d">00028</a> @property (weak) IBOutlet NSTextField *<a class="code" href="interface_t_m_document_a30fbe3828a4ab82ebca94c52ae65ab6d.html#a30fbe3828a4ab82ebca94c52ae65ab6d" title="A text box to display the remaining tasks.">dTasksRemaining</a>;
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="preprocessor">#pragma mark Current Task</span>
+<a name="l00032"></a>00032 <span class="preprocessor"></span>
+<a name="l00035"></a><a class="code" href="interface_t_m_document_a42f2d6e56ca5a9829b53fe6e69d26a47.html#a42f2d6e56ca5a9829b53fe6e69d26a47">00035</a> @property (unsafe_unretained) IBOutlet NSTextView *<a class="code" href="interface_t_m_document_a42f2d6e56ca5a9829b53fe6e69d26a47.html#a42f2d6e56ca5a9829b53fe6e69d26a47" title="Text box to display current task&#39;s description.">dCurrentTaskDescription</a>;
+<a name="l00039"></a><a class="code" href="interface_t_m_document_ad77f6f5d694113eeb540701267308bdc.html#ad77f6f5d694113eeb540701267308bdc">00039</a> @property (weak) IBOutlet NSTextField *<a class="code" href="interface_t_m_document_ad77f6f5d694113eeb540701267308bdc.html#ad77f6f5d694113eeb540701267308bdc" title="Text box to display current task&#39;s name.">dCurrentTaskName</a>;
+<a name="l00043"></a><a class="code" href="interface_t_m_document_a9955166beb41d7deff7cb8f33d1cd950.html#a9955166beb41d7deff7cb8f33d1cd950">00043</a> @property (weak) IBOutlet NSTextField *<a class="code" href="interface_t_m_document_a9955166beb41d7deff7cb8f33d1cd950.html#a9955166beb41d7deff7cb8f33d1cd950" title="Number box to display current task&#39;s time remaining.">dCurrentTaskTimeRemaining</a>;
+<a name="l00047"></a><a class="code" href="interface_t_m_document_a4b60fe71abb4800ac8ed81eed3cf5e91.html#a4b60fe71abb4800ac8ed81eed3cf5e91">00047</a> @property (weak) IBOutlet NSButton *<a class="code" href="interface_t_m_document_a4b60fe71abb4800ac8ed81eed3cf5e91.html#a4b60fe71abb4800ac8ed81eed3cf5e91" title="Checkbox for user to indicate when they are actively working on current task.">dTaskInProgress</a>;
 <a name="l00048"></a>00048 
-<a name="l00049"></a>00049 - (void)<a class="code" href="interface_t_m_document_a36efaf255be712c2f6ff19a7461d22bd.html#a36efaf255be712c2f6ff19a7461d22bd">stopWorkOnCurrentTask</a>;
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051 -(int) multiplierForUnitSelector:(NSPopUpButton*) theButton;
-<a name="l00052"></a>00052 
-<a name="l00053"></a><a class="code" href="interface_t_m_document_a0a64adc93a2316e159542bd1c8fa259d.html#a0a64adc93a2316e159542bd1c8fa259d">00053</a> <span class="keyword">@property</span> <span class="keywordtype">int</span> <a class="code" href="interface_t_m_document_a0a64adc93a2316e159542bd1c8fa259d.html#a0a64adc93a2316e159542bd1c8fa259d">unitMultiplier</a>;
-<a name="l00054"></a>00054 - (IBAction)dumpDebugInfo:(<span class="keywordtype">id</span>)sender;
-<a name="l00055"></a>00055 <span class="keyword">@end</span>
+<a name="l00053"></a>00053 - (IBAction)dChangeTaskActivity:(<span class="keywordtype">id</span>)sender;
+<a name="l00054"></a>00054 
+<a name="l00058"></a><a class="code" href="interface_t_m_document_af070986feb7c9e2c9877262b1a46fe68.html#af070986feb7c9e2c9877262b1a46fe68">00058</a> <span class="keyword">@property</span> (weak) IBOutlet NSTextField *<a class="code" href="interface_t_m_document_af070986feb7c9e2c9877262b1a46fe68.html#af070986feb7c9e2c9877262b1a46fe68" title="Number box to display time spent so far on current task.">dCurrentTaskTimeSpent</a>;
+<a name="l00062"></a><a class="code" href="interface_t_m_document_a1c242af51a55d7daf71790287f300304.html#a1c242af51a55d7daf71790287f300304">00062</a> <span class="keyword">@property</span> (weak) IBOutlet NSProgressIndicator *<a class="code" href="interface_t_m_document_a1c242af51a55d7daf71790287f300304.html#a1c242af51a55d7daf71790287f300304" title="Progress bar to show (time spent:time remaining)">dCurrentTaskCompletion</a>;
+<a name="l00066"></a><a class="code" href="interface_t_m_document_a1d62860615418da61be5acefdcc66c92.html#a1d62860615418da61be5acefdcc66c92">00066</a> <span class="keyword">@property</span> (weak) IBOutlet NSPopUpButton *<a class="code" href="interface_t_m_document_a1d62860615418da61be5acefdcc66c92.html#a1d62860615418da61be5acefdcc66c92" title="Dropdown list of available time units (minutes, seconds, etc)">dCurrentTaskTimeUnits</a>;
+<a name="l00067"></a>00067 
+<a name="l00072"></a>00072 - (IBAction)dChangeOfUnits:(<span class="keywordtype">id</span>)sender;
+<a name="l00073"></a>00073 
+<a name="l00077"></a><a class="code" href="interface_t_m_document_a0340f33a7627abdcda26e36982145328.html#a0340f33a7627abdcda26e36982145328">00077</a> <span class="keyword">@property</span> (weak) IBOutlet NSDatePicker *<a class="code" href="interface_t_m_document_a0340f33a7627abdcda26e36982145328.html#a0340f33a7627abdcda26e36982145328" title="Date field for current task&#39;s date of creation.">dCurrentTaskDateEntered</a>;
+<a name="l00081"></a><a class="code" href="interface_t_m_document_ace784700531a4104c71d6a284b46ef24.html#ace784700531a4104c71d6a284b46ef24">00081</a> <span class="keyword">@property</span> (weak) IBOutlet NSDatePicker *<a class="code" href="interface_t_m_document_ace784700531a4104c71d6a284b46ef24.html#ace784700531a4104c71d6a284b46ef24" title="Date field for current task&#39;s deadline.">dCurrentTaskDateDue</a>;
+<a name="l00085"></a><a class="code" href="interface_t_m_document_a32b747dadc236b7a650f0b3253ef03b5.html#a32b747dadc236b7a650f0b3253ef03b5">00085</a> <span class="keyword">@property</span> (weak) IBOutlet NSProgressIndicator *<a class="code" href="interface_t_m_document_a32b747dadc236b7a650f0b3253ef03b5.html#a32b747dadc236b7a650f0b3253ef03b5" title="Progress bar to show (time since start date:time until end date)">dCurrentTaskDateProgress</a>;
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087 <span class="preprocessor">#pragma mark New Task</span>
+<a name="l00088"></a>00088 <span class="preprocessor"></span>
+<a name="l00091"></a><a class="code" href="interface_t_m_document_a840c1f38388715bce459c3eca3cac4b3.html#a840c1f38388715bce459c3eca3cac4b3">00091</a> <span class="keyword">@property</span> (weak) IBOutlet NSTextField *<a class="code" href="interface_t_m_document_a840c1f38388715bce459c3eca3cac4b3.html#a840c1f38388715bce459c3eca3cac4b3" title="Text box for entry of name of a new task.">dNewTaskName</a>;
+<a name="l00095"></a><a class="code" href="interface_t_m_document_ac61ff044c04e7912ddb9028562c9f715.html#ac61ff044c04e7912ddb9028562c9f715">00095</a> <span class="keyword">@property</span> (unsafe_unretained) IBOutlet NSTextView *<a class="code" href="interface_t_m_document_ac61ff044c04e7912ddb9028562c9f715.html#ac61ff044c04e7912ddb9028562c9f715" title="Text box for entry of description of a new task.">dNewTaskDescription</a>;
+<a name="l00099"></a><a class="code" href="interface_t_m_document_a054855ca82083707d905719e9b99b5f1.html#a054855ca82083707d905719e9b99b5f1">00099</a> <span class="keyword">@property</span> (weak) IBOutlet NSTextField *<a class="code" href="interface_t_m_document_a054855ca82083707d905719e9b99b5f1.html#a054855ca82083707d905719e9b99b5f1" title="Number box for entry of time estimate of a new task.">dNewTaskDuration</a>;
+<a name="l00103"></a><a class="code" href="interface_t_m_document_a0e4e0c8ce53324297e2e4fb86774ba71.html#a0e4e0c8ce53324297e2e4fb86774ba71">00103</a> <span class="keyword">@property</span> (weak) IBOutlet NSDatePicker *<a class="code" href="interface_t_m_document_a0e4e0c8ce53324297e2e4fb86774ba71.html#a0e4e0c8ce53324297e2e4fb86774ba71" title="Date field for entry of deadline of a new task.">dNewTaskDueDate</a>;
+<a name="l00107"></a><a class="code" href="interface_t_m_document_ae9193b826e1c38733f627621ce827879.html#ae9193b826e1c38733f627621ce827879">00107</a> <span class="keyword">@property</span> (weak) IBOutlet NSPopUpButton *<a class="code" href="interface_t_m_document_ae9193b826e1c38733f627621ce827879.html#ae9193b826e1c38733f627621ce827879" title="Dropdown menu to select units of time estimate.">dNewTaskTimeUnit</a>;
+<a name="l00108"></a>00108 
+<a name="l00113"></a>00113 - (IBAction)dAddTask:(<span class="keywordtype">id</span>)sender;
+<a name="l00114"></a>00114 
+<a name="l00119"></a>00119 - (IBAction)dUpdateTimeRemaining:(<span class="keywordtype">id</span>)sender;
+<a name="l00123"></a>00123 - (void) <a class="code" href="interface_t_m_document_a610c3fb1762b5fffcafbd42efd352857.html#a610c3fb1762b5fffcafbd42efd352857" title="Refresh all the information in the &#39;current task&#39; tab to reflect current top task.">updateCurrentTaskDisplay</a>;
+<a name="l00128"></a>00128 - (void)workTicker:(NSTimer*)theTimer;
+<a name="l00129"></a>00129 
+<a name="l00133"></a>00133 - (void)<a class="code" href="interface_t_m_document_a36efaf255be712c2f6ff19a7461d22bd.html#a36efaf255be712c2f6ff19a7461d22bd" title="Stop the timer and force the Task Manager to check its top entry.">stopWorkOnCurrentTask</a>;
+<a name="l00134"></a>00134 
+<a name="l00140"></a>00140 -(int) multiplierForUnitSelector:(NSPopUpButton*) theButton;
+<a name="l00141"></a>00141 
+<a name="l00145"></a><a class="code" href="interface_t_m_document_a0a64adc93a2316e159542bd1c8fa259d.html#a0a64adc93a2316e159542bd1c8fa259d">00145</a> <span class="keyword">@property</span> <span class="keywordtype">int</span> <a class="code" href="interface_t_m_document_a0a64adc93a2316e159542bd1c8fa259d.html#a0a64adc93a2316e159542bd1c8fa259d" title="The currently active unit multiplication factor.">unitMultiplier</a>;
+<a name="l00150"></a>00150 - (IBAction)dumpDebugInfo:(<span class="keywordtype">id</span>)sender;
+<a name="l00151"></a>00151 <span class="keyword">@end</span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_t_m_document_8h.html">TMDocument.h</a>      </li>
-      <li class="footer">Generated on Fri May 18 2012 20:32:30 for Task Master by&#160;
+      <li class="footer">Generated on Fri May 18 2012 23:52:37 for Task Master by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

@@ -64,7 +64,7 @@ function toggleVisibility(linkObj) {
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="TaskMaster_Icon.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Task Master&#160;<span id="projectnumber">9bd4317</span></div>
+   <div id="projectname">Task Master&#160;<span id="projectnumber">c2073ec</span></div>
    <div id="projectbrief">CS132 Final Project - Task Tracking Application</div>
   </td>
  </tr>
@@ -125,6 +125,9 @@ function toggleVisibility(linkObj) {
 </div>
 <div class="contents">
 <!-- doxytag: class="TMDocument" -->
+<p>User interface window controller.  
+ <a href="interface_t_m_document.html#details">More...</a></p>
+
 <p><code>#import &lt;<a class="el" href="_t_m_document_8h_source.html">TMDocument.h</a>&gt;</code></p>
 
 <p><a href="class_t_m_document-members.html">List of all members.</a></p>
@@ -132,48 +135,77 @@ function toggleVisibility(linkObj) {
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(IBAction)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_t_m_document_a7fa17b92266b7cf083f3579d231977a3.html#a7fa17b92266b7cf083f3579d231977a3">dAddTask:</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Executed in response to user clicking "Add Task" button.  <a href="#a7fa17b92266b7cf083f3579d231977a3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(NSData *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_t_m_document_a27471c24dda704e08ce5625df224e986.html#a27471c24dda704e08ce5625df224e986">dataOfType:error:</a><code> [implementation]</code></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(IBAction)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_t_m_document_ab1a27882dee2939d278f801045a6cca8.html#ab1a27882dee2939d278f801045a6cca8">dChangeOfUnits:</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Executed in response to user changing time unit.  <a href="#ab1a27882dee2939d278f801045a6cca8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(IBAction)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_t_m_document_a3da833174a15d573c3fb95367b2a0115.html#a3da833174a15d573c3fb95367b2a0115">dChangeTaskActivity:</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Executed in response to user clicking 'working on it' checkbox.  <a href="#a3da833174a15d573c3fb95367b2a0115"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(IBAction)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_t_m_document_ae9874721899bab06d335bd39c0c3887f.html#ae9874721899bab06d335bd39c0c3887f">dumpDebugInfo:</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Executed in response to the (?) debug button.  <a href="#ae9874721899bab06d335bd39c0c3887f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(IBAction)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_t_m_document_aede60a3222114b9be9cdda8eae94ca40.html#aede60a3222114b9be9cdda8eae94ca40">dUpdateTimeRemaining:</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Executed in response to user entering a new time in the time-remaining box.  <a href="#aede60a3222114b9be9cdda8eae94ca40"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_t_m_document_a3141ca249907566e37e02502750a6ae3.html#a3141ca249907566e37e02502750a6ae3">init</a><code> [implementation]</code></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_t_m_document_a6f48e6c4df3092e243818a5185744836.html#a6f48e6c4df3092e243818a5185744836">multiplierForUnitSelector:</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility function for converting time units based on user preference.  <a href="#a6f48e6c4df3092e243818a5185744836"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(NSInteger)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_t_m_document_a484f9a48f5df07b94b9947ff7d0a9229.html#a484f9a48f5df07b94b9947ff7d0a9229">numberOfRowsInTableView:</a><code> [implementation]</code></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_t_m_document_af1ba070561656fbdf1c17812c858d09b.html#af1ba070561656fbdf1c17812c858d09b">readFromData:ofType:error:</a><code> [implementation]</code></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_t_m_document_a36efaf255be712c2f6ff19a7461d22bd.html#a36efaf255be712c2f6ff19a7461d22bd">stopWorkOnCurrentTask</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the timer and force the Task Manager to check its top entry.  <a href="#a36efaf255be712c2f6ff19a7461d22bd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_t_m_document_abc58d98b83ec8cc8a00bf607db6b0213.html#abc58d98b83ec8cc8a00bf607db6b0213">tableView:objectValueForTableColumn:row:</a><code> [implementation]</code></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_t_m_document_a610c3fb1762b5fffcafbd42efd352857.html#a610c3fb1762b5fffcafbd42efd352857">updateCurrentTaskDisplay</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Refresh all the information in the 'current task' tab to reflect current top task.  <a href="#a610c3fb1762b5fffcafbd42efd352857"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_t_m_document_a1e5db77b55078111e5bcecd07da55a39.html#a1e5db77b55078111e5bcecd07da55a39">windowControllerDidLoadNib:</a><code> [implementation]</code></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_t_m_document_a8c11c2179b4571063ed066a367423199.html#a8c11c2179b4571063ed066a367423199">windowNibName</a><code> [implementation]</code></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_t_m_document_a0c47d35fde176ba4b8d593c6d464357f.html#a0c47d35fde176ba4b8d593c6d464357f">workTicker:</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Executed in response to a regularly fired timer.  <a href="#a0c47d35fde176ba4b8d593c6d464357f"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_t_m_document_a7189665ab090042924ae71df8995549c.html#a7189665ab090042924ae71df8995549c">autosavesInPlace</a><code> [implementation]</code></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">IBOutlet NSProgressIndicator *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_t_m_document_a1c242af51a55d7daf71790287f300304.html#a1c242af51a55d7daf71790287f300304">dCurrentTaskCompletion</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Progress bar to show (time spent:time remaining)  <a href="#a1c242af51a55d7daf71790287f300304"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">IBOutlet NSDatePicker *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_t_m_document_ace784700531a4104c71d6a284b46ef24.html#ace784700531a4104c71d6a284b46ef24">dCurrentTaskDateDue</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Date field for current task's deadline.  <a href="#ace784700531a4104c71d6a284b46ef24"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">IBOutlet NSDatePicker *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_t_m_document_a0340f33a7627abdcda26e36982145328.html#a0340f33a7627abdcda26e36982145328">dCurrentTaskDateEntered</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Date field for current task's date of creation.  <a href="#a0340f33a7627abdcda26e36982145328"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">IBOutlet NSProgressIndicator *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_t_m_document_a32b747dadc236b7a650f0b3253ef03b5.html#a32b747dadc236b7a650f0b3253ef03b5">dCurrentTaskDateProgress</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Progress bar to show (time since start date:time until end date)  <a href="#a32b747dadc236b7a650f0b3253ef03b5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">IBOutlet NSTextView *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_t_m_document_a42f2d6e56ca5a9829b53fe6e69d26a47.html#a42f2d6e56ca5a9829b53fe6e69d26a47">dCurrentTaskDescription</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Text box to display current task's description.  <a href="#a42f2d6e56ca5a9829b53fe6e69d26a47"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">IBOutlet NSTextField *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_t_m_document_ad77f6f5d694113eeb540701267308bdc.html#ad77f6f5d694113eeb540701267308bdc">dCurrentTaskName</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Text box to display current task's name.  <a href="#ad77f6f5d694113eeb540701267308bdc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">IBOutlet NSTextField *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_t_m_document_a9955166beb41d7deff7cb8f33d1cd950.html#a9955166beb41d7deff7cb8f33d1cd950">dCurrentTaskTimeRemaining</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Number box to display current task's time remaining.  <a href="#a9955166beb41d7deff7cb8f33d1cd950"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">IBOutlet NSTextField *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_t_m_document_af070986feb7c9e2c9877262b1a46fe68.html#af070986feb7c9e2c9877262b1a46fe68">dCurrentTaskTimeSpent</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Number box to display time spent so far on current task.  <a href="#af070986feb7c9e2c9877262b1a46fe68"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">IBOutlet NSPopUpButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_t_m_document_a1d62860615418da61be5acefdcc66c92.html#a1d62860615418da61be5acefdcc66c92">dCurrentTaskTimeUnits</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Dropdown list of available time units (minutes, seconds, etc)  <a href="#a1d62860615418da61be5acefdcc66c92"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">IBOutlet NSTextView *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_t_m_document_ac61ff044c04e7912ddb9028562c9f715.html#ac61ff044c04e7912ddb9028562c9f715">dNewTaskDescription</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Text box for entry of description of a new task.  <a href="#ac61ff044c04e7912ddb9028562c9f715"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">IBOutlet NSDatePicker *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_t_m_document_a0e4e0c8ce53324297e2e4fb86774ba71.html#a0e4e0c8ce53324297e2e4fb86774ba71">dNewTaskDueDate</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Date field for entry of deadline of a new task.  <a href="#a0e4e0c8ce53324297e2e4fb86774ba71"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">IBOutlet NSTextField *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_t_m_document_a054855ca82083707d905719e9b99b5f1.html#a054855ca82083707d905719e9b99b5f1">dNewTaskDuration</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Number box for entry of time estimate of a new task.  <a href="#a054855ca82083707d905719e9b99b5f1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">IBOutlet NSTextField *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_t_m_document_a840c1f38388715bce459c3eca3cac4b3.html#a840c1f38388715bce459c3eca3cac4b3">dNewTaskName</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Text box for entry of name of a new task.  <a href="#a840c1f38388715bce459c3eca3cac4b3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">IBOutlet NSPopUpButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_t_m_document_ae9193b826e1c38733f627621ce827879.html#ae9193b826e1c38733f627621ce827879">dNewTaskTimeUnit</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Dropdown menu to select units of time estimate.  <a href="#ae9193b826e1c38733f627621ce827879"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">IBOutlet NSButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_t_m_document_a4b60fe71abb4800ac8ed81eed3cf5e91.html#a4b60fe71abb4800ac8ed81eed3cf5e91">dTaskInProgress</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checkbox for user to indicate when they are actively working on current task.  <a href="#a4b60fe71abb4800ac8ed81eed3cf5e91"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">IBOutlet NSTextField *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_t_m_document_a30fbe3828a4ab82ebca94c52ae65ab6d.html#a30fbe3828a4ab82ebca94c52ae65ab6d">dTasksRemaining</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A text box to display the remaining tasks.  <a href="#a30fbe3828a4ab82ebca94c52ae65ab6d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_c_s132_manager.html">CS132Manager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630">taskTracker</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The task-tracking brains of the operation.  <a href="#a4861a1417a7a5802aa9ecc2f7dbbc630"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_t_m_document_a0a64adc93a2316e159542bd1c8fa259d.html#a0a64adc93a2316e159542bd1c8fa259d">unitMultiplier</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The currently active unit multiplication factor.  <a href="#a0a64adc93a2316e159542bd1c8fa259d"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_t_m_document_8h_source.html#l00012">12</a> of file <a class="el" href="_t_m_document_8h_source.html">TMDocument.h</a>.</p>
+<div class="textblock"><p>User interface window controller. </p>
+<p>Responsible for mediating between user controls and a <a class="el" href="interface_c_s132_manager.html" title="Tracks completed, current, and to-do tasks.">CS132Manager</a> task management instance. </p>
+
+<p>Definition at line <a class="el" href="_t_m_document_8h_source.html#l00016">16</a> of file <a class="el" href="_t_m_document_8h_source.html">TMDocument.h</a>.</p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>TaskMaster/TaskMaster/<a class="el" href="_t_m_document_8h_source.html">TMDocument.h</a></li>
 <li>TaskMaster/TaskMaster/<a class="el" href="_t_m_document_8m_source.html">TMDocument.m</a></li>
@@ -183,7 +215,7 @@ Properties</h2></td></tr>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="interface_t_m_document.html">TMDocument</a>      </li>
-      <li class="footer">Generated on Fri May 18 2012 20:32:30 for Task Master by&#160;
+      <li class="footer">Generated on Fri May 18 2012 23:52:38 for Task Master by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

@@ -1,13 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$interface_c_s132_heap_ad2b9df2685054576d0c69b7803d49e63.html#ad2b9df2685054576d0c69b7803d49e63" title="find number of tasks in array" alt="" coords="211,51,413,79"/>
-<area shape="rect" id="node5" href="$interface_c_s132_heap_ad4d1ac1bebb1be8a89e2d2ad816234d0.html#ad4d1ac1bebb1be8a89e2d2ad816234d0" title="add a task to the heap" alt="" coords="495,18,657,46"/>
-<area shape="rect" id="node11" href="$interface_c_s132_manager_a3cb78bf1a26a76ef98b251c549286db4.html#a3cb78bf1a26a76ef98b251c549286db4" title="Count how many task there are to do." alt="" coords="462,83,690,111"/>
-<area shape="rect" id="node7" href="$interface_c_s132_manager_ad6cda86592385271cd8abcf7017ee8fb.html#ad6cda86592385271cd8abcf7017ee8fb" title="Add a task with necessary task information." alt="" coords="739,11,1237,39"/>
-<area shape="rect" id="node9" href="$interface_t_m_document_a7fa17b92266b7cf083f3579d231977a3.html#a7fa17b92266b7cf083f3579d231977a3" title="&#45;[TMDocument dAddTask:]" alt="" coords="1342,5,1522,33"/>
-<area shape="rect" id="node13" href="$interface_t_m_document_a610c3fb1762b5fffcafbd42efd352857.html#a610c3fb1762b5fffcafbd42efd352857" title="&#45;[TMDocument updateCurrentTaskDisplay]" alt="" coords="851,109,1125,137"/>
-<area shape="rect" id="node16" href="$interface_t_m_document_ab1a27882dee2939d278f801045a6cca8.html#ab1a27882dee2939d278f801045a6cca8" title="&#45;[TMDocument dChangeOfUnits:]" alt="" coords="1322,57,1542,85"/>
-<area shape="rect" id="node18" href="$interface_t_m_document_a3da833174a15d573c3fb95367b2a0115.html#a3da833174a15d573c3fb95367b2a0115" title="&#45;[TMDocument dChangeTaskActivity:]" alt="" coords="1310,109,1554,137"/>
-<area shape="rect" id="node20" href="$interface_t_m_document_aede60a3222114b9be9cdda8eae94ca40.html#aede60a3222114b9be9cdda8eae94ca40" title="&#45;[TMDocument dUpdateTimeRemaining:]" alt="" coords="1300,161,1564,189"/>
-<area shape="rect" id="node22" href="$interface_t_m_document_a1e5db77b55078111e5bcecd07da55a39.html#a1e5db77b55078111e5bcecd07da55a39" title="&#45;[TMDocument windowControllerDidLoadNib:]" alt="" coords="1286,213,1578,241"/>
-<area shape="rect" id="node24" href="$interface_t_m_document_a0c47d35fde176ba4b8d593c6d464357f.html#a0c47d35fde176ba4b8d593c6d464357f" title="&#45;[TMDocument workTicker:]" alt="" coords="1340,265,1524,293"/>
+<area shape="rect" id="node3" href="$interface_c_s132_heap_af6dd3361c506c7b538c1492a49d87658.html#af6dd3361c506c7b538c1492a49d87658" title="delete the top task of the heap" alt="" coords="211,31,405,59"/>
+<area shape="rect" id="node5" href="$interface_c_s132_manager_af7af5f105b747483aa81f02577b1a69f.html#af7af5f105b747483aa81f02577b1a69f" title="Adjust remaining time to a new time remaining for topTask." alt="" coords="454,31,738,59"/>
+<area shape="rect" id="node7" href="$interface_t_m_document_a3da833174a15d573c3fb95367b2a0115.html#a3da833174a15d573c3fb95367b2a0115" title="Executed in response to user clicking &#39;working on it&#39; checkbox." alt="" coords="796,5,1041,33"/>
+<area shape="rect" id="node9" href="$interface_t_m_document_aede60a3222114b9be9cdda8eae94ca40.html#aede60a3222114b9be9cdda8eae94ca40" title="Executed in response to user entering a new time in the time&#45;remaining box." alt="" coords="787,57,1051,85"/>
 </map>

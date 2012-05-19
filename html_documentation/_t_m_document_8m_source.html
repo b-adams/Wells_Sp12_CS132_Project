@@ -64,7 +64,7 @@ function toggleVisibility(linkObj) {
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="TaskMaster_Icon.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Task Master&#160;<span id="projectnumber">9bd4317</span></div>
+   <div id="projectname">Task Master&#160;<span id="projectnumber">c2073ec</span></div>
    <div id="projectbrief">CS132 Final Project - Task Tracking Application</div>
   </td>
  </tr>
@@ -119,278 +119,262 @@ function toggleVisibility(linkObj) {
 <div class="title">TaskMaster/TaskMaster/TMDocument.m</div>  </div>
 </div>
 <div class="contents">
-<a href="_t_m_document_8m.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
-<a name="l00002"></a>00002 <span class="comment">//  TMDocument.m</span>
-<a name="l00003"></a>00003 <span class="comment">//  TaskMaster</span>
-<a name="l00004"></a>00004 <span class="comment">//</span>
-<a name="l00005"></a>00005 <span class="comment">//  Created by Bryant Adams on 5/1/12.</span>
-<a name="l00006"></a>00006 <span class="comment">//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.</span>
-<a name="l00007"></a>00007 <span class="comment">//</span>
-<a name="l00008"></a>00008 
-<a name="l00009"></a>00009 <span class="preprocessor">#import &quot;<a class="code" href="_t_m_document_8h.html">TMDocument.h</a>&quot;</span>
-<a name="l00010"></a>00010 <span class="preprocessor">#import &quot;<a class="code" href="_c_s132_manager_8h.html" title="Heap implementation.">CS132Manager.h</a>&quot;</span>
-<a name="l00011"></a>00011 <span class="preprocessor">#import &quot;<a class="code" href="_c_s132_task_8h.html" title="Heap implementation.">CS132Task.h</a>&quot;</span>
-<a name="l00012"></a><a class="code" href="_t_m_document_8m_a4566a976829e58c43c185c3d529e7d65.html#a4566a976829e58c43c185c3d529e7d65">00012</a> <span class="preprocessor">#define TICK_SIZE 5</span>
-<a name="l00013"></a>00013 <span class="preprocessor"></span><span class="keyword">@implementation </span><a class="code" href="interface_t_m_document.html">TMDocument</a>
-<a name="l00014"></a>00014 {
-<a name="l00015"></a>00015     NSTimer* ticker;
-<a name="l00016"></a>00016 }
-<a name="l00017"></a>00017 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630">taskTracker</a>;
-<a name="l00018"></a>00018 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a30fbe3828a4ab82ebca94c52ae65ab6d.html#a30fbe3828a4ab82ebca94c52ae65ab6d">dTasksRemaining</a>;
-<a name="l00019"></a>00019 
-<a name="l00020"></a>00020 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a42f2d6e56ca5a9829b53fe6e69d26a47.html#a42f2d6e56ca5a9829b53fe6e69d26a47">dCurrentTaskDescription</a>;
-<a name="l00021"></a>00021 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_ad77f6f5d694113eeb540701267308bdc.html#ad77f6f5d694113eeb540701267308bdc">dCurrentTaskName</a>;
-<a name="l00022"></a>00022 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a9955166beb41d7deff7cb8f33d1cd950.html#a9955166beb41d7deff7cb8f33d1cd950">dCurrentTaskTimeRemaining</a>;
-<a name="l00023"></a>00023 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a4b60fe71abb4800ac8ed81eed3cf5e91.html#a4b60fe71abb4800ac8ed81eed3cf5e91">dTaskInProgress</a>;
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_af070986feb7c9e2c9877262b1a46fe68.html#af070986feb7c9e2c9877262b1a46fe68">dCurrentTaskTimeSpent</a>;
-<a name="l00026"></a>00026 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a1c242af51a55d7daf71790287f300304.html#a1c242af51a55d7daf71790287f300304">dCurrentTaskCompletion</a>;
-<a name="l00027"></a>00027 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a1d62860615418da61be5acefdcc66c92.html#a1d62860615418da61be5acefdcc66c92">dCurrentTaskTimeUnits</a>;
-<a name="l00028"></a>00028 
-<a name="l00029"></a>00029 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a0340f33a7627abdcda26e36982145328.html#a0340f33a7627abdcda26e36982145328">dCurrentTaskDateEntered</a>;
-<a name="l00030"></a>00030 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_ace784700531a4104c71d6a284b46ef24.html#ace784700531a4104c71d6a284b46ef24">dCurrentTaskDateDue</a>;
-<a name="l00031"></a>00031 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a32b747dadc236b7a650f0b3253ef03b5.html#a32b747dadc236b7a650f0b3253ef03b5">dCurrentTaskDateProgress</a>;
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a840c1f38388715bce459c3eca3cac4b3.html#a840c1f38388715bce459c3eca3cac4b3">dNewTaskName</a>;
-<a name="l00034"></a>00034 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_ac61ff044c04e7912ddb9028562c9f715.html#ac61ff044c04e7912ddb9028562c9f715">dNewTaskDescription</a>;
-<a name="l00035"></a>00035 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a054855ca82083707d905719e9b99b5f1.html#a054855ca82083707d905719e9b99b5f1">dNewTaskDuration</a>;
-<a name="l00036"></a>00036 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a0e4e0c8ce53324297e2e4fb86774ba71.html#a0e4e0c8ce53324297e2e4fb86774ba71">dNewTaskDueDate</a>;
-<a name="l00037"></a>00037 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_ae9193b826e1c38733f627621ce827879.html#ae9193b826e1c38733f627621ce827879">dNewTaskTimeUnit</a>;
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a0a64adc93a2316e159542bd1c8fa259d.html#a0a64adc93a2316e159542bd1c8fa259d">unitMultiplier</a>;
+<a href="_t_m_document_8m.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00007"></a>00007 <span class="preprocessor">#import &quot;<a class="code" href="_t_m_document_8h.html">TMDocument.h</a>&quot;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#import &quot;<a class="code" href="_c_s132_manager_8h.html" title="Heap implementation.">CS132Manager.h</a>&quot;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#import &quot;<a class="code" href="_c_s132_task_8h.html" title="Heap implementation.">CS132Task.h</a>&quot;</span>
+<a name="l00010"></a>00010 
+<a name="l00014"></a><a class="code" href="_t_m_document_8m_a4566a976829e58c43c185c3d529e7d65.html#a4566a976829e58c43c185c3d529e7d65">00014</a> <span class="preprocessor">#define TICK_SIZE 5</span>
+<a name="l00015"></a>00015 <span class="preprocessor"></span><span class="keyword">@implementation </span><a class="code" href="interface_t_m_document.html" title="User interface window controller.">TMDocument</a>
+<a name="l00016"></a>00016 {
+<a name="l00017"></a>00017     NSTimer* ticker;
+<a name="l00018"></a>00018 }
+<a name="l00019"></a>00019 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630" title="The task-tracking brains of the operation.">taskTracker</a>;
+<a name="l00020"></a>00020 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a30fbe3828a4ab82ebca94c52ae65ab6d.html#a30fbe3828a4ab82ebca94c52ae65ab6d" title="A text box to display the remaining tasks.">dTasksRemaining</a>;
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a42f2d6e56ca5a9829b53fe6e69d26a47.html#a42f2d6e56ca5a9829b53fe6e69d26a47" title="Text box to display current task&#39;s description.">dCurrentTaskDescription</a>;
+<a name="l00023"></a>00023 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_ad77f6f5d694113eeb540701267308bdc.html#ad77f6f5d694113eeb540701267308bdc" title="Text box to display current task&#39;s name.">dCurrentTaskName</a>;
+<a name="l00024"></a>00024 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a9955166beb41d7deff7cb8f33d1cd950.html#a9955166beb41d7deff7cb8f33d1cd950" title="Number box to display current task&#39;s time remaining.">dCurrentTaskTimeRemaining</a>;
+<a name="l00025"></a>00025 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a4b60fe71abb4800ac8ed81eed3cf5e91.html#a4b60fe71abb4800ac8ed81eed3cf5e91" title="Checkbox for user to indicate when they are actively working on current task.">dTaskInProgress</a>;
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_af070986feb7c9e2c9877262b1a46fe68.html#af070986feb7c9e2c9877262b1a46fe68" title="Number box to display time spent so far on current task.">dCurrentTaskTimeSpent</a>;
+<a name="l00028"></a>00028 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a1c242af51a55d7daf71790287f300304.html#a1c242af51a55d7daf71790287f300304" title="Progress bar to show (time spent:time remaining)">dCurrentTaskCompletion</a>;
+<a name="l00029"></a>00029 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a1d62860615418da61be5acefdcc66c92.html#a1d62860615418da61be5acefdcc66c92" title="Dropdown list of available time units (minutes, seconds, etc)">dCurrentTaskTimeUnits</a>;
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a0340f33a7627abdcda26e36982145328.html#a0340f33a7627abdcda26e36982145328" title="Date field for current task&#39;s date of creation.">dCurrentTaskDateEntered</a>;
+<a name="l00032"></a>00032 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_ace784700531a4104c71d6a284b46ef24.html#ace784700531a4104c71d6a284b46ef24" title="Date field for current task&#39;s deadline.">dCurrentTaskDateDue</a>;
+<a name="l00033"></a>00033 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a32b747dadc236b7a650f0b3253ef03b5.html#a32b747dadc236b7a650f0b3253ef03b5" title="Progress bar to show (time since start date:time until end date)">dCurrentTaskDateProgress</a>;
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a840c1f38388715bce459c3eca3cac4b3.html#a840c1f38388715bce459c3eca3cac4b3" title="Text box for entry of name of a new task.">dNewTaskName</a>;
+<a name="l00036"></a>00036 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_ac61ff044c04e7912ddb9028562c9f715.html#ac61ff044c04e7912ddb9028562c9f715" title="Text box for entry of description of a new task.">dNewTaskDescription</a>;
+<a name="l00037"></a>00037 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a054855ca82083707d905719e9b99b5f1.html#a054855ca82083707d905719e9b99b5f1" title="Number box for entry of time estimate of a new task.">dNewTaskDuration</a>;
+<a name="l00038"></a>00038 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a0e4e0c8ce53324297e2e4fb86774ba71.html#a0e4e0c8ce53324297e2e4fb86774ba71" title="Date field for entry of deadline of a new task.">dNewTaskDueDate</a>;
+<a name="l00039"></a>00039 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_ae9193b826e1c38733f627621ce827879.html#ae9193b826e1c38733f627621ce827879" title="Dropdown menu to select units of time estimate.">dNewTaskTimeUnit</a>;
 <a name="l00040"></a>00040 
-<a name="l00041"></a><a class="code" href="interface_t_m_document_a3141ca249907566e37e02502750a6ae3.html#a3141ca249907566e37e02502750a6ae3">00041</a> - (id)<a class="code" href="interface_t_m_document_a3141ca249907566e37e02502750a6ae3.html#a3141ca249907566e37e02502750a6ae3">init</a>
-<a name="l00042"></a>00042 {
-<a name="l00043"></a>00043     <span class="keyword">self</span> = [<span class="keyword">super</span> init];
-<a name="l00044"></a>00044     <span class="keywordflow">if</span> (<span class="keyword">self</span>) {
-<a name="l00045"></a>00045         [<span class="keyword">self</span> setTaskTracker: [[<a class="code" href="interface_c_s132_manager.html">CS132Manager</a> alloc] init]];
-<a name="l00046"></a>00046         
+<a name="l00041"></a>00041 <span class="keyword">@synthesize</span> <a class="code" href="interface_t_m_document_a0a64adc93a2316e159542bd1c8fa259d.html#a0a64adc93a2316e159542bd1c8fa259d" title="The currently active unit multiplication factor.">unitMultiplier</a>;
+<a name="l00042"></a>00042 
+<a name="l00043"></a><a class="code" href="interface_t_m_document_a3141ca249907566e37e02502750a6ae3.html#a3141ca249907566e37e02502750a6ae3">00043</a> - (id)<a class="code" href="interface_t_m_document_a3141ca249907566e37e02502750a6ae3.html#a3141ca249907566e37e02502750a6ae3">init</a>
+<a name="l00044"></a>00044 {
+<a name="l00045"></a>00045     <span class="keyword">self</span> = [<span class="keyword">super</span> init];
+<a name="l00046"></a>00046     <span class="keywordflow">if</span> (<span class="keyword">self</span>) {
 <a name="l00047"></a>00047         <span class="comment">// Add your subclass-specific initialization here.</span>
 <a name="l00048"></a>00048         <span class="comment">// If an error occurs here, return nil.</span>
-<a name="l00049"></a>00049     }
-<a name="l00050"></a>00050     <span class="keywordflow">return</span> <span class="keyword">self</span>;
-<a name="l00051"></a>00051 }
-<a name="l00052"></a>00052 
-<a name="l00053"></a><a class="code" href="interface_t_m_document_a8c11c2179b4571063ed066a367423199.html#a8c11c2179b4571063ed066a367423199">00053</a> - (NSString *)<a class="code" href="interface_t_m_document_a8c11c2179b4571063ed066a367423199.html#a8c11c2179b4571063ed066a367423199">windowNibName</a>
-<a name="l00054"></a>00054 {
-<a name="l00055"></a>00055     <span class="comment">// Override returning the nib file name of the document</span>
-<a name="l00056"></a>00056     <span class="comment">// If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this method and override -makeWindowControllers instead.</span>
-<a name="l00057"></a>00057     <span class="keywordflow">return</span> <span class="stringliteral">@&quot;TMDocument&quot;</span>;
-<a name="l00058"></a>00058 }
-<a name="l00059"></a>00059 
-<a name="l00060"></a><a class="code" href="interface_t_m_document_a1e5db77b55078111e5bcecd07da55a39.html#a1e5db77b55078111e5bcecd07da55a39">00060</a> - (void)windowControllerDidLoadNib:(NSWindowController *)aController
-<a name="l00061"></a>00061 {
-<a name="l00062"></a>00062     [<span class="keyword">super</span> windowControllerDidLoadNib:aController];
-<a name="l00063"></a>00063     <span class="comment">// Add any code here that needs to be executed once the windowController has loaded the document&#39;s window.</span>
-<a name="l00064"></a>00064     [<a class="code" href="interface_t_m_document_a0e4e0c8ce53324297e2e4fb86774ba71.html#a0e4e0c8ce53324297e2e4fb86774ba71">dNewTaskDueDate</a> setDateValue:[NSDate date]];
-<a name="l00065"></a>00065     [<span class="keyword">self</span> setUnitMultiplier:[<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a6f48e6c4df3092e243818a5185744836.html#a6f48e6c4df3092e243818a5185744836">multiplierForUnitSelector</a>:dCurrentTaskTimeUnits]];
-<a name="l00066"></a>00066     [<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a610c3fb1762b5fffcafbd42efd352857.html#a610c3fb1762b5fffcafbd42efd352857">updateCurrentTaskDisplay</a>];
-<a name="l00067"></a>00067 }
-<a name="l00068"></a>00068 
-<a name="l00069"></a><a class="code" href="interface_t_m_document_a27471c24dda704e08ce5625df224e986.html#a27471c24dda704e08ce5625df224e986">00069</a> - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
-<a name="l00070"></a>00070 {
-<a name="l00071"></a>00071     <span class="comment">/*</span>
-<a name="l00072"></a>00072 <span class="comment">     Insert code here to write your document to data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning nil.</span>
-<a name="l00073"></a>00073 <span class="comment">    You can also choose to override -fileWrapperOfType:error:, -writeToURL:ofType:error:, or -writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.</span>
-<a name="l00074"></a>00074 <span class="comment">    */</span>
-<a name="l00075"></a>00075     NSException *exception = [NSException exceptionWithName:@&quot;UnimplementedMethod&quot; reason:[NSString stringWithFormat:@&quot;%@ is unimplemented&quot;, NSStringFromSelector(_cmd)] userInfo:nil];
-<a name="l00076"></a>00076     <span class="keyword">@throw</span> exception;
-<a name="l00077"></a>00077     <span class="keywordflow">return</span> nil;
-<a name="l00078"></a>00078 }
-<a name="l00079"></a>00079 
-<a name="l00080"></a><a class="code" href="interface_t_m_document_af1ba070561656fbdf1c17812c858d09b.html#af1ba070561656fbdf1c17812c858d09b">00080</a> - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
-<a name="l00081"></a>00081 {
-<a name="l00082"></a>00082     <span class="comment">/*</span>
-<a name="l00083"></a>00083 <span class="comment">    Insert code here to read your document from the given data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning NO.</span>
-<a name="l00084"></a>00084 <span class="comment">    You can also choose to override -readFromFileWrapper:ofType:error: or -readFromURL:ofType:error: instead.</span>
-<a name="l00085"></a>00085 <span class="comment">    If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.</span>
-<a name="l00086"></a>00086 <span class="comment">    */</span>
-<a name="l00087"></a>00087     NSException *exception = [NSException exceptionWithName:@&quot;UnimplementedMethod&quot; reason:[NSString stringWithFormat:@&quot;%@ is unimplemented&quot;, NSStringFromSelector(_cmd)] userInfo:nil];
-<a name="l00088"></a>00088     <span class="keyword">@throw</span> exception;
-<a name="l00089"></a>00089     <span class="keywordflow">return</span> YES;
-<a name="l00090"></a>00090 }
-<a name="l00091"></a>00091 
-<a name="l00092"></a><a class="code" href="interface_t_m_document_a7189665ab090042924ae71df8995549c.html#a7189665ab090042924ae71df8995549c">00092</a> + (BOOL)<a class="code" href="interface_t_m_document_a7189665ab090042924ae71df8995549c.html#a7189665ab090042924ae71df8995549c">autosavesInPlace</a>
-<a name="l00093"></a>00093 {
-<a name="l00094"></a>00094     <span class="keywordflow">return</span> NO;
-<a name="l00095"></a>00095 }
-<a name="l00096"></a>00096 
-<a name="l00097"></a>00097 <span class="preprocessor">#pragma mark User Interface Methods</span>
-<a name="l00098"></a><a class="code" href="interface_t_m_document_ab1a27882dee2939d278f801045a6cca8.html#ab1a27882dee2939d278f801045a6cca8">00098</a> <span class="preprocessor"></span>- (IBAction)dChangeOfUnits:(<span class="keywordtype">id</span>)sender
-<a name="l00099"></a>00099 {
-<a name="l00100"></a>00100 <span class="comment">//    NSLog(@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;, @&quot;Stub&quot;, NSStringFromClass([self class]), NSStringFromSelector(_cmd));</span>
-<a name="l00101"></a>00101 <span class="comment">//    NSLog(@&quot;SENDER: %@\n\tselectedItem: %@\n\tindexOfSelectedItem: %ld\n\ttitleOfSelectedItem: %@\n\n&quot;, </span>
-<a name="l00102"></a>00102 <span class="comment">//          sender, [sender selectedItem], [sender indexOfSelectedItem], [sender titleOfSelectedItem]);</span>
-<a name="l00103"></a>00103     [<span class="keyword">self</span> setUnitMultiplier:[<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a6f48e6c4df3092e243818a5185744836.html#a6f48e6c4df3092e243818a5185744836">multiplierForUnitSelector</a>:sender]];
-<a name="l00104"></a>00104     [<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a610c3fb1762b5fffcafbd42efd352857.html#a610c3fb1762b5fffcafbd42efd352857">updateCurrentTaskDisplay</a>];
-<a name="l00105"></a>00105 }
-<a name="l00106"></a><a class="code" href="interface_t_m_document_a3da833174a15d573c3fb95367b2a0115.html#a3da833174a15d573c3fb95367b2a0115">00106</a> - (IBAction)dChangeTaskActivity:(<span class="keywordtype">id</span>)sender
-<a name="l00107"></a>00107 {
-<a name="l00108"></a>00108 <span class="comment">//    NSLog(@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;, @&quot;Stub&quot;, NSStringFromClass([self class]), NSStringFromSelector(_cmd));</span>
-<a name="l00109"></a>00109 <span class="comment">//    NSLog(@&quot;SENDER: %@\n\tstate: %ld\n\n&quot;, sender, [sender state]);</span>
-<a name="l00110"></a>00110     printf(<span class="stringliteral">&quot;\nChange Task Activity\n&quot;</span>);
-<a name="l00111"></a>00111 
-<a name="l00112"></a>00112     <span class="keywordflow">if</span>(![sender state]) <span class="comment">//Stopped working</span>
-<a name="l00113"></a>00113     {
-<a name="l00114"></a>00114         <span class="keywordtype">int</span> newTime = [<a class="code" href="interface_t_m_document_a9955166beb41d7deff7cb8f33d1cd950.html#a9955166beb41d7deff7cb8f33d1cd950">dCurrentTaskTimeRemaining</a> intValue];
-<a name="l00115"></a>00115         [<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630">taskTracker</a> <a class="code" href="interface_c_s132_manager_af7af5f105b747483aa81f02577b1a69f.html#af7af5f105b747483aa81f02577b1a69f" title="Adjust remaining time to a new time remaining for topTask.">changeRemainingTimeTo</a>:newTime];
-<a name="l00116"></a>00116         [<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a36efaf255be712c2f6ff19a7461d22bd.html#a36efaf255be712c2f6ff19a7461d22bd">stopWorkOnCurrentTask</a>];
-<a name="l00117"></a>00117     } <span class="keywordflow">else</span> {
-<a name="l00118"></a>00118         ticker = [NSTimer scheduledTimerWithTimeInterval:TICK_SIZE
-<a name="l00119"></a>00119                                                   target:self 
-<a name="l00120"></a>00120                                                 selector:@selector(workTicker:)
-<a name="l00121"></a>00121                                                 userInfo:nil
-<a name="l00122"></a>00122                                                  repeats:YES];
-<a name="l00123"></a>00123     }
-<a name="l00124"></a>00124     [<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a610c3fb1762b5fffcafbd42efd352857.html#a610c3fb1762b5fffcafbd42efd352857">updateCurrentTaskDisplay</a>];
-<a name="l00125"></a>00125 }
-<a name="l00126"></a>00126 
-<a name="l00127"></a><a class="code" href="interface_t_m_document_a36efaf255be712c2f6ff19a7461d22bd.html#a36efaf255be712c2f6ff19a7461d22bd">00127</a> -(void)<a class="code" href="interface_t_m_document_a36efaf255be712c2f6ff19a7461d22bd.html#a36efaf255be712c2f6ff19a7461d22bd">stopWorkOnCurrentTask</a>
-<a name="l00128"></a>00128 {
-<a name="l00129"></a>00129     [<a class="code" href="interface_t_m_document_a4b60fe71abb4800ac8ed81eed3cf5e91.html#a4b60fe71abb4800ac8ed81eed3cf5e91">dTaskInProgress</a> setState:0]; <span class="comment">//in case it wasn&#39;t already</span>
-<a name="l00130"></a>00130     <span class="keywordflow">if</span>(ticker)
-<a name="l00131"></a>00131     {
-<a name="l00132"></a>00132         [ticker invalidate];
-<a name="l00133"></a>00133         ticker=nil;
-<a name="l00134"></a>00134     }
-<a name="l00135"></a>00135     [<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630">taskTracker</a> <a class="code" href="interface_c_s132_manager_aa521edc7a88f12e4d3e188407f960d98.html#aa521edc7a88f12e4d3e188407f960d98">fixTopTask</a>];
-<a name="l00136"></a>00136 }
-<a name="l00137"></a>00137 
-<a name="l00138"></a><a class="code" href="interface_t_m_document_a6f48e6c4df3092e243818a5185744836.html#a6f48e6c4df3092e243818a5185744836">00138</a> -(int) multiplierForUnitSelector:(NSPopUpButton*) theButton
-<a name="l00139"></a>00139 {
-<a name="l00140"></a>00140     <span class="keywordflow">if</span>([[theButton titleOfSelectedItem] isEqual:<span class="stringliteral">@&quot;Seconds&quot;</span>]) <span class="keywordflow">return</span> 1;
-<a name="l00141"></a>00141     <span class="keywordflow">if</span>([[theButton titleOfSelectedItem] isEqual:<span class="stringliteral">@&quot;Minutes&quot;</span>]) <span class="keywordflow">return</span> 1*60;
-<a name="l00142"></a>00142     <span class="keywordflow">if</span>([[theButton titleOfSelectedItem] isEqual:<span class="stringliteral">@&quot;Hours&quot;</span>]) <span class="keywordflow">return</span> 1*60*60;
-<a name="l00143"></a>00143     <span class="keywordflow">if</span>([[theButton titleOfSelectedItem] isEqual:<span class="stringliteral">@&quot;Days&quot;</span>]) <span class="keywordflow">return</span> 1*60*60*24;
-<a name="l00144"></a>00144     <span class="keywordflow">return</span> 0;
-<a name="l00145"></a>00145 }
-<a name="l00146"></a><a class="code" href="interface_t_m_document_a7fa17b92266b7cf083f3579d231977a3.html#a7fa17b92266b7cf083f3579d231977a3">00146</a> - (IBAction)dAddTask:(<span class="keywordtype">id</span>)sender
-<a name="l00147"></a>00147 {
-<a name="l00148"></a>00148 <span class="comment">//    NSLog(@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;, @&quot;Stub&quot;, NSStringFromClass([self class]), NSStringFromSelector(_cmd));</span>
-<a name="l00149"></a>00149 <span class="comment">//    NSLog(@&quot;SENDER: %@\n\n&quot;, sender);</span>
-<a name="l00150"></a>00150 <span class="comment">//    NSLog(@&quot;\n\tName: %@\n\tDescription: %@\n\tDue: %@&quot;,</span>
-<a name="l00151"></a>00151 <span class="comment">//          [dNewTaskName stringValue], [dNewTaskDescription string], [dNewTaskDueDate stringValue]);</span>
-<a name="l00152"></a>00152     printf(<span class="stringliteral">&quot;\nAdd Task\n&quot;</span>);
-<a name="l00153"></a>00153     NSTimeInterval timeMagnitude = [<a class="code" href="interface_t_m_document_a054855ca82083707d905719e9b99b5f1.html#a054855ca82083707d905719e9b99b5f1">dNewTaskDuration</a> doubleValue];
-<a name="l00154"></a>00154     <span class="keywordtype">int</span> timeUnits = [<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a6f48e6c4df3092e243818a5185744836.html#a6f48e6c4df3092e243818a5185744836">multiplierForUnitSelector</a>:dNewTaskTimeUnit];
-<a name="l00155"></a>00155     [<a class="code" href="interface_t_m_document_a4b60fe71abb4800ac8ed81eed3cf5e91.html#a4b60fe71abb4800ac8ed81eed3cf5e91">dTaskInProgress</a> setState:NO];
-<a name="l00156"></a>00156     [<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630">taskTracker</a> <a class="code" href="interface_c_s132_manager_ad6cda86592385271cd8abcf7017ee8fb.html#ad6cda86592385271cd8abcf7017ee8fb" title="Add a task with necessary task information.">addTaskWithName</a>:[<a class="code" href="interface_t_m_document_a840c1f38388715bce459c3eca3cac4b3.html#a840c1f38388715bce459c3eca3cac4b3">dNewTaskName</a> stringValue]
-<a name="l00157"></a>00157                   <a class="code" href="interface_c_s132_manager_ad6cda86592385271cd8abcf7017ee8fb.html#ad6cda86592385271cd8abcf7017ee8fb" title="Add a task with necessary task information.">andDescription</a>:[[<a class="code" href="interface_t_m_document_ac61ff044c04e7912ddb9028562c9f715.html#ac61ff044c04e7912ddb9028562c9f715">dNewTaskDescription</a> string] copy]
-<a name="l00158"></a>00158                           <a class="code" href="interface_c_s132_manager_ad6cda86592385271cd8abcf7017ee8fb.html#ad6cda86592385271cd8abcf7017ee8fb" title="Add a task with necessary task information.">andDue</a>:[<a class="code" href="interface_t_m_document_a0e4e0c8ce53324297e2e4fb86774ba71.html#a0e4e0c8ce53324297e2e4fb86774ba71">dNewTaskDueDate</a> dateValue]
-<a name="l00159"></a>00159                  <a class="code" href="interface_c_s132_manager_ad6cda86592385271cd8abcf7017ee8fb.html#ad6cda86592385271cd8abcf7017ee8fb" title="Add a task with necessary task information.">andTimeRequired</a>:timeMagnitude * timeUnits];
-<a name="l00160"></a>00160     [<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a610c3fb1762b5fffcafbd42efd352857.html#a610c3fb1762b5fffcafbd42efd352857">updateCurrentTaskDisplay</a>];
-<a name="l00161"></a>00161     [<a class="code" href="interface_t_m_document_a840c1f38388715bce459c3eca3cac4b3.html#a840c1f38388715bce459c3eca3cac4b3">dNewTaskName</a> setStringValue:@&quot;&quot;];
-<a name="l00162"></a>00162     [<a class="code" href="interface_t_m_document_ac61ff044c04e7912ddb9028562c9f715.html#ac61ff044c04e7912ddb9028562c9f715">dNewTaskDescription</a> setString:@&quot;&quot;];
-<a name="l00163"></a>00163     [<a class="code" href="interface_t_m_document_a054855ca82083707d905719e9b99b5f1.html#a054855ca82083707d905719e9b99b5f1">dNewTaskDuration</a> setIntValue:0];
-<a name="l00164"></a>00164 }
-<a name="l00165"></a>00165      
-<a name="l00166"></a><a class="code" href="interface_t_m_document_aede60a3222114b9be9cdda8eae94ca40.html#aede60a3222114b9be9cdda8eae94ca40">00166</a> - (IBAction)dUpdateTimeRemaining:(<span class="keywordtype">id</span>)sender 
-<a name="l00167"></a>00167 {
-<a name="l00168"></a>00168     printf(<span class="stringliteral">&quot;\nUpdate Time Remaining\n&quot;</span>);
-<a name="l00169"></a>00169     <a class="code" href="interface_c_s132_task.html">CS132Task</a>* previousTask = [<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630">taskTracker</a> <a class="code" href="interface_c_s132_manager_a5d7496204ad69073d0f27c597d441233.html#a5d7496204ad69073d0f27c597d441233" title="It represent CS132 pointer to the current top task of the heap.">topTask</a>];
-<a name="l00170"></a>00170     <span class="keywordtype">int</span> newTime = [<a class="code" href="interface_t_m_document_a9955166beb41d7deff7cb8f33d1cd950.html#a9955166beb41d7deff7cb8f33d1cd950">dCurrentTaskTimeRemaining</a> doubleValue] * [<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a0a64adc93a2316e159542bd1c8fa259d.html#a0a64adc93a2316e159542bd1c8fa259d">unitMultiplier</a>];
-<a name="l00171"></a>00171     [<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630">taskTracker</a> <a class="code" href="interface_c_s132_manager_af7af5f105b747483aa81f02577b1a69f.html#af7af5f105b747483aa81f02577b1a69f" title="Adjust remaining time to a new time remaining for topTask.">changeRemainingTimeTo</a>:newTime];
-<a name="l00172"></a>00172     <span class="keywordflow">if</span>([<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630">taskTracker</a> topTask] != previousTask) [<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a36efaf255be712c2f6ff19a7461d22bd.html#a36efaf255be712c2f6ff19a7461d22bd">stopWorkOnCurrentTask</a>];
-<a name="l00173"></a>00173     [<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a610c3fb1762b5fffcafbd42efd352857.html#a610c3fb1762b5fffcafbd42efd352857">updateCurrentTaskDisplay</a>];
-<a name="l00174"></a>00174 }
-<a name="l00175"></a>00175 
-<a name="l00176"></a><a class="code" href="interface_t_m_document_a610c3fb1762b5fffcafbd42efd352857.html#a610c3fb1762b5fffcafbd42efd352857">00176</a> -(void) <a class="code" href="interface_t_m_document_a610c3fb1762b5fffcafbd42efd352857.html#a610c3fb1762b5fffcafbd42efd352857">updateCurrentTaskDisplay</a>
-<a name="l00177"></a>00177 {
-<a name="l00178"></a>00178     <a class="code" href="interface_c_s132_task.html">CS132Task</a>* currentTask = [<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630">taskTracker</a> <a class="code" href="interface_c_s132_manager_a5d7496204ad69073d0f27c597d441233.html#a5d7496204ad69073d0f27c597d441233" title="It represent CS132 pointer to the current top task of the heap.">topTask</a>];
-<a name="l00179"></a>00179     <span class="keywordflow">if</span>(currentTask)
-<a name="l00180"></a>00180     {
-<a name="l00181"></a>00181         [<a class="code" href="interface_t_m_document_a4b60fe71abb4800ac8ed81eed3cf5e91.html#a4b60fe71abb4800ac8ed81eed3cf5e91">dTaskInProgress</a> setEnabled:YES];
-<a name="l00182"></a>00182         [<a class="code" href="interface_t_m_document_a9955166beb41d7deff7cb8f33d1cd950.html#a9955166beb41d7deff7cb8f33d1cd950">dCurrentTaskTimeRemaining</a> setEnabled:YES];
-<a name="l00183"></a>00183         [<a class="code" href="interface_t_m_document_ad77f6f5d694113eeb540701267308bdc.html#ad77f6f5d694113eeb540701267308bdc">dCurrentTaskName</a> setStringValue: [currentTask <a class="code" href="interface_c_s132_task_a8a8cfbf68d3666849068a3c12ddb530e.html#a8a8cfbf68d3666849068a3c12ddb530e" title="Name or Title of the task.">taskName</a>]];
-<a name="l00184"></a>00184         [<a class="code" href="interface_t_m_document_a42f2d6e56ca5a9829b53fe6e69d26a47.html#a42f2d6e56ca5a9829b53fe6e69d26a47">dCurrentTaskDescription</a> setString: [currentTask <a class="code" href="interface_c_s132_task_ad58f65c4131c9bd2ff864701f3fc2812.html#ad58f65c4131c9bd2ff864701f3fc2812" title="A textual description of the task or its details.">taskDescription</a>]];
-<a name="l00185"></a>00185         [<a class="code" href="interface_t_m_document_ace784700531a4104c71d6a284b46ef24.html#ace784700531a4104c71d6a284b46ef24">dCurrentTaskDateDue</a> setDateValue: [currentTask <a class="code" href="interface_c_s132_task_a580b64debb0b27061e686fdf3567a1b6.html#a580b64debb0b27061e686fdf3567a1b6" title="The date when the task is due.">dateDue</a>]];
-<a name="l00186"></a>00186         [<a class="code" href="interface_t_m_document_a0340f33a7627abdcda26e36982145328.html#a0340f33a7627abdcda26e36982145328">dCurrentTaskDateEntered</a> setDateValue: [currentTask <a class="code" href="interface_c_s132_task_a09ad0124856e996f59d47b41f081cc5e.html#a09ad0124856e996f59d47b41f081cc5e" title="Date the task was created.">dateCreated</a>]];
-<a name="l00187"></a>00187         [<a class="code" href="interface_t_m_document_af070986feb7c9e2c9877262b1a46fe68.html#af070986feb7c9e2c9877262b1a46fe68">dCurrentTaskTimeSpent</a> setDoubleValue: [currentTask <a class="code" href="interface_c_s132_task_ac780519437dad9335b26cec9582643a5.html#ac780519437dad9335b26cec9582643a5" title="Amount of work-time that has been spent on the task so far.">timeSpent</a>]/[<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a0a64adc93a2316e159542bd1c8fa259d.html#a0a64adc93a2316e159542bd1c8fa259d">unitMultiplier</a>]];
-<a name="l00188"></a>00188         [<a class="code" href="interface_t_m_document_a9955166beb41d7deff7cb8f33d1cd950.html#a9955166beb41d7deff7cb8f33d1cd950">dCurrentTaskTimeRemaining</a> setDoubleValue: [currentTask <a class="code" href="interface_c_s132_task_aa42785b1cd6f0f504d91a6c39a27c9a2.html#aa42785b1cd6f0f504d91a6c39a27c9a2" title="Amount of remaining work-time currently forecast before the task will be completed.">timeRemaining</a>]/[<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a0a64adc93a2316e159542bd1c8fa259d.html#a0a64adc93a2316e159542bd1c8fa259d">unitMultiplier</a>]];
-<a name="l00189"></a>00189         
-<a name="l00190"></a>00190         <span class="keywordflow">if</span>([currentTask timeRemaining]&lt;0)
-<a name="l00191"></a>00191         {
-<a name="l00192"></a>00192             [<a class="code" href="interface_t_m_document_a1c242af51a55d7daf71790287f300304.html#a1c242af51a55d7daf71790287f300304">dCurrentTaskCompletion</a> setIndeterminate:YES];
-<a name="l00193"></a>00193             [<a class="code" href="interface_t_m_document_a1c242af51a55d7daf71790287f300304.html#a1c242af51a55d7daf71790287f300304">dCurrentTaskCompletion</a> startAnimation:self];
-<a name="l00194"></a>00194         } <span class="keywordflow">else</span> {
-<a name="l00195"></a>00195             [<a class="code" href="interface_t_m_document_a1c242af51a55d7daf71790287f300304.html#a1c242af51a55d7daf71790287f300304">dCurrentTaskCompletion</a> setIndeterminate:NO];
-<a name="l00196"></a>00196             [<a class="code" href="interface_t_m_document_a1c242af51a55d7daf71790287f300304.html#a1c242af51a55d7daf71790287f300304">dCurrentTaskCompletion</a> setDoubleValue: (double)[currentTask <a class="code" href="interface_c_s132_task_a84862ca83e6adbd32f02cc5e95cb3ef6.html#a84862ca83e6adbd32f02cc5e95cb3ef6" title="Computes the time in progress from start to finish.">progressOfCompletionFrom</a>:0 <a class="code" href="interface_c_s132_task_a84862ca83e6adbd32f02cc5e95cb3ef6.html#a84862ca83e6adbd32f02cc5e95cb3ef6" title="Computes the time in progress from start to finish.">to</a>:100]];
-<a name="l00197"></a>00197         }
-<a name="l00198"></a>00198 
-<a name="l00199"></a>00199         <span class="keywordflow">if</span>([[currentTask dateDue] compare:[NSDate date]]==NSOrderedAscending)
-<a name="l00200"></a>00200         {
-<a name="l00201"></a>00201             [<a class="code" href="interface_t_m_document_a32b747dadc236b7a650f0b3253ef03b5.html#a32b747dadc236b7a650f0b3253ef03b5">dCurrentTaskDateProgress</a> setIndeterminate:YES];
-<a name="l00202"></a>00202             [<a class="code" href="interface_t_m_document_a32b747dadc236b7a650f0b3253ef03b5.html#a32b747dadc236b7a650f0b3253ef03b5">dCurrentTaskDateProgress</a> startAnimation:self];
-<a name="l00203"></a>00203         } <span class="keywordflow">else</span> {
-<a name="l00204"></a>00204             [<a class="code" href="interface_t_m_document_a32b747dadc236b7a650f0b3253ef03b5.html#a32b747dadc236b7a650f0b3253ef03b5">dCurrentTaskDateProgress</a> setIndeterminate:NO];
-<a name="l00205"></a>00205             [<a class="code" href="interface_t_m_document_a32b747dadc236b7a650f0b3253ef03b5.html#a32b747dadc236b7a650f0b3253ef03b5">dCurrentTaskDateProgress</a> setDoubleValue: (double)[currentTask <a class="code" href="interface_c_s132_task_a30da4f4f532bb33c104cd1da88438ee2.html#a30da4f4f532bb33c104cd1da88438ee2" title="Computes the progress of the date from start to finish.">progressOfDateFrom</a>:0 <a class="code" href="interface_c_s132_task_a30da4f4f532bb33c104cd1da88438ee2.html#a30da4f4f532bb33c104cd1da88438ee2" title="Computes the progress of the date from start to finish.">to</a>:100]];
-<a name="l00206"></a>00206         }
-<a name="l00207"></a>00207 
-<a name="l00208"></a>00208     } <span class="keywordflow">else</span> {
-<a name="l00209"></a>00209         [<a class="code" href="interface_t_m_document_a4b60fe71abb4800ac8ed81eed3cf5e91.html#a4b60fe71abb4800ac8ed81eed3cf5e91">dTaskInProgress</a> setEnabled:NO];
-<a name="l00210"></a>00210         [<a class="code" href="interface_t_m_document_a9955166beb41d7deff7cb8f33d1cd950.html#a9955166beb41d7deff7cb8f33d1cd950">dCurrentTaskTimeRemaining</a> setEnabled:NO];
-<a name="l00211"></a>00211         [<a class="code" href="interface_t_m_document_ad77f6f5d694113eeb540701267308bdc.html#ad77f6f5d694113eeb540701267308bdc">dCurrentTaskName</a> setStringValue:@&quot;No Task&quot;];
-<a name="l00212"></a>00212         [<a class="code" href="interface_t_m_document_a42f2d6e56ca5a9829b53fe6e69d26a47.html#a42f2d6e56ca5a9829b53fe6e69d26a47">dCurrentTaskDescription</a> setString:@&quot;&quot;];
-<a name="l00213"></a>00213         [<a class="code" href="interface_t_m_document_ace784700531a4104c71d6a284b46ef24.html#ace784700531a4104c71d6a284b46ef24">dCurrentTaskDateDue</a> setDateValue: [NSDate date]];
-<a name="l00214"></a>00214         [<a class="code" href="interface_t_m_document_a0340f33a7627abdcda26e36982145328.html#a0340f33a7627abdcda26e36982145328">dCurrentTaskDateEntered</a> setDateValue: [NSDate date]];
-<a name="l00215"></a>00215         [<a class="code" href="interface_t_m_document_af070986feb7c9e2c9877262b1a46fe68.html#af070986feb7c9e2c9877262b1a46fe68">dCurrentTaskTimeSpent</a> setIntValue:0];
-<a name="l00216"></a>00216         [<a class="code" href="interface_t_m_document_a9955166beb41d7deff7cb8f33d1cd950.html#a9955166beb41d7deff7cb8f33d1cd950">dCurrentTaskTimeRemaining</a> setIntValue:0];    
-<a name="l00217"></a>00217         [<a class="code" href="interface_t_m_document_a32b747dadc236b7a650f0b3253ef03b5.html#a32b747dadc236b7a650f0b3253ef03b5">dCurrentTaskDateProgress</a> setIndeterminate:YES];
-<a name="l00218"></a>00218         [<a class="code" href="interface_t_m_document_a1c242af51a55d7daf71790287f300304.html#a1c242af51a55d7daf71790287f300304">dCurrentTaskCompletion</a> setIndeterminate:YES];
-<a name="l00219"></a>00219         [<a class="code" href="interface_t_m_document_a32b747dadc236b7a650f0b3253ef03b5.html#a32b747dadc236b7a650f0b3253ef03b5">dCurrentTaskDateProgress</a> stopAnimation:self];
-<a name="l00220"></a>00220         [<a class="code" href="interface_t_m_document_a1c242af51a55d7daf71790287f300304.html#a1c242af51a55d7daf71790287f300304">dCurrentTaskCompletion</a> stopAnimation:self];
-<a name="l00221"></a>00221         [<a class="code" href="interface_t_m_document_a4b60fe71abb4800ac8ed81eed3cf5e91.html#a4b60fe71abb4800ac8ed81eed3cf5e91">dTaskInProgress</a> setState:0]; <span class="comment">//Turn off checkbox</span>
-<a name="l00222"></a>00222     }
-<a name="l00223"></a>00223     [<a class="code" href="interface_t_m_document_a30fbe3828a4ab82ebca94c52ae65ab6d.html#a30fbe3828a4ab82ebca94c52ae65ab6d">dTasksRemaining</a> setIntValue:[<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630">taskTracker</a> <a class="code" href="interface_c_s132_manager_a3cb78bf1a26a76ef98b251c549286db4.html#a3cb78bf1a26a76ef98b251c549286db4" title="Count how many task there are to do.">countTasksToDo</a>]];
-<a name="l00224"></a>00224     
+<a name="l00049"></a>00049         [<span class="keyword">self</span> setTaskTracker: [[<a class="code" href="interface_c_s132_manager.html" title="Tracks completed, current, and to-do tasks.">CS132Manager</a> alloc] init]];
+<a name="l00050"></a>00050     }
+<a name="l00051"></a>00051     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00052"></a>00052 }
+<a name="l00053"></a>00053 
+<a name="l00054"></a><a class="code" href="interface_t_m_document_a8c11c2179b4571063ed066a367423199.html#a8c11c2179b4571063ed066a367423199">00054</a> - (NSString *)<a class="code" href="interface_t_m_document_a8c11c2179b4571063ed066a367423199.html#a8c11c2179b4571063ed066a367423199">windowNibName</a>
+<a name="l00055"></a>00055 {
+<a name="l00056"></a>00056     <span class="comment">// Override returning the nib file name of the document</span>
+<a name="l00057"></a>00057     <span class="comment">// If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this method and override -makeWindowControllers instead.</span>
+<a name="l00058"></a>00058     <span class="keywordflow">return</span> <span class="stringliteral">@&quot;TMDocument&quot;</span>;
+<a name="l00059"></a>00059 }
+<a name="l00060"></a>00060 
+<a name="l00061"></a><a class="code" href="interface_t_m_document_a1e5db77b55078111e5bcecd07da55a39.html#a1e5db77b55078111e5bcecd07da55a39">00061</a> - (void)windowControllerDidLoadNib:(NSWindowController *)aController
+<a name="l00062"></a>00062 {
+<a name="l00063"></a>00063     [<span class="keyword">super</span> windowControllerDidLoadNib:aController];
+<a name="l00064"></a>00064     <span class="comment">// Add any code here that needs to be executed once the windowController has loaded the document&#39;s window.</span>
+<a name="l00065"></a>00065     [<a class="code" href="interface_t_m_document_a0e4e0c8ce53324297e2e4fb86774ba71.html#a0e4e0c8ce53324297e2e4fb86774ba71" title="Date field for entry of deadline of a new task.">dNewTaskDueDate</a> setDateValue:[NSDate date]];
+<a name="l00066"></a>00066     [<span class="keyword">self</span> setUnitMultiplier:[<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a6f48e6c4df3092e243818a5185744836.html#a6f48e6c4df3092e243818a5185744836" title="Utility function for converting time units based on user preference.">multiplierForUnitSelector</a>:dCurrentTaskTimeUnits]];
+<a name="l00067"></a>00067     [<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a610c3fb1762b5fffcafbd42efd352857.html#a610c3fb1762b5fffcafbd42efd352857" title="Refresh all the information in the &#39;current task&#39; tab to reflect current top task.">updateCurrentTaskDisplay</a>];
+<a name="l00068"></a>00068 }
+<a name="l00069"></a>00069 
+<a name="l00070"></a><a class="code" href="interface_t_m_document_a27471c24dda704e08ce5625df224e986.html#a27471c24dda704e08ce5625df224e986">00070</a> - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
+<a name="l00071"></a>00071 {
+<a name="l00072"></a>00072     <span class="comment">/*</span>
+<a name="l00073"></a>00073 <span class="comment">     Insert code here to write your document to data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning nil.</span>
+<a name="l00074"></a>00074 <span class="comment">    You can also choose to override -fileWrapperOfType:error:, -writeToURL:ofType:error:, or -writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.</span>
+<a name="l00075"></a>00075 <span class="comment">    */</span>
+<a name="l00076"></a>00076     NSException *exception = [NSException exceptionWithName:@&quot;UnimplementedMethod&quot; reason:[NSString stringWithFormat:@&quot;%@ is unimplemented&quot;, NSStringFromSelector(_cmd)] userInfo:nil];
+<a name="l00077"></a>00077     <span class="keyword">@throw</span> exception;
+<a name="l00078"></a>00078     <span class="keywordflow">return</span> nil;
+<a name="l00079"></a>00079 }
+<a name="l00080"></a>00080 
+<a name="l00081"></a><a class="code" href="interface_t_m_document_af1ba070561656fbdf1c17812c858d09b.html#af1ba070561656fbdf1c17812c858d09b">00081</a> - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
+<a name="l00082"></a>00082 {
+<a name="l00083"></a>00083     <span class="comment">/*</span>
+<a name="l00084"></a>00084 <span class="comment">    Insert code here to read your document from the given data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning NO.</span>
+<a name="l00085"></a>00085 <span class="comment">    You can also choose to override -readFromFileWrapper:ofType:error: or -readFromURL:ofType:error: instead.</span>
+<a name="l00086"></a>00086 <span class="comment">    If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.</span>
+<a name="l00087"></a>00087 <span class="comment">    */</span>
+<a name="l00088"></a>00088     NSException *exception = [NSException exceptionWithName:@&quot;UnimplementedMethod&quot; reason:[NSString stringWithFormat:@&quot;%@ is unimplemented&quot;, NSStringFromSelector(_cmd)] userInfo:nil];
+<a name="l00089"></a>00089     <span class="keyword">@throw</span> exception;
+<a name="l00090"></a>00090     <span class="keywordflow">return</span> YES;
+<a name="l00091"></a>00091 }
+<a name="l00092"></a>00092 
+<a name="l00093"></a><a class="code" href="interface_t_m_document_a7189665ab090042924ae71df8995549c.html#a7189665ab090042924ae71df8995549c">00093</a> + (BOOL)<a class="code" href="interface_t_m_document_a7189665ab090042924ae71df8995549c.html#a7189665ab090042924ae71df8995549c">autosavesInPlace</a>
+<a name="l00094"></a>00094 {
+<a name="l00095"></a>00095     <span class="keywordflow">return</span> NO;
+<a name="l00096"></a>00096 }
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098 <span class="preprocessor">#pragma mark User Interface Methods</span>
+<a name="l00099"></a><a class="code" href="interface_t_m_document_ab1a27882dee2939d278f801045a6cca8.html#ab1a27882dee2939d278f801045a6cca8">00099</a> <span class="preprocessor"></span>- (IBAction)dChangeOfUnits:(<span class="keywordtype">id</span>)sender
+<a name="l00100"></a>00100 {
+<a name="l00101"></a>00101     [<span class="keyword">self</span> setUnitMultiplier:[<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a6f48e6c4df3092e243818a5185744836.html#a6f48e6c4df3092e243818a5185744836" title="Utility function for converting time units based on user preference.">multiplierForUnitSelector</a>:sender]];
+<a name="l00102"></a>00102     [<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a610c3fb1762b5fffcafbd42efd352857.html#a610c3fb1762b5fffcafbd42efd352857" title="Refresh all the information in the &#39;current task&#39; tab to reflect current top task.">updateCurrentTaskDisplay</a>];
+<a name="l00103"></a>00103 }
+<a name="l00104"></a><a class="code" href="interface_t_m_document_a3da833174a15d573c3fb95367b2a0115.html#a3da833174a15d573c3fb95367b2a0115">00104</a> - (IBAction)dChangeTaskActivity:(<span class="keywordtype">id</span>)sender
+<a name="l00105"></a>00105 {
+<a name="l00106"></a>00106     printf(<span class="stringliteral">&quot;\nChange Task Activity\n&quot;</span>);
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108     <span class="keywordflow">if</span>(![sender state]) <span class="comment">//Stopped working</span>
+<a name="l00109"></a>00109     {
+<a name="l00110"></a>00110         <span class="keywordtype">int</span> newTime = [<a class="code" href="interface_t_m_document_a9955166beb41d7deff7cb8f33d1cd950.html#a9955166beb41d7deff7cb8f33d1cd950" title="Number box to display current task&#39;s time remaining.">dCurrentTaskTimeRemaining</a> intValue];
+<a name="l00111"></a>00111         [<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630" title="The task-tracking brains of the operation.">taskTracker</a> <a class="code" href="interface_c_s132_manager_af7af5f105b747483aa81f02577b1a69f.html#af7af5f105b747483aa81f02577b1a69f" title="Adjust remaining time to a new time remaining for topTask.">changeRemainingTimeTo</a>:newTime];
+<a name="l00112"></a>00112         [<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a36efaf255be712c2f6ff19a7461d22bd.html#a36efaf255be712c2f6ff19a7461d22bd" title="Stop the timer and force the Task Manager to check its top entry.">stopWorkOnCurrentTask</a>];
+<a name="l00113"></a>00113     } <span class="keywordflow">else</span> {
+<a name="l00114"></a>00114         ticker = [NSTimer scheduledTimerWithTimeInterval:TICK_SIZE
+<a name="l00115"></a>00115                                                   target:self 
+<a name="l00116"></a>00116                                                 selector:@selector(workTicker:)
+<a name="l00117"></a>00117                                                 userInfo:nil
+<a name="l00118"></a>00118                                                  repeats:YES];
+<a name="l00119"></a>00119     }
+<a name="l00120"></a>00120     [<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a610c3fb1762b5fffcafbd42efd352857.html#a610c3fb1762b5fffcafbd42efd352857" title="Refresh all the information in the &#39;current task&#39; tab to reflect current top task.">updateCurrentTaskDisplay</a>];
+<a name="l00121"></a>00121 }
+<a name="l00122"></a>00122 
+<a name="l00123"></a><a class="code" href="interface_t_m_document_a36efaf255be712c2f6ff19a7461d22bd.html#a36efaf255be712c2f6ff19a7461d22bd">00123</a> -(void)<a class="code" href="interface_t_m_document_a36efaf255be712c2f6ff19a7461d22bd.html#a36efaf255be712c2f6ff19a7461d22bd" title="Stop the timer and force the Task Manager to check its top entry.">stopWorkOnCurrentTask</a>
+<a name="l00124"></a>00124 {
+<a name="l00125"></a>00125     [<a class="code" href="interface_t_m_document_a4b60fe71abb4800ac8ed81eed3cf5e91.html#a4b60fe71abb4800ac8ed81eed3cf5e91" title="Checkbox for user to indicate when they are actively working on current task.">dTaskInProgress</a> setState:0]; <span class="comment">//in case it wasn&#39;t already</span>
+<a name="l00126"></a>00126     <span class="keywordflow">if</span>(ticker)
+<a name="l00127"></a>00127     {
+<a name="l00128"></a>00128         [ticker invalidate];
+<a name="l00129"></a>00129         ticker=nil;
+<a name="l00130"></a>00130     }
+<a name="l00131"></a>00131     [<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630" title="The task-tracking brains of the operation.">taskTracker</a> <a class="code" href="interface_c_s132_manager_aa521edc7a88f12e4d3e188407f960d98.html#aa521edc7a88f12e4d3e188407f960d98">fixTopTask</a>];
+<a name="l00132"></a>00132 }
+<a name="l00133"></a>00133 
+<a name="l00134"></a><a class="code" href="interface_t_m_document_a6f48e6c4df3092e243818a5185744836.html#a6f48e6c4df3092e243818a5185744836">00134</a> -(int) multiplierForUnitSelector:(NSPopUpButton*) theButton
+<a name="l00135"></a>00135 {
+<a name="l00136"></a>00136     <span class="keywordflow">if</span>([[theButton titleOfSelectedItem] isEqual:<span class="stringliteral">@&quot;Seconds&quot;</span>]) <span class="keywordflow">return</span> 1;
+<a name="l00137"></a>00137     <span class="keywordflow">if</span>([[theButton titleOfSelectedItem] isEqual:<span class="stringliteral">@&quot;Minutes&quot;</span>]) <span class="keywordflow">return</span> 1*60;
+<a name="l00138"></a>00138     <span class="keywordflow">if</span>([[theButton titleOfSelectedItem] isEqual:<span class="stringliteral">@&quot;Hours&quot;</span>]) <span class="keywordflow">return</span> 1*60*60;
+<a name="l00139"></a>00139     <span class="keywordflow">if</span>([[theButton titleOfSelectedItem] isEqual:<span class="stringliteral">@&quot;Days&quot;</span>]) <span class="keywordflow">return</span> 1*60*60*24;
+<a name="l00140"></a>00140     <span class="keywordflow">return</span> 0;
+<a name="l00141"></a>00141 }
+<a name="l00142"></a><a class="code" href="interface_t_m_document_a7fa17b92266b7cf083f3579d231977a3.html#a7fa17b92266b7cf083f3579d231977a3">00142</a> - (IBAction)dAddTask:(<span class="keywordtype">id</span>)sender
+<a name="l00143"></a>00143 {
+<a name="l00144"></a>00144     printf(<span class="stringliteral">&quot;\nAdd Task\n&quot;</span>);
+<a name="l00145"></a>00145     NSTimeInterval timeMagnitude = [<a class="code" href="interface_t_m_document_a054855ca82083707d905719e9b99b5f1.html#a054855ca82083707d905719e9b99b5f1" title="Number box for entry of time estimate of a new task.">dNewTaskDuration</a> doubleValue];
+<a name="l00146"></a>00146     <span class="keywordtype">int</span> timeUnits = [<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a6f48e6c4df3092e243818a5185744836.html#a6f48e6c4df3092e243818a5185744836" title="Utility function for converting time units based on user preference.">multiplierForUnitSelector</a>:dNewTaskTimeUnit];
+<a name="l00147"></a>00147     [<a class="code" href="interface_t_m_document_a4b60fe71abb4800ac8ed81eed3cf5e91.html#a4b60fe71abb4800ac8ed81eed3cf5e91" title="Checkbox for user to indicate when they are actively working on current task.">dTaskInProgress</a> setState:NO];
+<a name="l00148"></a>00148     [<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630" title="The task-tracking brains of the operation.">taskTracker</a> <a class="code" href="interface_c_s132_manager_ad6cda86592385271cd8abcf7017ee8fb.html#ad6cda86592385271cd8abcf7017ee8fb" title="Add a task with necessary task information.">addTaskWithName</a>:[<a class="code" href="interface_t_m_document_a840c1f38388715bce459c3eca3cac4b3.html#a840c1f38388715bce459c3eca3cac4b3" title="Text box for entry of name of a new task.">dNewTaskName</a> stringValue]
+<a name="l00149"></a>00149                   <a class="code" href="interface_c_s132_manager_ad6cda86592385271cd8abcf7017ee8fb.html#ad6cda86592385271cd8abcf7017ee8fb" title="Add a task with necessary task information.">andDescription</a>:[[<a class="code" href="interface_t_m_document_ac61ff044c04e7912ddb9028562c9f715.html#ac61ff044c04e7912ddb9028562c9f715" title="Text box for entry of description of a new task.">dNewTaskDescription</a> string] copy]
+<a name="l00150"></a>00150                           <a class="code" href="interface_c_s132_manager_ad6cda86592385271cd8abcf7017ee8fb.html#ad6cda86592385271cd8abcf7017ee8fb" title="Add a task with necessary task information.">andDue</a>:[<a class="code" href="interface_t_m_document_a0e4e0c8ce53324297e2e4fb86774ba71.html#a0e4e0c8ce53324297e2e4fb86774ba71" title="Date field for entry of deadline of a new task.">dNewTaskDueDate</a> dateValue]
+<a name="l00151"></a>00151                  <a class="code" href="interface_c_s132_manager_ad6cda86592385271cd8abcf7017ee8fb.html#ad6cda86592385271cd8abcf7017ee8fb" title="Add a task with necessary task information.">andTimeRequired</a>:timeMagnitude * timeUnits];
+<a name="l00152"></a>00152     [<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a610c3fb1762b5fffcafbd42efd352857.html#a610c3fb1762b5fffcafbd42efd352857" title="Refresh all the information in the &#39;current task&#39; tab to reflect current top task.">updateCurrentTaskDisplay</a>];
+<a name="l00153"></a>00153     [<a class="code" href="interface_t_m_document_a840c1f38388715bce459c3eca3cac4b3.html#a840c1f38388715bce459c3eca3cac4b3" title="Text box for entry of name of a new task.">dNewTaskName</a> setStringValue:@&quot;&quot;];
+<a name="l00154"></a>00154     [<a class="code" href="interface_t_m_document_ac61ff044c04e7912ddb9028562c9f715.html#ac61ff044c04e7912ddb9028562c9f715" title="Text box for entry of description of a new task.">dNewTaskDescription</a> setString:@&quot;&quot;];
+<a name="l00155"></a>00155     [<a class="code" href="interface_t_m_document_a054855ca82083707d905719e9b99b5f1.html#a054855ca82083707d905719e9b99b5f1" title="Number box for entry of time estimate of a new task.">dNewTaskDuration</a> setIntValue:0];
+<a name="l00156"></a>00156 }
+<a name="l00157"></a>00157      
+<a name="l00158"></a><a class="code" href="interface_t_m_document_aede60a3222114b9be9cdda8eae94ca40.html#aede60a3222114b9be9cdda8eae94ca40">00158</a> - (IBAction)dUpdateTimeRemaining:(<span class="keywordtype">id</span>)sender 
+<a name="l00159"></a>00159 {
+<a name="l00160"></a>00160     printf(<span class="stringliteral">&quot;\nUpdate Time Remaining\n&quot;</span>);
+<a name="l00161"></a>00161     <a class="code" href="interface_c_s132_task.html" title="Represents a completable task, with description, time estimates, and relevant dates.">CS132Task</a>* previousTask = [<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630" title="The task-tracking brains of the operation.">taskTracker</a> <a class="code" href="interface_c_s132_manager_a5d7496204ad69073d0f27c597d441233.html#a5d7496204ad69073d0f27c597d441233" title="It represent CS132 pointer to the current top task of the heap.">topTask</a>];
+<a name="l00162"></a>00162     <span class="keywordtype">int</span> newTime = [<a class="code" href="interface_t_m_document_a9955166beb41d7deff7cb8f33d1cd950.html#a9955166beb41d7deff7cb8f33d1cd950" title="Number box to display current task&#39;s time remaining.">dCurrentTaskTimeRemaining</a> doubleValue] * [<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a0a64adc93a2316e159542bd1c8fa259d.html#a0a64adc93a2316e159542bd1c8fa259d" title="The currently active unit multiplication factor.">unitMultiplier</a>];
+<a name="l00163"></a>00163     [<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630" title="The task-tracking brains of the operation.">taskTracker</a> <a class="code" href="interface_c_s132_manager_af7af5f105b747483aa81f02577b1a69f.html#af7af5f105b747483aa81f02577b1a69f" title="Adjust remaining time to a new time remaining for topTask.">changeRemainingTimeTo</a>:newTime];
+<a name="l00164"></a>00164     <span class="keywordflow">if</span>([<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630" title="The task-tracking brains of the operation.">taskTracker</a> topTask] != previousTask) [<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a36efaf255be712c2f6ff19a7461d22bd.html#a36efaf255be712c2f6ff19a7461d22bd" title="Stop the timer and force the Task Manager to check its top entry.">stopWorkOnCurrentTask</a>];
+<a name="l00165"></a>00165     [<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a610c3fb1762b5fffcafbd42efd352857.html#a610c3fb1762b5fffcafbd42efd352857" title="Refresh all the information in the &#39;current task&#39; tab to reflect current top task.">updateCurrentTaskDisplay</a>];
+<a name="l00166"></a>00166 }
+<a name="l00167"></a>00167 
+<a name="l00168"></a><a class="code" href="interface_t_m_document_a610c3fb1762b5fffcafbd42efd352857.html#a610c3fb1762b5fffcafbd42efd352857">00168</a> -(void) <a class="code" href="interface_t_m_document_a610c3fb1762b5fffcafbd42efd352857.html#a610c3fb1762b5fffcafbd42efd352857" title="Refresh all the information in the &#39;current task&#39; tab to reflect current top task.">updateCurrentTaskDisplay</a>
+<a name="l00169"></a>00169 {
+<a name="l00170"></a>00170     <a class="code" href="interface_c_s132_task.html" title="Represents a completable task, with description, time estimates, and relevant dates.">CS132Task</a>* currentTask = [<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630" title="The task-tracking brains of the operation.">taskTracker</a> <a class="code" href="interface_c_s132_manager_a5d7496204ad69073d0f27c597d441233.html#a5d7496204ad69073d0f27c597d441233" title="It represent CS132 pointer to the current top task of the heap.">topTask</a>];
+<a name="l00171"></a>00171     <span class="keywordflow">if</span>(currentTask)
+<a name="l00172"></a>00172     {
+<a name="l00173"></a>00173         [<a class="code" href="interface_t_m_document_a4b60fe71abb4800ac8ed81eed3cf5e91.html#a4b60fe71abb4800ac8ed81eed3cf5e91" title="Checkbox for user to indicate when they are actively working on current task.">dTaskInProgress</a> setEnabled:YES];
+<a name="l00174"></a>00174         [<a class="code" href="interface_t_m_document_a9955166beb41d7deff7cb8f33d1cd950.html#a9955166beb41d7deff7cb8f33d1cd950" title="Number box to display current task&#39;s time remaining.">dCurrentTaskTimeRemaining</a> setEnabled:YES];
+<a name="l00175"></a>00175         [<a class="code" href="interface_t_m_document_ad77f6f5d694113eeb540701267308bdc.html#ad77f6f5d694113eeb540701267308bdc" title="Text box to display current task&#39;s name.">dCurrentTaskName</a> setStringValue: [currentTask <a class="code" href="interface_c_s132_task_a8a8cfbf68d3666849068a3c12ddb530e.html#a8a8cfbf68d3666849068a3c12ddb530e" title="Name or Title of the task.">taskName</a>]];
+<a name="l00176"></a>00176         [<a class="code" href="interface_t_m_document_a42f2d6e56ca5a9829b53fe6e69d26a47.html#a42f2d6e56ca5a9829b53fe6e69d26a47" title="Text box to display current task&#39;s description.">dCurrentTaskDescription</a> setString: [currentTask <a class="code" href="interface_c_s132_task_ad58f65c4131c9bd2ff864701f3fc2812.html#ad58f65c4131c9bd2ff864701f3fc2812" title="A textual description of the task or its details.">taskDescription</a>]];
+<a name="l00177"></a>00177         [<a class="code" href="interface_t_m_document_ace784700531a4104c71d6a284b46ef24.html#ace784700531a4104c71d6a284b46ef24" title="Date field for current task&#39;s deadline.">dCurrentTaskDateDue</a> setDateValue: [currentTask <a class="code" href="interface_c_s132_task_a580b64debb0b27061e686fdf3567a1b6.html#a580b64debb0b27061e686fdf3567a1b6" title="The date when the task is due.">dateDue</a>]];
+<a name="l00178"></a>00178         [<a class="code" href="interface_t_m_document_a0340f33a7627abdcda26e36982145328.html#a0340f33a7627abdcda26e36982145328" title="Date field for current task&#39;s date of creation.">dCurrentTaskDateEntered</a> setDateValue: [currentTask <a class="code" href="interface_c_s132_task_a09ad0124856e996f59d47b41f081cc5e.html#a09ad0124856e996f59d47b41f081cc5e" title="Date the task was created.">dateCreated</a>]];
+<a name="l00179"></a>00179         [<a class="code" href="interface_t_m_document_af070986feb7c9e2c9877262b1a46fe68.html#af070986feb7c9e2c9877262b1a46fe68" title="Number box to display time spent so far on current task.">dCurrentTaskTimeSpent</a> setDoubleValue: [currentTask <a class="code" href="interface_c_s132_task_ac780519437dad9335b26cec9582643a5.html#ac780519437dad9335b26cec9582643a5" title="Amount of work-time that has been spent on the task so far.">timeSpent</a>]/[<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a0a64adc93a2316e159542bd1c8fa259d.html#a0a64adc93a2316e159542bd1c8fa259d" title="The currently active unit multiplication factor.">unitMultiplier</a>]];
+<a name="l00180"></a>00180         [<a class="code" href="interface_t_m_document_a9955166beb41d7deff7cb8f33d1cd950.html#a9955166beb41d7deff7cb8f33d1cd950" title="Number box to display current task&#39;s time remaining.">dCurrentTaskTimeRemaining</a> setDoubleValue: [currentTask <a class="code" href="interface_c_s132_task_aa42785b1cd6f0f504d91a6c39a27c9a2.html#aa42785b1cd6f0f504d91a6c39a27c9a2" title="Amount of remaining work-time currently forecast before the task will be completed.">timeRemaining</a>]/[<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a0a64adc93a2316e159542bd1c8fa259d.html#a0a64adc93a2316e159542bd1c8fa259d" title="The currently active unit multiplication factor.">unitMultiplier</a>]];
+<a name="l00181"></a>00181         
+<a name="l00182"></a>00182         <span class="keywordflow">if</span>([currentTask timeRemaining]&lt;0)
+<a name="l00183"></a>00183         {
+<a name="l00184"></a>00184             [<a class="code" href="interface_t_m_document_a1c242af51a55d7daf71790287f300304.html#a1c242af51a55d7daf71790287f300304" title="Progress bar to show (time spent:time remaining)">dCurrentTaskCompletion</a> setIndeterminate:YES];
+<a name="l00185"></a>00185             [<a class="code" href="interface_t_m_document_a1c242af51a55d7daf71790287f300304.html#a1c242af51a55d7daf71790287f300304" title="Progress bar to show (time spent:time remaining)">dCurrentTaskCompletion</a> startAnimation:self];
+<a name="l00186"></a>00186         } <span class="keywordflow">else</span> {
+<a name="l00187"></a>00187             [<a class="code" href="interface_t_m_document_a1c242af51a55d7daf71790287f300304.html#a1c242af51a55d7daf71790287f300304" title="Progress bar to show (time spent:time remaining)">dCurrentTaskCompletion</a> setIndeterminate:NO];
+<a name="l00188"></a>00188             [<a class="code" href="interface_t_m_document_a1c242af51a55d7daf71790287f300304.html#a1c242af51a55d7daf71790287f300304" title="Progress bar to show (time spent:time remaining)">dCurrentTaskCompletion</a> setDoubleValue: (double)[currentTask <a class="code" href="interface_c_s132_task_a84862ca83e6adbd32f02cc5e95cb3ef6.html#a84862ca83e6adbd32f02cc5e95cb3ef6" title="Computes the time in progress from start to finish.">progressOfCompletionFrom</a>:0 <a class="code" href="interface_c_s132_task_a84862ca83e6adbd32f02cc5e95cb3ef6.html#a84862ca83e6adbd32f02cc5e95cb3ef6" title="Computes the time in progress from start to finish.">to</a>:100]];
+<a name="l00189"></a>00189         }
+<a name="l00190"></a>00190 
+<a name="l00191"></a>00191         <span class="keywordflow">if</span>([[currentTask dateDue] compare:[NSDate date]]==NSOrderedAscending)
+<a name="l00192"></a>00192         {
+<a name="l00193"></a>00193             [<a class="code" href="interface_t_m_document_a32b747dadc236b7a650f0b3253ef03b5.html#a32b747dadc236b7a650f0b3253ef03b5" title="Progress bar to show (time since start date:time until end date)">dCurrentTaskDateProgress</a> setIndeterminate:YES];
+<a name="l00194"></a>00194             [<a class="code" href="interface_t_m_document_a32b747dadc236b7a650f0b3253ef03b5.html#a32b747dadc236b7a650f0b3253ef03b5" title="Progress bar to show (time since start date:time until end date)">dCurrentTaskDateProgress</a> startAnimation:self];
+<a name="l00195"></a>00195         } <span class="keywordflow">else</span> {
+<a name="l00196"></a>00196             [<a class="code" href="interface_t_m_document_a32b747dadc236b7a650f0b3253ef03b5.html#a32b747dadc236b7a650f0b3253ef03b5" title="Progress bar to show (time since start date:time until end date)">dCurrentTaskDateProgress</a> setIndeterminate:NO];
+<a name="l00197"></a>00197             [<a class="code" href="interface_t_m_document_a32b747dadc236b7a650f0b3253ef03b5.html#a32b747dadc236b7a650f0b3253ef03b5" title="Progress bar to show (time since start date:time until end date)">dCurrentTaskDateProgress</a> setDoubleValue: (double)[currentTask <a class="code" href="interface_c_s132_task_a30da4f4f532bb33c104cd1da88438ee2.html#a30da4f4f532bb33c104cd1da88438ee2" title="Computes the progress of the date from start to finish.">progressOfDateFrom</a>:0 <a class="code" href="interface_c_s132_task_a30da4f4f532bb33c104cd1da88438ee2.html#a30da4f4f532bb33c104cd1da88438ee2" title="Computes the progress of the date from start to finish.">to</a>:100]];
+<a name="l00198"></a>00198         }
+<a name="l00199"></a>00199 
+<a name="l00200"></a>00200     } <span class="keywordflow">else</span> {
+<a name="l00201"></a>00201         [<a class="code" href="interface_t_m_document_a4b60fe71abb4800ac8ed81eed3cf5e91.html#a4b60fe71abb4800ac8ed81eed3cf5e91" title="Checkbox for user to indicate when they are actively working on current task.">dTaskInProgress</a> setEnabled:NO];
+<a name="l00202"></a>00202         [<a class="code" href="interface_t_m_document_a9955166beb41d7deff7cb8f33d1cd950.html#a9955166beb41d7deff7cb8f33d1cd950" title="Number box to display current task&#39;s time remaining.">dCurrentTaskTimeRemaining</a> setEnabled:NO];
+<a name="l00203"></a>00203         [<a class="code" href="interface_t_m_document_ad77f6f5d694113eeb540701267308bdc.html#ad77f6f5d694113eeb540701267308bdc" title="Text box to display current task&#39;s name.">dCurrentTaskName</a> setStringValue:@&quot;No Task&quot;];
+<a name="l00204"></a>00204         [<a class="code" href="interface_t_m_document_a42f2d6e56ca5a9829b53fe6e69d26a47.html#a42f2d6e56ca5a9829b53fe6e69d26a47" title="Text box to display current task&#39;s description.">dCurrentTaskDescription</a> setString:@&quot;&quot;];
+<a name="l00205"></a>00205         [<a class="code" href="interface_t_m_document_ace784700531a4104c71d6a284b46ef24.html#ace784700531a4104c71d6a284b46ef24" title="Date field for current task&#39;s deadline.">dCurrentTaskDateDue</a> setDateValue: [NSDate date]];
+<a name="l00206"></a>00206         [<a class="code" href="interface_t_m_document_a0340f33a7627abdcda26e36982145328.html#a0340f33a7627abdcda26e36982145328" title="Date field for current task&#39;s date of creation.">dCurrentTaskDateEntered</a> setDateValue: [NSDate date]];
+<a name="l00207"></a>00207         [<a class="code" href="interface_t_m_document_af070986feb7c9e2c9877262b1a46fe68.html#af070986feb7c9e2c9877262b1a46fe68" title="Number box to display time spent so far on current task.">dCurrentTaskTimeSpent</a> setIntValue:0];
+<a name="l00208"></a>00208         [<a class="code" href="interface_t_m_document_a9955166beb41d7deff7cb8f33d1cd950.html#a9955166beb41d7deff7cb8f33d1cd950" title="Number box to display current task&#39;s time remaining.">dCurrentTaskTimeRemaining</a> setIntValue:0];    
+<a name="l00209"></a>00209         [<a class="code" href="interface_t_m_document_a32b747dadc236b7a650f0b3253ef03b5.html#a32b747dadc236b7a650f0b3253ef03b5" title="Progress bar to show (time since start date:time until end date)">dCurrentTaskDateProgress</a> setIndeterminate:YES];
+<a name="l00210"></a>00210         [<a class="code" href="interface_t_m_document_a1c242af51a55d7daf71790287f300304.html#a1c242af51a55d7daf71790287f300304" title="Progress bar to show (time spent:time remaining)">dCurrentTaskCompletion</a> setIndeterminate:YES];
+<a name="l00211"></a>00211         [<a class="code" href="interface_t_m_document_a32b747dadc236b7a650f0b3253ef03b5.html#a32b747dadc236b7a650f0b3253ef03b5" title="Progress bar to show (time since start date:time until end date)">dCurrentTaskDateProgress</a> stopAnimation:self];
+<a name="l00212"></a>00212         [<a class="code" href="interface_t_m_document_a1c242af51a55d7daf71790287f300304.html#a1c242af51a55d7daf71790287f300304" title="Progress bar to show (time spent:time remaining)">dCurrentTaskCompletion</a> stopAnimation:self];
+<a name="l00213"></a>00213         [<a class="code" href="interface_t_m_document_a4b60fe71abb4800ac8ed81eed3cf5e91.html#a4b60fe71abb4800ac8ed81eed3cf5e91" title="Checkbox for user to indicate when they are actively working on current task.">dTaskInProgress</a> setState:0]; <span class="comment">//Turn off checkbox</span>
+<a name="l00214"></a>00214     }
+<a name="l00215"></a>00215     [<a class="code" href="interface_t_m_document_a30fbe3828a4ab82ebca94c52ae65ab6d.html#a30fbe3828a4ab82ebca94c52ae65ab6d" title="A text box to display the remaining tasks.">dTasksRemaining</a> setIntValue:[<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630" title="The task-tracking brains of the operation.">taskTracker</a> <a class="code" href="interface_c_s132_manager_a3cb78bf1a26a76ef98b251c549286db4.html#a3cb78bf1a26a76ef98b251c549286db4" title="Count how many task there are to do.">countTasksToDo</a>]];
+<a name="l00216"></a>00216     
+<a name="l00217"></a>00217 }
+<a name="l00218"></a>00218 
+<a name="l00219"></a><a class="code" href="interface_t_m_document_a0c47d35fde176ba4b8d593c6d464357f.html#a0c47d35fde176ba4b8d593c6d464357f">00219</a> - (void)workTicker:(NSTimer*)theTimer
+<a name="l00220"></a>00220 {
+<a name="l00221"></a>00221 <span class="comment">//    NSLog(@&quot;Tick&quot;);</span>
+<a name="l00222"></a>00222     <span class="keywordflow">if</span>(![<a class="code" href="interface_t_m_document_a4b60fe71abb4800ac8ed81eed3cf5e91.html#a4b60fe71abb4800ac8ed81eed3cf5e91" title="Checkbox for user to indicate when they are actively working on current task.">dTaskInProgress</a> state]) [theTimer invalidate];
+<a name="l00223"></a>00223     [<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630" title="The task-tracking brains of the operation.">taskTracker</a> <a class="code" href="interface_c_s132_manager_abb6a5d768ced586c65cc6666e9983e46.html#abb6a5d768ced586c65cc6666e9983e46" title="To spend time on topTime.">spendTimeOnTopTask</a>:TICK_SIZE];
+<a name="l00224"></a>00224     [<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a610c3fb1762b5fffcafbd42efd352857.html#a610c3fb1762b5fffcafbd42efd352857" title="Refresh all the information in the &#39;current task&#39; tab to reflect current top task.">updateCurrentTaskDisplay</a>];
 <a name="l00225"></a>00225 }
 <a name="l00226"></a>00226 
-<a name="l00227"></a><a class="code" href="interface_t_m_document_a0c47d35fde176ba4b8d593c6d464357f.html#a0c47d35fde176ba4b8d593c6d464357f">00227</a> - (void)workTicker:(NSTimer*)theTimer
-<a name="l00228"></a>00228 {
-<a name="l00229"></a>00229 <span class="comment">//    NSLog(@&quot;Tick&quot;);</span>
-<a name="l00230"></a>00230     <span class="keywordflow">if</span>(![<a class="code" href="interface_t_m_document_a4b60fe71abb4800ac8ed81eed3cf5e91.html#a4b60fe71abb4800ac8ed81eed3cf5e91">dTaskInProgress</a> state]) [theTimer invalidate];
-<a name="l00231"></a>00231     [<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630">taskTracker</a> <a class="code" href="interface_c_s132_manager_abb6a5d768ced586c65cc6666e9983e46.html#abb6a5d768ced586c65cc6666e9983e46" title="To spend time on topTime.">spendTimeOnTopTask</a>:TICK_SIZE];
-<a name="l00232"></a>00232     [<span class="keyword">self</span> <a class="code" href="interface_t_m_document_a610c3fb1762b5fffcafbd42efd352857.html#a610c3fb1762b5fffcafbd42efd352857">updateCurrentTaskDisplay</a>];
-<a name="l00233"></a>00233 }
-<a name="l00234"></a>00234 
-<a name="l00235"></a>00235 <span class="preprocessor">#pragma mark Feeding information to the table view</span>
-<a name="l00236"></a><a class="code" href="interface_t_m_document_a484f9a48f5df07b94b9947ff7d0a9229.html#a484f9a48f5df07b94b9947ff7d0a9229">00236</a> <span class="preprocessor"></span>-(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
-<a name="l00237"></a>00237 {
-<a name="l00238"></a>00238     <span class="keywordflow">return</span> [[<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630">taskTracker</a> <a class="code" href="interface_c_s132_manager_ac82d5a25cb649d47f9801ed531593f2a.html#ac82d5a25cb649d47f9801ed531593f2a" title="It represent a NSMutableArray pointer that keep track of task completed.">tasksCompleted</a>] count];
-<a name="l00239"></a>00239 }
-<a name="l00240"></a><a class="code" href="interface_t_m_document_abc58d98b83ec8cc8a00bf607db6b0213.html#abc58d98b83ec8cc8a00bf607db6b0213">00240</a> -(id)tableView:(NSTableView *)tableView 
-<a name="l00241"></a>00241 objectValueForTableColumn:(NSTableColumn *)tableColumn 
-<a name="l00242"></a>00242            row:(NSInteger)row
-<a name="l00243"></a>00243 {
-<a name="l00244"></a>00244     <a class="code" href="interface_c_s132_task.html">CS132Task</a>* theTask = nil;
-<a name="l00245"></a>00245     theTask = [[<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630">taskTracker</a> <a class="code" href="interface_c_s132_manager_ac82d5a25cb649d47f9801ed531593f2a.html#ac82d5a25cb649d47f9801ed531593f2a" title="It represent a NSMutableArray pointer that keep track of task completed.">tasksCompleted</a>] objectAtIndex:row];
-<a name="l00246"></a>00246     <span class="keywordtype">id</span> colName = [[tableColumn headerCell] stringValue];
-<a name="l00247"></a>00247     <span class="keywordflow">if</span>([colName isEqual:<span class="stringliteral">@&quot;Task&quot;</span>]) {
-<a name="l00248"></a>00248         <span class="keywordflow">return</span> [theTask <a class="code" href="interface_c_s132_task_a8a8cfbf68d3666849068a3c12ddb530e.html#a8a8cfbf68d3666849068a3c12ddb530e" title="Name or Title of the task.">taskName</a>];
-<a name="l00249"></a>00249     } <span class="keywordflow">else</span> <span class="keywordflow">if</span>([colName isEqual:<span class="stringliteral">@&quot;Completed&quot;</span>]) {
-<a name="l00250"></a>00250         <span class="keywordflow">return</span> [theTask <a class="code" href="interface_c_s132_task_a00ab823e601f4a87e221648d6c10d9bf.html#a00ab823e601f4a87e221648d6c10d9bf" title="Date when the task was finished. If the task hasn&#39;t been finished yet, this should be nil...">dateCompleted</a>];
-<a name="l00251"></a>00251     } <span class="keywordflow">else</span> <span class="keywordflow">if</span>([colName isEqual:<span class="stringliteral">@&quot;Deadline&quot;</span>]) {
-<a name="l00252"></a>00252         <span class="keywordflow">return</span> [theTask <a class="code" href="interface_c_s132_task_a580b64debb0b27061e686fdf3567a1b6.html#a580b64debb0b27061e686fdf3567a1b6" title="The date when the task is due.">dateDue</a>];
-<a name="l00253"></a>00253     } <span class="keywordflow">else</span> <span class="keywordflow">if</span>([colName isEqual:<span class="stringliteral">@&quot;Time Taken&quot;</span>]) {
-<a name="l00254"></a>00254         <span class="keywordflow">return</span> [NSNumber numberWithDouble:[theTask <a class="code" href="interface_c_s132_task_ac780519437dad9335b26cec9582643a5.html#ac780519437dad9335b26cec9582643a5" title="Amount of work-time that has been spent on the task so far.">timeSpent</a>]]; 
-<a name="l00255"></a>00255     } <span class="keywordflow">else</span> <span class="keywordflow">if</span>([colName isEqual:<span class="stringliteral">@&quot;Time Expected&quot;</span>]) {
-<a name="l00256"></a>00256         <span class="keywordflow">return</span> [NSNumber numberWithDouble:[theTask <a class="code" href="interface_c_s132_task_a64503a688df342de8240397cc9b68bc2.html#a64503a688df342de8240397cc9b68bc2" title="Original amount of actively-working-time the task was expected to take.">timeExpected</a>]]; 
-<a name="l00257"></a>00257     } <span class="keywordflow">else</span> {
-<a name="l00258"></a>00258         NSLog(<span class="stringliteral">@&quot;What column is %@?&quot;</span>,colName);
-<a name="l00259"></a>00259     }
-<a name="l00260"></a>00260     <span class="keywordflow">return</span> <span class="stringliteral">@&quot;???&quot;</span>;
-<a name="l00261"></a>00261 }
-<a name="l00262"></a>00262 
-<a name="l00263"></a><a class="code" href="interface_t_m_document_ae9874721899bab06d335bd39c0c3887f.html#ae9874721899bab06d335bd39c0c3887f">00263</a> - (IBAction)dumpDebugInfo:(<span class="keywordtype">id</span>)sender {
-<a name="l00264"></a>00264     NSLog(<span class="stringliteral">@&quot;MANAGER DUMP\n\n%@\n\n&quot;</span>,<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630">taskTracker</a>);
-<a name="l00265"></a>00265 }
-<a name="l00266"></a>00266 <span class="keyword">@end</span>
+<a name="l00227"></a>00227 <span class="preprocessor">#pragma mark Feeding information to the table view</span>
+<a name="l00228"></a><a class="code" href="interface_t_m_document_a484f9a48f5df07b94b9947ff7d0a9229.html#a484f9a48f5df07b94b9947ff7d0a9229">00228</a> <span class="preprocessor"></span>-(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
+<a name="l00229"></a>00229 {
+<a name="l00230"></a>00230     <span class="keywordflow">return</span> [[<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630" title="The task-tracking brains of the operation.">taskTracker</a> <a class="code" href="interface_c_s132_manager_ac82d5a25cb649d47f9801ed531593f2a.html#ac82d5a25cb649d47f9801ed531593f2a" title="It represent a NSMutableArray pointer that keep track of task completed.">tasksCompleted</a>] count];
+<a name="l00231"></a>00231 }
+<a name="l00232"></a><a class="code" href="interface_t_m_document_abc58d98b83ec8cc8a00bf607db6b0213.html#abc58d98b83ec8cc8a00bf607db6b0213">00232</a> -(id)tableView:(NSTableView *)tableView 
+<a name="l00233"></a>00233 objectValueForTableColumn:(NSTableColumn *)tableColumn 
+<a name="l00234"></a>00234            row:(NSInteger)row
+<a name="l00235"></a>00235 {
+<a name="l00236"></a>00236     <a class="code" href="interface_c_s132_task.html" title="Represents a completable task, with description, time estimates, and relevant dates.">CS132Task</a>* theTask = nil;
+<a name="l00237"></a>00237     theTask = [[<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630" title="The task-tracking brains of the operation.">taskTracker</a> <a class="code" href="interface_c_s132_manager_ac82d5a25cb649d47f9801ed531593f2a.html#ac82d5a25cb649d47f9801ed531593f2a" title="It represent a NSMutableArray pointer that keep track of task completed.">tasksCompleted</a>] objectAtIndex:row];
+<a name="l00238"></a>00238     <span class="keywordtype">id</span> colName = [[tableColumn headerCell] stringValue];
+<a name="l00239"></a>00239     <span class="keywordflow">if</span>([colName isEqual:<span class="stringliteral">@&quot;Task&quot;</span>]) {
+<a name="l00240"></a>00240         <span class="keywordflow">return</span> [theTask <a class="code" href="interface_c_s132_task_a8a8cfbf68d3666849068a3c12ddb530e.html#a8a8cfbf68d3666849068a3c12ddb530e" title="Name or Title of the task.">taskName</a>];
+<a name="l00241"></a>00241     } <span class="keywordflow">else</span> <span class="keywordflow">if</span>([colName isEqual:<span class="stringliteral">@&quot;Completed&quot;</span>]) {
+<a name="l00242"></a>00242         <span class="keywordflow">return</span> [theTask <a class="code" href="interface_c_s132_task_a00ab823e601f4a87e221648d6c10d9bf.html#a00ab823e601f4a87e221648d6c10d9bf" title="Date when the task was finished. If the task hasn&#39;t been finished yet, this should be nil...">dateCompleted</a>];
+<a name="l00243"></a>00243     } <span class="keywordflow">else</span> <span class="keywordflow">if</span>([colName isEqual:<span class="stringliteral">@&quot;Deadline&quot;</span>]) {
+<a name="l00244"></a>00244         <span class="keywordflow">return</span> [theTask <a class="code" href="interface_c_s132_task_a580b64debb0b27061e686fdf3567a1b6.html#a580b64debb0b27061e686fdf3567a1b6" title="The date when the task is due.">dateDue</a>];
+<a name="l00245"></a>00245     } <span class="keywordflow">else</span> <span class="keywordflow">if</span>([colName isEqual:<span class="stringliteral">@&quot;Time Taken&quot;</span>]) {
+<a name="l00246"></a>00246         <span class="keywordflow">return</span> [NSNumber numberWithDouble:[theTask <a class="code" href="interface_c_s132_task_ac780519437dad9335b26cec9582643a5.html#ac780519437dad9335b26cec9582643a5" title="Amount of work-time that has been spent on the task so far.">timeSpent</a>]]; 
+<a name="l00247"></a>00247     } <span class="keywordflow">else</span> <span class="keywordflow">if</span>([colName isEqual:<span class="stringliteral">@&quot;Time Expected&quot;</span>]) {
+<a name="l00248"></a>00248         <span class="keywordflow">return</span> [NSNumber numberWithDouble:[theTask <a class="code" href="interface_c_s132_task_a64503a688df342de8240397cc9b68bc2.html#a64503a688df342de8240397cc9b68bc2" title="Original amount of actively-working-time the task was expected to take.">timeExpected</a>]]; 
+<a name="l00249"></a>00249     } <span class="keywordflow">else</span> {
+<a name="l00250"></a>00250         NSLog(<span class="stringliteral">@&quot;What column is %@?&quot;</span>,colName);
+<a name="l00251"></a>00251     }
+<a name="l00252"></a>00252     <span class="keywordflow">return</span> <span class="stringliteral">@&quot;???&quot;</span>;
+<a name="l00253"></a>00253 }
+<a name="l00254"></a>00254 
+<a name="l00255"></a><a class="code" href="interface_t_m_document_ae9874721899bab06d335bd39c0c3887f.html#ae9874721899bab06d335bd39c0c3887f">00255</a> - (IBAction)dumpDebugInfo:(<span class="keywordtype">id</span>)sender {
+<a name="l00256"></a>00256     NSLog(<span class="stringliteral">@&quot;MANAGER DUMP\n\n%@\n\n&quot;</span>,<a class="code" href="interface_t_m_document_a4861a1417a7a5802aa9ecc2f7dbbc630.html#a4861a1417a7a5802aa9ecc2f7dbbc630" title="The task-tracking brains of the operation.">taskTracker</a>);
+<a name="l00257"></a>00257 }
+<a name="l00258"></a>00258 <span class="keyword">@end</span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_t_m_document_8m.html">TMDocument.m</a>      </li>
-      <li class="footer">Generated on Fri May 18 2012 20:32:30 for Task Master by&#160;
+      <li class="footer">Generated on Fri May 18 2012 23:52:37 for Task Master by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

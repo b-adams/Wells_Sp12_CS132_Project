@@ -7,16 +7,16 @@
 
 #import <Foundation/Foundation.h>
 
-#define ROOT_INDEX 1
-
 /**
  @brief Index where the root of the heap is stored, in the heap's array contents
- @see http://en.wikipedia.org/wiki/Priority_queue#Usual_implementation
  */
+#define ROOT_INDEX 1
+
 @class CS132Task;
 
 /**
- Heap-based implementation of a priority queue
+ @brief Heap-based implementation of a priority queue
+ @see http://en.wikipedia.org/wiki/Priority_queue#Usual_implementation
  */
 @interface CS132Heap : NSObject
 

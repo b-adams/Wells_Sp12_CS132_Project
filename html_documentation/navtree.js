@@ -1,6 +1,7 @@
 var NAVTREE =
 [
   [ "Task Master", "index.html", [
+    [ "About TaskMaster", "index.html", null ],
     [ "Class List", "annotated.html", [
       [ "CS132Heap", "interface_c_s132_heap.html", null ],
       [ "CS132Manager", "interface_c_s132_manager.html", null ],

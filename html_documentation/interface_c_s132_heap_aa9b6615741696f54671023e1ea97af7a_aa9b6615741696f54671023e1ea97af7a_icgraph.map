@@ -1,4 +1,7 @@
 <map id="G" name="G">
 <area shape="rect" id="node3" href="$interface_c_s132_heap_a774d0c9b23644a85e6dda42d5d3366c3.html#a774d0c9b23644a85e6dda42d5d3366c3" title="take the task at the given index and bubbles it up to the correct spot in the heap" alt="" coords="270,29,440,57"/>
-<area shape="rect" id="node6" href="$interface_c_s132_heap_abcd39dd4ee705e15fc12f85c8fa39da7.html#abcd39dd4ee705e15fc12f85c8fa39da7" title="determine if a certain index has a parent" alt="" coords="268,81,442,109"/>
+<area shape="rect" id="node12" href="$interface_c_s132_heap_abcd39dd4ee705e15fc12f85c8fa39da7.html#abcd39dd4ee705e15fc12f85c8fa39da7" title="determine if a certain index has a parent" alt="" coords="268,81,442,109"/>
+<area shape="rect" id="node5" href="$interface_c_s132_heap_ad4d1ac1bebb1be8a89e2d2ad816234d0.html#ad4d1ac1bebb1be8a89e2d2ad816234d0" title="add a task to the heap" alt="" coords="491,29,653,57"/>
+<area shape="rect" id="node7" href="$interface_c_s132_manager_ad6cda86592385271cd8abcf7017ee8fb.html#ad6cda86592385271cd8abcf7017ee8fb" title="Add a task with necessary task information." alt="" coords="702,29,1200,57"/>
+<area shape="rect" id="node9" href="$interface_t_m_document_a7fa17b92266b7cf083f3579d231977a3.html#a7fa17b92266b7cf083f3579d231977a3" title="Executed in response to user clicking &quot;Add Task&quot; button." alt="" coords="1248,29,1427,57"/>
 </map>

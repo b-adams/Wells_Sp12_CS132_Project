@@ -64,7 +64,7 @@ function toggleVisibility(linkObj) {
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="TaskMaster_Icon.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Task Master&#160;<span id="projectnumber">9bd4317</span></div>
+   <div id="projectname">Task Master&#160;<span id="projectnumber">c2073ec</span></div>
    <div id="projectbrief">CS132 Final Project - Task Tracking Application</div>
   </td>
  </tr>
@@ -124,7 +124,7 @@ function toggleVisibility(linkObj) {
 <a name="l00009"></a>00009 <span class="preprocessor">#import &quot;<a class="code" href="_c_s132_heap_8h.html" title="Heap interface.">CS132Heap.h</a>&quot;</span>
 <a name="l00010"></a>00010 <span class="preprocessor">#import &quot;<a class="code" href="_c_s132_task_8h.html" title="Heap implementation.">CS132Task.h</a>&quot;</span>
 <a name="l00011"></a>00011 
-<a name="l00012"></a>00012 <span class="keyword">@implementation </span><a class="code" href="interface_c_s132_manager.html">CS132Manager</a>
+<a name="l00012"></a>00012 <span class="keyword">@implementation </span><a class="code" href="interface_c_s132_manager.html" title="Tracks completed, current, and to-do tasks.">CS132Manager</a>
 <a name="l00013"></a>00013 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_manager_ac82d5a25cb649d47f9801ed531593f2a.html#ac82d5a25cb649d47f9801ed531593f2a" title="It represent a NSMutableArray pointer that keep track of task completed.">tasksCompleted</a>;
 <a name="l00014"></a>00014 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_manager_aa6ae7c331eb1187d4139baf33153282b.html#aa6ae7c331eb1187d4139baf33153282b" title="It represent CS132Heap pointer that monitors the task to do next.">tasksToDo</a>;
 <a name="l00015"></a>00015 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s132_manager_a5d7496204ad69073d0f27c597d441233.html#a5d7496204ad69073d0f27c597d441233" title="It represent CS132 pointer to the current top task of the heap.">topTask</a>;
@@ -133,8 +133,8 @@ function toggleVisibility(linkObj) {
 <a name="l00018"></a>00018     <span class="keyword">self</span> = [<span class="keyword">super</span> init];
 <a name="l00019"></a>00019     <span class="keywordflow">if</span> (<span class="keyword">self</span>) {
 <a name="l00020"></a>00020         [<span class="keyword">self</span> setTasksCompleted:[NSMutableArray array]];
-<a name="l00021"></a>00021         [<span class="keyword">self</span> setTasksToDo:[[<a class="code" href="interface_c_s132_heap.html">CS132Heap</a> alloc] init]];
-<a name="l00022"></a>00022         [<span class="keyword">self</span> setTopTask:[[<a class="code" href="interface_c_s132_task.html">CS132Task</a> alloc] init]];
+<a name="l00021"></a>00021         [<span class="keyword">self</span> setTasksToDo:[[<a class="code" href="interface_c_s132_heap.html" title="Heap-based implementation of a priority queue.">CS132Heap</a> alloc] init]];
+<a name="l00022"></a>00022         [<span class="keyword">self</span> setTopTask:nil];
 <a name="l00023"></a>00023     }
 <a name="l00024"></a>00024     <span class="keywordflow">return</span> <span class="keyword">self</span>;
 <a name="l00025"></a>00025 }
@@ -146,60 +146,63 @@ function toggleVisibility(linkObj) {
 <a name="l00031"></a>00031 
 <a name="l00032"></a><a class="code" href="interface_c_s132_manager_aa521edc7a88f12e4d3e188407f960d98.html#aa521edc7a88f12e4d3e188407f960d98">00032</a> -(void) <a class="code" href="interface_c_s132_manager_aa521edc7a88f12e4d3e188407f960d98.html#aa521edc7a88f12e4d3e188407f960d98">fixTopTask</a>
 <a name="l00033"></a>00033 {
-<a name="l00034"></a>00034     <span class="comment">//NSLog(@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;, @&quot;Stubulous&quot;, NSStringFromClass([self class]), NSStringFromSelector(_cmd));</span>
-<a name="l00035"></a>00035     <span class="comment">//Put the pointer pointing to the task that is now finished to point to the root of the heap...</span>
-<a name="l00036"></a>00036     
-<a name="l00037"></a>00037     [<span class="keyword">self</span> setTopTask: [[<span class="keyword">self</span> <a class="code" href="interface_c_s132_manager_aa6ae7c331eb1187d4139baf33153282b.html#aa6ae7c331eb1187d4139baf33153282b" title="It represent CS132Heap pointer that monitors the task to do next.">tasksToDo</a>] <a class="code" href="interface_c_s132_heap_a96e361766f2872fc9501220afe388060.html#a96e361766f2872fc9501220afe388060" title="find the top task of the heap">topTask</a>]];
-<a name="l00038"></a>00038     
-<a name="l00039"></a>00039 }
-<a name="l00040"></a>00040 
-<a name="l00041"></a><a class="code" href="interface_c_s132_manager_abb6a5d768ced586c65cc6666e9983e46.html#abb6a5d768ced586c65cc6666e9983e46">00041</a> -(void) spendTimeOnTopTask:(<span class="keywordtype">int</span>) seconds
-<a name="l00042"></a>00042 {
-<a name="l00043"></a>00043     [[<span class="keyword">self</span> <a class="code" href="interface_c_s132_manager_a5d7496204ad69073d0f27c597d441233.html#a5d7496204ad69073d0f27c597d441233" title="It represent CS132 pointer to the current top task of the heap.">topTask</a>] setTimeSpent:[[<span class="keyword">self</span> <a class="code" href="interface_c_s132_manager_a5d7496204ad69073d0f27c597d441233.html#a5d7496204ad69073d0f27c597d441233" title="It represent CS132 pointer to the current top task of the heap.">topTask</a>] <a class="code" href="interface_c_s132_task_ac780519437dad9335b26cec9582643a5.html#ac780519437dad9335b26cec9582643a5" title="Amount of work-time that has been spent on the task so far.">timeSpent</a>] + seconds];
-<a name="l00044"></a>00044     
-<a name="l00045"></a>00045     [[<span class="keyword">self</span> <a class="code" href="interface_c_s132_manager_a5d7496204ad69073d0f27c597d441233.html#a5d7496204ad69073d0f27c597d441233" title="It represent CS132 pointer to the current top task of the heap.">topTask</a>] setTimeRemaining:[[<span class="keyword">self</span> <a class="code" href="interface_c_s132_manager_a5d7496204ad69073d0f27c597d441233.html#a5d7496204ad69073d0f27c597d441233" title="It represent CS132 pointer to the current top task of the heap.">topTask</a>] <a class="code" href="interface_c_s132_task_aa42785b1cd6f0f504d91a6c39a27c9a2.html#aa42785b1cd6f0f504d91a6c39a27c9a2" title="Amount of remaining work-time currently forecast before the task will be completed.">timeRemaining</a>] - seconds];
-<a name="l00046"></a>00046     <span class="comment">//NSLog(@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;, @&quot;Stubulous&quot;, NSStringFromClass([self class]), NSStringFromSelector(_cmd));</span>
-<a name="l00047"></a>00047      
-<a name="l00048"></a>00048 }
+<a name="l00034"></a>00034     [<span class="keyword">self</span> setTopTask: [[<span class="keyword">self</span> <a class="code" href="interface_c_s132_manager_aa6ae7c331eb1187d4139baf33153282b.html#aa6ae7c331eb1187d4139baf33153282b" title="It represent CS132Heap pointer that monitors the task to do next.">tasksToDo</a>] <a class="code" href="interface_c_s132_heap_a96e361766f2872fc9501220afe388060.html#a96e361766f2872fc9501220afe388060" title="find the top task of the heap">topTask</a>]];
+<a name="l00035"></a>00035 }
+<a name="l00036"></a>00036 
+<a name="l00037"></a><a class="code" href="interface_c_s132_manager_abb6a5d768ced586c65cc6666e9983e46.html#abb6a5d768ced586c65cc6666e9983e46">00037</a> -(void) spendTimeOnTopTask:(<span class="keywordtype">int</span>) seconds
+<a name="l00038"></a>00038 {
+<a name="l00039"></a>00039     <a class="code" href="interface_c_s132_task.html" title="Represents a completable task, with description, time estimates, and relevant dates.">CS132Task</a>* theTask = [<span class="keyword">self</span> <a class="code" href="interface_c_s132_manager_a5d7496204ad69073d0f27c597d441233.html#a5d7496204ad69073d0f27c597d441233" title="It represent CS132 pointer to the current top task of the heap.">topTask</a>];
+<a name="l00040"></a>00040     <span class="keywordflow">if</span>(!theTask) <span class="keywordflow">return</span>; <span class="comment">//No top task to spend time upon</span>
+<a name="l00041"></a>00041     [theTask setTimeSpent:[theTask <a class="code" href="interface_c_s132_task_ac780519437dad9335b26cec9582643a5.html#ac780519437dad9335b26cec9582643a5" title="Amount of work-time that has been spent on the task so far.">timeSpent</a>] + seconds];
+<a name="l00042"></a>00042     [theTask setTimeRemaining:[theTask <a class="code" href="interface_c_s132_task_aa42785b1cd6f0f504d91a6c39a27c9a2.html#aa42785b1cd6f0f504d91a6c39a27c9a2" title="Amount of remaining work-time currently forecast before the task will be completed.">timeRemaining</a>] - seconds];
+<a name="l00043"></a>00043 }
+<a name="l00044"></a>00044 
+<a name="l00045"></a><a class="code" href="interface_c_s132_manager_af7af5f105b747483aa81f02577b1a69f.html#af7af5f105b747483aa81f02577b1a69f">00045</a> -(void) changeRemainingTimeTo:(<span class="keywordtype">int</span>) seconds
+<a name="l00046"></a>00046 {
+<a name="l00047"></a>00047     <a class="code" href="interface_c_s132_task.html" title="Represents a completable task, with description, time estimates, and relevant dates.">CS132Task</a>* theTask = [<span class="keyword">self</span> <a class="code" href="interface_c_s132_manager_a5d7496204ad69073d0f27c597d441233.html#a5d7496204ad69073d0f27c597d441233" title="It represent CS132 pointer to the current top task of the heap.">topTask</a>];
+<a name="l00048"></a>00048     <span class="keywordflow">if</span>(!theTask) <span class="keywordflow">return</span>; <span class="comment">//No top task to spend time upon</span>
 <a name="l00049"></a>00049 
-<a name="l00050"></a><a class="code" href="interface_c_s132_manager_af7af5f105b747483aa81f02577b1a69f.html#af7af5f105b747483aa81f02577b1a69f">00050</a> -(void) changeRemainingTimeTo:(<span class="keywordtype">int</span>) seconds
-<a name="l00051"></a>00051 {
-<a name="l00052"></a>00052     [[<span class="keyword">self</span> <a class="code" href="interface_c_s132_manager_a5d7496204ad69073d0f27c597d441233.html#a5d7496204ad69073d0f27c597d441233" title="It represent CS132 pointer to the current top task of the heap.">topTask</a>] setTimeRemaining:seconds];
-<a name="l00053"></a>00053     
-<a name="l00054"></a>00054     [[<span class="keyword">self</span> <a class="code" href="interface_c_s132_manager_aa6ae7c331eb1187d4139baf33153282b.html#aa6ae7c331eb1187d4139baf33153282b" title="It represent CS132Heap pointer that monitors the task to do next.">tasksToDo</a>] <a class="code" href="interface_c_s132_heap_af1da7a3fdbc4691e504b7033732cfedf.html#af1da7a3fdbc4691e504b7033732cfedf" title="takes the task at the given index and moves it down to the correct spot of the heap">bubbleDown</a>:ROOT_INDEX];
-<a name="l00055"></a>00055     
-<a name="l00056"></a>00056     [<span class="keyword">self</span> <a class="code" href="interface_c_s132_manager_aa521edc7a88f12e4d3e188407f960d98.html#aa521edc7a88f12e4d3e188407f960d98">fixTopTask</a>]; 
-<a name="l00057"></a>00057       <span class="comment">//NSLog(@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;, @&quot;Stubulous&quot;, NSStringFromClass([self class]), NSStringFromSelector(_cmd));</span>
-<a name="l00058"></a>00058 }
-<a name="l00059"></a>00059 
-<a name="l00060"></a><a class="code" href="interface_c_s132_manager_ad6cda86592385271cd8abcf7017ee8fb.html#ad6cda86592385271cd8abcf7017ee8fb">00060</a> -(void) addTaskWithName: (NSString*) newName
-<a name="l00061"></a>00061          andDescription: (NSString*) newDesc
-<a name="l00062"></a>00062                  andDue: (NSDate*) newDue
-<a name="l00063"></a>00063         andTimeRequired: (<span class="keywordtype">int</span>) newTimeNeeded
-<a name="l00064"></a>00064 {
-<a name="l00065"></a>00065     <span class="comment">//NSLog(@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;, @&quot;Stubulous&quot;, NSStringFromClass([self class]), NSStringFromSelector(_cmd));</span>
-<a name="l00066"></a>00066     <span class="comment">//Set up name, description, due date, and time needed.... How? Do I use initWith... ??</span>
-<a name="l00067"></a>00067     <a class="code" href="interface_c_s132_task.html">CS132Task</a>* taskCreated = [[<a class="code" href="interface_c_s132_task.html">CS132Task</a> alloc] 
-<a name="l00068"></a>00068                        initWithName:newName 
-<a name="l00069"></a>00069                      andDescription:newDesc 
-<a name="l00070"></a>00070                          andDueDate:newDue 
-<a name="l00071"></a>00071                     andTimeEstimate:newTimeNeeded];
-<a name="l00072"></a>00072     [[<span class="keyword">self</span> <a class="code" href="interface_c_s132_manager_aa6ae7c331eb1187d4139baf33153282b.html#aa6ae7c331eb1187d4139baf33153282b" title="It represent CS132Heap pointer that monitors the task to do next.">tasksToDo</a>] <a class="code" href="interface_c_s132_heap_ad4d1ac1bebb1be8a89e2d2ad816234d0.html#ad4d1ac1bebb1be8a89e2d2ad816234d0" title="add a task to the heap">addTask</a>:taskCreated];
-<a name="l00073"></a>00073     
-<a name="l00074"></a>00074 }
-<a name="l00075"></a>00075 
-<a name="l00076"></a>00076 <span class="preprocessor">#warning Implementation needed (KEvans)</span>
-<a name="l00077"></a><a class="code" href="interface_c_s132_manager_ad0ab46b84abf26fa5554eb24e87f8d77.html#ad0ab46b84abf26fa5554eb24e87f8d77">00077</a> <span class="preprocessor"></span>-(NSString*) <a class="code" href="interface_c_s132_manager_ad0ab46b84abf26fa5554eb24e87f8d77.html#ad0ab46b84abf26fa5554eb24e87f8d77">description</a>
-<a name="l00078"></a>00078 {
-<a name="l00079"></a>00079     <span class="keywordflow">return</span> [NSString stringWithFormat:@&quot;Top Task: %@, Tasks to Do: %@, Tasks Completed: %@&quot;, [<span class="keyword">self</span> <a class="code" href="interface_c_s132_manager_a5d7496204ad69073d0f27c597d441233.html#a5d7496204ad69073d0f27c597d441233" title="It represent CS132 pointer to the current top task of the heap.">topTask</a>],[<span class="keyword">self</span> <a class="code" href="interface_c_s132_manager_aa6ae7c331eb1187d4139baf33153282b.html#aa6ae7c331eb1187d4139baf33153282b" title="It represent CS132Heap pointer that monitors the task to do next.">tasksToDo</a>], [<span class="keyword">self</span> <a class="code" href="interface_c_s132_manager_ac82d5a25cb649d47f9801ed531593f2a.html#ac82d5a25cb649d47f9801ed531593f2a" title="It represent a NSMutableArray pointer that keep track of task completed.">tasksCompleted</a>]];
-<a name="l00080"></a>00080 }
-<a name="l00081"></a>00081 <span class="keyword">@end</span>
+<a name="l00050"></a>00050     NSTimeInterval newTime = 0.0+seconds;
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052     [theTask setTimeRemaining:newTime];
+<a name="l00053"></a>00053     <span class="keywordflow">if</span>(newTime &lt;= 0)
+<a name="l00054"></a>00054     { <span class="comment">//Task completed! Need to do stuff</span>
+<a name="l00055"></a>00055         [theTask setDateCompleted:[NSDate date]]; <span class="comment">//Completion=NOW</span>
+<a name="l00056"></a>00056         [<a class="code" href="interface_c_s132_manager_ac82d5a25cb649d47f9801ed531593f2a.html#ac82d5a25cb649d47f9801ed531593f2a" title="It represent a NSMutableArray pointer that keep track of task completed.">tasksCompleted</a> addObject:theTask]; <span class="comment">//Add to completed list</span>
+<a name="l00057"></a>00057         [<a class="code" href="interface_c_s132_manager_aa6ae7c331eb1187d4139baf33153282b.html#aa6ae7c331eb1187d4139baf33153282b" title="It represent CS132Heap pointer that monitors the task to do next.">tasksToDo</a> <a class="code" href="interface_c_s132_heap_af6dd3361c506c7b538c1492a49d87658.html#af6dd3361c506c7b538c1492a49d87658" title="delete the top task of the heap">deleteTopTask</a>]; <span class="comment">//Remove from todo list</span>
+<a name="l00058"></a>00058     } 
+<a name="l00059"></a>00059     <span class="keywordflow">else</span> 
+<a name="l00060"></a>00060     { <span class="comment">//Priority may have shifted and need adjustment</span>
+<a name="l00061"></a>00061         [[<span class="keyword">self</span> <a class="code" href="interface_c_s132_manager_aa6ae7c331eb1187d4139baf33153282b.html#aa6ae7c331eb1187d4139baf33153282b" title="It represent CS132Heap pointer that monitors the task to do next.">tasksToDo</a>] <a class="code" href="interface_c_s132_heap_af1da7a3fdbc4691e504b7033732cfedf.html#af1da7a3fdbc4691e504b7033732cfedf" title="takes the task at the given index and moves it down to the correct spot of the heap">bubbleDown</a>:ROOT_INDEX];
+<a name="l00062"></a>00062     }
+<a name="l00063"></a>00063     [<span class="keyword">self</span> <a class="code" href="interface_c_s132_manager_aa521edc7a88f12e4d3e188407f960d98.html#aa521edc7a88f12e4d3e188407f960d98">fixTopTask</a>]; <span class="comment">//We may have a new top task</span>
+<a name="l00064"></a>00064 }
+<a name="l00065"></a>00065 
+<a name="l00066"></a><a class="code" href="interface_c_s132_manager_ad6cda86592385271cd8abcf7017ee8fb.html#ad6cda86592385271cd8abcf7017ee8fb">00066</a> -(void) addTaskWithName: (NSString*) newName
+<a name="l00067"></a>00067          andDescription: (NSString*) newDesc
+<a name="l00068"></a>00068                  andDue: (NSDate*) newDue
+<a name="l00069"></a>00069         andTimeRequired: (<span class="keywordtype">int</span>) newTimeNeeded
+<a name="l00070"></a>00070 {
+<a name="l00071"></a>00071     <a class="code" href="interface_c_s132_task.html" title="Represents a completable task, with description, time estimates, and relevant dates.">CS132Task</a>* taskCreated = [[<a class="code" href="interface_c_s132_task.html" title="Represents a completable task, with description, time estimates, and relevant dates.">CS132Task</a> alloc] initWithName:newName 
+<a name="l00072"></a>00072                                               andDescription:newDesc 
+<a name="l00073"></a>00073                                                   andDueDate:newDue 
+<a name="l00074"></a>00074                                              andTimeEstimate:newTimeNeeded];
+<a name="l00075"></a>00075     [[<span class="keyword">self</span> <a class="code" href="interface_c_s132_manager_aa6ae7c331eb1187d4139baf33153282b.html#aa6ae7c331eb1187d4139baf33153282b" title="It represent CS132Heap pointer that monitors the task to do next.">tasksToDo</a>] <a class="code" href="interface_c_s132_heap_ad4d1ac1bebb1be8a89e2d2ad816234d0.html#ad4d1ac1bebb1be8a89e2d2ad816234d0" title="add a task to the heap">addTask</a>:taskCreated];
+<a name="l00076"></a>00076     [<span class="keyword">self</span> <a class="code" href="interface_c_s132_manager_aa521edc7a88f12e4d3e188407f960d98.html#aa521edc7a88f12e4d3e188407f960d98">fixTopTask</a>]; <span class="comment">//In case the new task is more important than the existing one</span>
+<a name="l00077"></a>00077 }
+<a name="l00078"></a>00078 
+<a name="l00079"></a><a class="code" href="interface_c_s132_manager_ad0ab46b84abf26fa5554eb24e87f8d77.html#ad0ab46b84abf26fa5554eb24e87f8d77">00079</a> -(NSString*) <a class="code" href="interface_c_s132_manager_ad0ab46b84abf26fa5554eb24e87f8d77.html#ad0ab46b84abf26fa5554eb24e87f8d77">description</a>
+<a name="l00080"></a>00080 {
+<a name="l00081"></a>00081     <span class="keywordflow">return</span> [NSString stringWithFormat:@&quot;Top Task: %@, Tasks to Do: %@, Tasks Completed: %@&quot;,
+<a name="l00082"></a>00082             [<span class="keyword">self</span> <a class="code" href="interface_c_s132_manager_a5d7496204ad69073d0f27c597d441233.html#a5d7496204ad69073d0f27c597d441233" title="It represent CS132 pointer to the current top task of the heap.">topTask</a>],[<span class="keyword">self</span> <a class="code" href="interface_c_s132_manager_aa6ae7c331eb1187d4139baf33153282b.html#aa6ae7c331eb1187d4139baf33153282b" title="It represent CS132Heap pointer that monitors the task to do next.">tasksToDo</a>], [<span class="keyword">self</span> <a class="code" href="interface_c_s132_manager_ac82d5a25cb649d47f9801ed531593f2a.html#ac82d5a25cb649d47f9801ed531593f2a" title="It represent a NSMutableArray pointer that keep track of task completed.">tasksCompleted</a>]];
+<a name="l00083"></a>00083 }
+<a name="l00084"></a>00084 <span class="keyword">@end</span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_c_s132_manager_8m.html">CS132Manager.m</a>      </li>
-      <li class="footer">Generated on Fri May 18 2012 20:32:30 for Task Master by&#160;
+      <li class="footer">Generated on Fri May 18 2012 23:52:37 for Task Master by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

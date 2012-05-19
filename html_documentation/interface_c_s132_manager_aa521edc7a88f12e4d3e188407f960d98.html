@@ -64,7 +64,7 @@ function toggleVisibility(linkObj) {
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="TaskMaster_Icon.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Task Master&#160;<span id="projectnumber">9bd4317</span></div>
+   <div id="projectname">Task Master&#160;<span id="projectnumber">c2073ec</span></div>
    <div id="projectbrief">CS132 Final Project - Task Tracking Application</div>
   </td>
  </tr>
@@ -145,15 +145,11 @@ function toggleVisibility(linkObj) {
 
 <p>Definition at line <a class="el" href="_c_s132_manager_8m_source.html#l00032">32</a> of file <a class="el" href="_c_s132_manager_8m_source.html">CS132Manager.m</a>.</p>
 
-<p>References <a class="el" href="_c_s132_manager_8h_source.html#l00022">tasksToDo</a>, and <a class="el" href="_c_s132_heap_8m_source.html#l00264">CS132Heap::topTask</a>.</p>
+<p>References <a class="el" href="_c_s132_manager_8h_source.html#l00024">tasksToDo</a>, and <a class="el" href="_c_s132_heap_8m_source.html#l00184">CS132Heap::topTask</a>.</p>
 
-<p>Referenced by <a class="el" href="_c_s132_manager_8m_source.html#l00050">changeRemainingTimeTo:</a>, and <a class="el" href="_t_m_document_8m_source.html#l00127">TMDocument::stopWorkOnCurrentTask</a>.</p>
+<p>Referenced by <a class="el" href="_c_s132_manager_8m_source.html#l00066">addTaskWithName:andDescription:andDue:andTimeRequired:</a>, <a class="el" href="_c_s132_manager_8m_source.html#l00045">changeRemainingTimeTo:</a>, and <a class="el" href="_t_m_document_8m_source.html#l00123">TMDocument::stopWorkOnCurrentTask</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="comment">//NSLog(@&quot;\n\tStatus=&lt;%@&gt; Class=&lt;%@&gt; Selector=&lt;%@&gt;&quot;, @&quot;Stubulous&quot;, NSStringFromClass([self class]), NSStringFromSelector(_cmd));</span>
-    <span class="comment">//Put the pointer pointing to the task that is now finished to point to the root of the heap...</span>
-    
     [<span class="keyword">self</span> setTopTask: [[<span class="keyword">self</span> tasksToDo] topTask]];
-    
 }
 </pre></div>
 <p><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -174,7 +170,7 @@ function toggleVisibility(linkObj) {
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="interface_c_s132_manager_aa521edc7a88f12e4d3e188407f960d98_aa521edc7a88f12e4d3e188407f960d98_icgraph.png" border="0" usemap="#interface_c_s132_manager_aa521edc7a88f12e4d3e188407f960d98_aa521edc7a88f12e4d3e188407f960d98_icgraph" alt=""/></div>
 <map name="interface_c_s132_manager_aa521edc7a88f12e4d3e188407f960d98_aa521edc7a88f12e4d3e188407f960d98_icgraph" id="interface_c_s132_manager_aa521edc7a88f12e4d3e188407f960d98_aa521edc7a88f12e4d3e188407f960d98_icgraph">
-<area shape="rect" id="node3" href="interface_c_s132_manager_af7af5f105b747483aa81f02577b1a69f.html#af7af5f105b747483aa81f02577b1a69f" title="Adjust remaining time to a new time remaining for topTask." alt="" coords="246,5,530,33"/><area shape="rect" id="node9" href="interface_t_m_document_a36efaf255be712c2f6ff19a7461d22bd.html#a36efaf255be712c2f6ff19a7461d22bd" title="&#45;[TMDocument stopWorkOnCurrentTask]" alt="" coords="257,57,519,85"/><area shape="rect" id="node5" href="interface_t_m_document_a3da833174a15d573c3fb95367b2a0115.html#a3da833174a15d573c3fb95367b2a0115" title="&#45;[TMDocument dChangeTaskActivity:]" alt="" coords="588,5,833,33"/><area shape="rect" id="node7" href="interface_t_m_document_aede60a3222114b9be9cdda8eae94ca40.html#aede60a3222114b9be9cdda8eae94ca40" title="&#45;[TMDocument dUpdateTimeRemaining:]" alt="" coords="579,57,843,85"/></map>
+<area shape="rect" id="node3" href="interface_c_s132_manager_ad6cda86592385271cd8abcf7017ee8fb.html#ad6cda86592385271cd8abcf7017ee8fb" title="Add a task with necessary task information." alt="" coords="246,5,744,33"/><area shape="rect" id="node7" href="interface_c_s132_manager_af7af5f105b747483aa81f02577b1a69f.html#af7af5f105b747483aa81f02577b1a69f" title="Adjust remaining time to a new time remaining for topTask." alt="" coords="352,109,637,137"/><area shape="rect" id="node13" href="interface_t_m_document_a36efaf255be712c2f6ff19a7461d22bd.html#a36efaf255be712c2f6ff19a7461d22bd" title="Stop the timer and force the Task Manager to check its top entry." alt="" coords="363,57,626,85"/><area shape="rect" id="node5" href="interface_t_m_document_a7fa17b92266b7cf083f3579d231977a3.html#a7fa17b92266b7cf083f3579d231977a3" title="Executed in response to user clicking &quot;Add Task&quot; button." alt="" coords="834,5,1014,33"/><area shape="rect" id="node9" href="interface_t_m_document_a3da833174a15d573c3fb95367b2a0115.html#a3da833174a15d573c3fb95367b2a0115" title="Executed in response to user clicking &#39;working on it&#39; checkbox." alt="" coords="802,109,1046,137"/><area shape="rect" id="node11" href="interface_t_m_document_aede60a3222114b9be9cdda8eae94ca40.html#aede60a3222114b9be9cdda8eae94ca40" title="Executed in response to user entering a new time in the time&#45;remaining box." alt="" coords="792,57,1056,85"/></map>
 </div>
 </p>
 
@@ -188,7 +184,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="interface_c_s132_manager.html">CS132Manager</a>      </li>
-      <li class="footer">Generated on Fri May 18 2012 20:32:30 for Task Master by&#160;
+      <li class="footer">Generated on Fri May 18 2012 23:52:38 for Task Master by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

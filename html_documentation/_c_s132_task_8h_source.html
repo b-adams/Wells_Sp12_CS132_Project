@@ -64,7 +64,7 @@ function toggleVisibility(linkObj) {
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="TaskMaster_Icon.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Task Master&#160;<span id="projectnumber">9bd4317</span></div>
+   <div id="projectname">Task Master&#160;<span id="projectnumber">c2073ec</span></div>
    <div id="projectbrief">CS132 Final Project - Task Tracking Application</div>
   </td>
  </tr>
@@ -122,50 +122,50 @@ function toggleVisibility(linkObj) {
 <a href="_c_s132_task_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
 <a name="l00008"></a>00008 <span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span>
 <a name="l00009"></a>00009 
-<a name="l00010"></a><a class="code" href="interface_c_s132_task.html">00010</a> <span class="keyword">@interface </span><a class="code" href="interface_c_s132_task.html">CS132Task</a> : NSObject
-<a name="l00011"></a>00011 
-<a name="l00015"></a><a class="code" href="interface_c_s132_task_a8a8cfbf68d3666849068a3c12ddb530e.html#a8a8cfbf68d3666849068a3c12ddb530e">00015</a> @property (strong) NSString* <a class="code" href="interface_c_s132_task_a8a8cfbf68d3666849068a3c12ddb530e.html#a8a8cfbf68d3666849068a3c12ddb530e" title="Name or Title of the task.">taskName</a>;
-<a name="l00016"></a>00016 
-<a name="l00020"></a><a class="code" href="interface_c_s132_task_ad58f65c4131c9bd2ff864701f3fc2812.html#ad58f65c4131c9bd2ff864701f3fc2812">00020</a> @property (strong) NSString* <a class="code" href="interface_c_s132_task_ad58f65c4131c9bd2ff864701f3fc2812.html#ad58f65c4131c9bd2ff864701f3fc2812" title="A textual description of the task or its details.">taskDescription</a>;
-<a name="l00021"></a>00021 
-<a name="l00025"></a><a class="code" href="interface_c_s132_task_a580b64debb0b27061e686fdf3567a1b6.html#a580b64debb0b27061e686fdf3567a1b6">00025</a> @property (strong) NSDate* <a class="code" href="interface_c_s132_task_a580b64debb0b27061e686fdf3567a1b6.html#a580b64debb0b27061e686fdf3567a1b6" title="The date when the task is due.">dateDue</a>;
-<a name="l00026"></a>00026 
-<a name="l00030"></a><a class="code" href="interface_c_s132_task_a09ad0124856e996f59d47b41f081cc5e.html#a09ad0124856e996f59d47b41f081cc5e">00030</a> @property (strong) NSDate* <a class="code" href="interface_c_s132_task_a09ad0124856e996f59d47b41f081cc5e.html#a09ad0124856e996f59d47b41f081cc5e" title="Date the task was created.">dateCreated</a>;
-<a name="l00031"></a>00031 
-<a name="l00035"></a><a class="code" href="interface_c_s132_task_aa42785b1cd6f0f504d91a6c39a27c9a2.html#aa42785b1cd6f0f504d91a6c39a27c9a2">00035</a> @property NSTimeInterval <a class="code" href="interface_c_s132_task_aa42785b1cd6f0f504d91a6c39a27c9a2.html#aa42785b1cd6f0f504d91a6c39a27c9a2" title="Amount of remaining work-time currently forecast before the task will be completed.">timeRemaining</a>;
-<a name="l00036"></a>00036 
-<a name="l00040"></a><a class="code" href="interface_c_s132_task_a00ab823e601f4a87e221648d6c10d9bf.html#a00ab823e601f4a87e221648d6c10d9bf">00040</a> @property (strong) NSDate* <a class="code" href="interface_c_s132_task_a00ab823e601f4a87e221648d6c10d9bf.html#a00ab823e601f4a87e221648d6c10d9bf" title="Date when the task was finished. If the task hasn&#39;t been finished yet, this should be nil...">dateCompleted</a>;
-<a name="l00041"></a>00041 
-<a name="l00045"></a><a class="code" href="interface_c_s132_task_ac780519437dad9335b26cec9582643a5.html#ac780519437dad9335b26cec9582643a5">00045</a> @property NSTimeInterval <a class="code" href="interface_c_s132_task_ac780519437dad9335b26cec9582643a5.html#ac780519437dad9335b26cec9582643a5" title="Amount of work-time that has been spent on the task so far.">timeSpent</a>;
-<a name="l00046"></a>00046 
-<a name="l00050"></a><a class="code" href="interface_c_s132_task_a64503a688df342de8240397cc9b68bc2.html#a64503a688df342de8240397cc9b68bc2">00050</a> @property NSTimeInterval <a class="code" href="interface_c_s132_task_a64503a688df342de8240397cc9b68bc2.html#a64503a688df342de8240397cc9b68bc2" title="Original amount of actively-working-time the task was expected to take.">timeExpected</a>;
-<a name="l00051"></a>00051 
-<a name="l00056"></a>00056 -(NSDate*) <a class="code" href="interface_c_s132_task_a701ae619ee160981490b1fb35f801d26.html#a701ae619ee160981490b1fb35f801d26" title="Calls effectiveDate.">dateEffective</a>;
-<a name="l00057"></a>00057 
-<a name="l00062"></a>00062 -(NSDate*) <a class="code" href="interface_c_s132_task_af527761c2fd231266890cd66fa47b2c2.html#af527761c2fd231266890cd66fa47b2c2" title="Compares dateDue to timeRemaining (dateDute - timeRemaining)">effectiveDate</a>;
-<a name="l00063"></a>00063 
-<a name="l00068"></a>00068 -(BOOL) <a class="code" href="interface_c_s132_task_a9f0b4fd9fa4d694a75ec743f848fe795.html#a9f0b4fd9fa4d694a75ec743f848fe795" title="Determines whether the task has been completed or not.">isCompleted</a>;
-<a name="l00069"></a>00069 
-<a name="l00078"></a>00078 -(id) initWithName: (NSString*) name
-<a name="l00079"></a>00079     andDescription: (NSString*) description
-<a name="l00080"></a>00080         andDueDate: (NSDate*) dueDate
-<a name="l00081"></a>00081    andTimeEstimate: (NSTimeInterval) seconds;
-<a name="l00082"></a>00082 
-<a name="l00090"></a>00090 -(NSComparisonResult) compare: (<a class="code" href="interface_c_s132_task.html">CS132Task</a>*) anotherTask;
-<a name="l00091"></a>00091 
-<a name="l00102"></a>00102 -(int) progressOfCompletionFrom:(<span class="keywordtype">int</span>) none
-<a name="l00103"></a>00103                              to:(<span class="keywordtype">int</span>) done;
-<a name="l00104"></a>00104 
-<a name="l00111"></a>00111 -(int) progressOfDateFrom:(<span class="keywordtype">int</span>) none
-<a name="l00112"></a>00112                        to:(<span class="keywordtype">int</span>) done;
-<a name="l00113"></a>00113 
-<a name="l00114"></a>00114 <span class="keyword">@end</span>
+<a name="l00013"></a><a class="code" href="interface_c_s132_task.html">00013</a> <span class="keyword">@interface </span><a class="code" href="interface_c_s132_task.html" title="Represents a completable task, with description, time estimates, and relevant dates.">CS132Task</a> : NSObject
+<a name="l00014"></a>00014 
+<a name="l00018"></a><a class="code" href="interface_c_s132_task_a8a8cfbf68d3666849068a3c12ddb530e.html#a8a8cfbf68d3666849068a3c12ddb530e">00018</a> @property (strong) NSString* <a class="code" href="interface_c_s132_task_a8a8cfbf68d3666849068a3c12ddb530e.html#a8a8cfbf68d3666849068a3c12ddb530e" title="Name or Title of the task.">taskName</a>;
+<a name="l00019"></a>00019 
+<a name="l00023"></a><a class="code" href="interface_c_s132_task_ad58f65c4131c9bd2ff864701f3fc2812.html#ad58f65c4131c9bd2ff864701f3fc2812">00023</a> @property (strong) NSString* <a class="code" href="interface_c_s132_task_ad58f65c4131c9bd2ff864701f3fc2812.html#ad58f65c4131c9bd2ff864701f3fc2812" title="A textual description of the task or its details.">taskDescription</a>;
+<a name="l00024"></a>00024 
+<a name="l00028"></a><a class="code" href="interface_c_s132_task_a580b64debb0b27061e686fdf3567a1b6.html#a580b64debb0b27061e686fdf3567a1b6">00028</a> @property (strong) NSDate* <a class="code" href="interface_c_s132_task_a580b64debb0b27061e686fdf3567a1b6.html#a580b64debb0b27061e686fdf3567a1b6" title="The date when the task is due.">dateDue</a>;
+<a name="l00029"></a>00029 
+<a name="l00033"></a><a class="code" href="interface_c_s132_task_a09ad0124856e996f59d47b41f081cc5e.html#a09ad0124856e996f59d47b41f081cc5e">00033</a> @property (strong) NSDate* <a class="code" href="interface_c_s132_task_a09ad0124856e996f59d47b41f081cc5e.html#a09ad0124856e996f59d47b41f081cc5e" title="Date the task was created.">dateCreated</a>;
+<a name="l00034"></a>00034 
+<a name="l00038"></a><a class="code" href="interface_c_s132_task_aa42785b1cd6f0f504d91a6c39a27c9a2.html#aa42785b1cd6f0f504d91a6c39a27c9a2">00038</a> @property NSTimeInterval <a class="code" href="interface_c_s132_task_aa42785b1cd6f0f504d91a6c39a27c9a2.html#aa42785b1cd6f0f504d91a6c39a27c9a2" title="Amount of remaining work-time currently forecast before the task will be completed.">timeRemaining</a>;
+<a name="l00039"></a>00039 
+<a name="l00043"></a><a class="code" href="interface_c_s132_task_a00ab823e601f4a87e221648d6c10d9bf.html#a00ab823e601f4a87e221648d6c10d9bf">00043</a> @property (strong) NSDate* <a class="code" href="interface_c_s132_task_a00ab823e601f4a87e221648d6c10d9bf.html#a00ab823e601f4a87e221648d6c10d9bf" title="Date when the task was finished. If the task hasn&#39;t been finished yet, this should be nil...">dateCompleted</a>;
+<a name="l00044"></a>00044 
+<a name="l00048"></a><a class="code" href="interface_c_s132_task_ac780519437dad9335b26cec9582643a5.html#ac780519437dad9335b26cec9582643a5">00048</a> @property NSTimeInterval <a class="code" href="interface_c_s132_task_ac780519437dad9335b26cec9582643a5.html#ac780519437dad9335b26cec9582643a5" title="Amount of work-time that has been spent on the task so far.">timeSpent</a>;
+<a name="l00049"></a>00049 
+<a name="l00053"></a><a class="code" href="interface_c_s132_task_a64503a688df342de8240397cc9b68bc2.html#a64503a688df342de8240397cc9b68bc2">00053</a> @property NSTimeInterval <a class="code" href="interface_c_s132_task_a64503a688df342de8240397cc9b68bc2.html#a64503a688df342de8240397cc9b68bc2" title="Original amount of actively-working-time the task was expected to take.">timeExpected</a>;
+<a name="l00054"></a>00054 
+<a name="l00059"></a>00059 -(NSDate*) <a class="code" href="interface_c_s132_task_a701ae619ee160981490b1fb35f801d26.html#a701ae619ee160981490b1fb35f801d26" title="Calls effectiveDate.">dateEffective</a>;
+<a name="l00060"></a>00060 
+<a name="l00065"></a>00065 -(NSDate*) <a class="code" href="interface_c_s132_task_af527761c2fd231266890cd66fa47b2c2.html#af527761c2fd231266890cd66fa47b2c2" title="Compares dateDue to timeRemaining (dateDute - timeRemaining)">effectiveDate</a>;
+<a name="l00066"></a>00066 
+<a name="l00071"></a>00071 -(BOOL) <a class="code" href="interface_c_s132_task_a9f0b4fd9fa4d694a75ec743f848fe795.html#a9f0b4fd9fa4d694a75ec743f848fe795" title="Determines whether the task has been completed or not.">isCompleted</a>;
+<a name="l00072"></a>00072 
+<a name="l00081"></a>00081 -(id) initWithName: (NSString*) name
+<a name="l00082"></a>00082     andDescription: (NSString*) description
+<a name="l00083"></a>00083         andDueDate: (NSDate*) dueDate
+<a name="l00084"></a>00084    andTimeEstimate: (NSTimeInterval) seconds;
+<a name="l00085"></a>00085 
+<a name="l00093"></a>00093 -(NSComparisonResult) compare: (<a class="code" href="interface_c_s132_task.html" title="Represents a completable task, with description, time estimates, and relevant dates.">CS132Task</a>*) anotherTask;
+<a name="l00094"></a>00094 
+<a name="l00105"></a>00105 -(int) progressOfCompletionFrom:(<span class="keywordtype">int</span>) none
+<a name="l00106"></a>00106                              to:(<span class="keywordtype">int</span>) done;
+<a name="l00107"></a>00107 
+<a name="l00114"></a>00114 -(int) progressOfDateFrom:(<span class="keywordtype">int</span>) none
+<a name="l00115"></a>00115                        to:(<span class="keywordtype">int</span>) done;
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117 <span class="keyword">@end</span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_c_s132_task_8h.html">CS132Task.h</a>      </li>
-      <li class="footer">Generated on Fri May 18 2012 20:32:30 for Task Master by&#160;
+      <li class="footer">Generated on Fri May 18 2012 23:52:37 for Task Master by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

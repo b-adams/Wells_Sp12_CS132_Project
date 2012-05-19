@@ -64,7 +64,7 @@ function toggleVisibility(linkObj) {
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="TaskMaster_Icon.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Task Master&#160;<span id="projectnumber">9bd4317</span></div>
+   <div id="projectname">Task Master&#160;<span id="projectnumber">c2073ec</span></div>
    <div id="projectbrief">CS132 Final Project - Task Tracking Application</div>
   </td>
  </tr>
@@ -153,16 +153,25 @@ function toggleVisibility(linkObj) {
 
 <p>delete the top task of the heap </p>
 
-<p>Definition at line <a class="el" href="_c_s132_heap_8m_source.html#l00132">132</a> of file <a class="el" href="_c_s132_heap_8m_source.html">CS132Heap.m</a>.</p>
+<p>Definition at line <a class="el" href="_c_s132_heap_8m_source.html#l00107">107</a> of file <a class="el" href="_c_s132_heap_8m_source.html">CS132Heap.m</a>.</p>
 
-<p>References <a class="el" href="_c_s132_heap_8m_source.html#l00049">bubbleDown:</a>, <a class="el" href="_c_s132_heap_8h_source.html#l00022">lastUsedIndex</a>, <a class="el" href="_c_s132_heap_8h_source.html#l00027">taskArray</a>, and <a class="el" href="_c_s132_heap_8m_source.html#l00264">topTask</a>.</p>
+<p>References <a class="el" href="_c_s132_heap_8m_source.html#l00031">bubbleDown:</a>, <a class="el" href="_c_s132_heap_8m_source.html#l00102">isEmpty</a>, <a class="el" href="_c_s132_heap_8h_source.html#l00026">lastUsedIndex</a>, and <a class="el" href="_c_s132_heap_8h_source.html#l00031">taskArray</a>.</p>
+
+<p>Referenced by <a class="el" href="_c_s132_manager_8m_source.html#l00045">CS132Manager::changeRemainingTimeTo:</a>.</p>
 <div class="fragment"><pre class="fragment">{
-   [taskArray exchangeObjectAtIndex:[taskArray indexOfObject:[<span class="keyword">self</span> topTask]] withObjectAtIndex:[<span class="keyword">self</span> lastUsedIndex]];
-    [taskArray replaceObjectAtIndex: lastUsedIndex withObject:[NSNull null]];
+    <span class="keywordflow">if</span>([<span class="keyword">self</span> <a class="code" href="interface_c_s132_heap_ab535e433b28e3ed21f3893f7f0128e5b.html#ab535e433b28e3ed21f3893f7f0128e5b" title="determine fi the heap is empty">isEmpty</a>]) <span class="keywordflow">return</span>; <span class="comment">//Nothing to see here, move along</span>
     
-    [<span class="keyword">self</span> bubbleDown: ROOT_INDEX];
+    <span class="keywordtype">int</span> newLastUsed = [<span class="keyword">self</span> lastUsedIndex] - 1; 
     
-    <span class="keywordflow">return</span>;
+    [taskArray exchangeObjectAtIndex:ROOT_INDEX 
+                   withObjectAtIndex:[<span class="keyword">self</span> lastUsedIndex]]; <span class="comment">//Swap to end</span>
+    
+    [taskArray replaceObjectAtIndex: lastUsedIndex 
+                         withObject:[NSNull null]]; <span class="comment">//Erase old top task</span>
+    
+    [<span class="keyword">self</span> setLastUsedIndex:newLastUsed]; <span class="comment">//Update content counter (before bubbling)</span>
+    
+    [<span class="keyword">self</span> bubbleDown: ROOT_INDEX]; <span class="comment">//Fix nonheapyness at the new root</span>
 }
 </pre></div>
 <p><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -172,7 +181,18 @@ function toggleVisibility(linkObj) {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="interface_c_s132_heap_af6dd3361c506c7b538c1492a49d87658_af6dd3361c506c7b538c1492a49d87658_cgraph.png" border="0" usemap="#interface_c_s132_heap_af6dd3361c506c7b538c1492a49d87658_af6dd3361c506c7b538c1492a49d87658_cgraph" alt=""/></div>
 <map name="interface_c_s132_heap_af6dd3361c506c7b538c1492a49d87658_af6dd3361c506c7b538c1492a49d87658_cgraph" id="interface_c_s132_heap_af6dd3361c506c7b538c1492a49d87658_af6dd3361c506c7b538c1492a49d87658_cgraph">
-<area shape="rect" id="node3" href="interface_c_s132_heap_af1da7a3fdbc4691e504b7033732cfedf.html#af1da7a3fdbc4691e504b7033732cfedf" title="takes the task at the given index and moves it down to the correct spot of the heap" alt="" coords="249,57,436,85"/><area shape="rect" id="node9" href="interface_c_s132_heap_a96e361766f2872fc9501220afe388060.html#a96e361766f2872fc9501220afe388060" title="find the top task of the heap" alt="" coords="265,109,420,137"/><area shape="rect" id="node5" href="interface_c_s132_heap_a9518f12f9d556ff62fa7d63b4411b865.html#a9518f12f9d556ff62fa7d63b4411b865" title="find the index of the left child of a given index" alt="" coords="490,5,716,33"/><area shape="rect" id="node7" href="interface_c_s132_heap_a61ef008d35dd55720347ed9b2c547e76.html#a61ef008d35dd55720347ed9b2c547e76" title="Compare the priority level of two tasks." alt="" coords="485,57,720,85"/><area shape="rect" id="node11" href="interface_c_s132_heap_a577d6f097dac732ff3e054f66b0dd599.html#a577d6f097dac732ff3e054f66b0dd599" title="Retrieve the task object based upon given index." alt="" coords="511,109,694,137"/></map>
+<area shape="rect" id="node3" href="interface_c_s132_heap_af1da7a3fdbc4691e504b7033732cfedf.html#af1da7a3fdbc4691e504b7033732cfedf" title="takes the task at the given index and moves it down to the correct spot of the heap" alt="" coords="249,70,436,98"/><area shape="rect" id="node12" href="interface_c_s132_heap_ab535e433b28e3ed21f3893f7f0128e5b.html#ab535e433b28e3ed21f3893f7f0128e5b" title="determine fi the heap is empty" alt="" coords="264,135,421,163"/><area shape="rect" id="node6" href="interface_c_s132_heap_a9518f12f9d556ff62fa7d63b4411b865.html#a9518f12f9d556ff62fa7d63b4411b865" title="find the index of the left child of a given index" alt="" coords="490,5,716,33"/><area shape="rect" id="node8" href="interface_c_s132_heap_a61ef008d35dd55720347ed9b2c547e76.html#a61ef008d35dd55720347ed9b2c547e76" title="Compare the priority level of two tasks." alt="" coords="485,57,720,85"/><area shape="rect" id="node10" href="interface_c_s132_heap_a577d6f097dac732ff3e054f66b0dd599.html#a577d6f097dac732ff3e054f66b0dd599" title="Retrieve the task object based upon given index." alt="" coords="511,109,694,137"/><area shape="rect" id="node14" href="interface_c_s132_heap_ad2b9df2685054576d0c69b7803d49e63.html#ad2b9df2685054576d0c69b7803d49e63" title="find number of tasks in array" alt="" coords="501,161,704,189"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="interface_c_s132_heap_af6dd3361c506c7b538c1492a49d87658_af6dd3361c506c7b538c1492a49d87658_icgraph.png" border="0" usemap="#interface_c_s132_heap_af6dd3361c506c7b538c1492a49d87658_af6dd3361c506c7b538c1492a49d87658_icgraph" alt=""/></div>
+<map name="interface_c_s132_heap_af6dd3361c506c7b538c1492a49d87658_af6dd3361c506c7b538c1492a49d87658_icgraph" id="interface_c_s132_heap_af6dd3361c506c7b538c1492a49d87658_af6dd3361c506c7b538c1492a49d87658_icgraph">
+<area shape="rect" id="node3" href="interface_c_s132_manager_af7af5f105b747483aa81f02577b1a69f.html#af7af5f105b747483aa81f02577b1a69f" title="Adjust remaining time to a new time remaining for topTask." alt="" coords="248,31,533,59"/><area shape="rect" id="node5" href="interface_t_m_document_a3da833174a15d573c3fb95367b2a0115.html#a3da833174a15d573c3fb95367b2a0115" title="Executed in response to user clicking &#39;working on it&#39; checkbox." alt="" coords="591,5,836,33"/><area shape="rect" id="node7" href="interface_t_m_document_aede60a3222114b9be9cdda8eae94ca40.html#aede60a3222114b9be9cdda8eae94ca40" title="Executed in response to user entering a new time in the time&#45;remaining box." alt="" coords="581,57,845,85"/></map>
 </div>
 </p>
 
@@ -186,7 +206,7 @@ function toggleVisibility(linkObj) {
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="interface_c_s132_heap.html">CS132Heap</a>      </li>
-      <li class="footer">Generated on Fri May 18 2012 20:32:30 for Task Master by&#160;
+      <li class="footer">Generated on Fri May 18 2012 23:52:37 for Task Master by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

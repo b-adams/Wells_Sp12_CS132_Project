@@ -1,4 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$interface_c_s132_heap_ad2b9df2685054576d0c69b7803d49e63.html#ad2b9df2685054576d0c69b7803d49e63" title="find number of tasks in array" alt="" coords="216,5,419,33"/>
-<area shape="rect" id="node5" href="$interface_c_s132_heap_ab535e433b28e3ed21f3893f7f0128e5b.html#ab535e433b28e3ed21f3893f7f0128e5b" title="determine fi the heap is empty" alt="" coords="467,5,624,33"/>
+<area shape="rect" id="node3" href="$interface_c_s132_heap_a774d0c9b23644a85e6dda42d5d3366c3.html#a774d0c9b23644a85e6dda42d5d3366c3" title="take the task at the given index and bubbles it up to the correct spot in the heap" alt="" coords="232,30,402,58"/>
+<area shape="rect" id="node10" href="$interface_c_s132_heap_ad2b9df2685054576d0c69b7803d49e63.html#ad2b9df2685054576d0c69b7803d49e63" title="find number of tasks in array" alt="" coords="216,82,419,110"/>
+<area shape="rect" id="node6" href="$interface_c_s132_heap_aa9b6615741696f54671023e1ea97af7a.html#aa9b6615741696f54671023e1ea97af7a" title="find the index of the parent of a given index" alt="" coords="467,5,680,33"/>
+<area shape="rect" id="node8" href="$interface_c_s132_heap_a577d6f097dac732ff3e054f66b0dd599.html#a577d6f097dac732ff3e054f66b0dd599" title="Retrieve the task object based upon given index." alt="" coords="482,57,665,85"/>
 </map>

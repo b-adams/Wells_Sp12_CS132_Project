@@ -1,2 +1,5 @@
 <map id="G" name="G">
+<area shape="rect" id="node3" href="$interface_c_s132_heap_ad4d1ac1bebb1be8a89e2d2ad816234d0.html#ad4d1ac1bebb1be8a89e2d2ad816234d0" title="add a task to the heap" alt="" coords="224,29,387,57"/>
+<area shape="rect" id="node5" href="$interface_c_s132_manager_ad6cda86592385271cd8abcf7017ee8fb.html#ad6cda86592385271cd8abcf7017ee8fb" title="Add a task with necessary task information." alt="" coords="435,29,933,57"/>
+<area shape="rect" id="node7" href="$interface_t_m_document_a7fa17b92266b7cf083f3579d231977a3.html#a7fa17b92266b7cf083f3579d231977a3" title="Executed in response to user clicking &quot;Add Task&quot; button." alt="" coords="981,29,1160,57"/>
 </map>

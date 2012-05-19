@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$interface_c_s132_manager_af7af5f105b747483aa81f02577b1a69f.html#af7af5f105b747483aa81f02577b1a69f" title="Adjust remaining time to a new time remaining for topTask." alt="" coords="248,31,533,59"/>
+<area shape="rect" id="node5" href="$interface_t_m_document_a3da833174a15d573c3fb95367b2a0115.html#a3da833174a15d573c3fb95367b2a0115" title="Executed in response to user clicking &#39;working on it&#39; checkbox." alt="" coords="591,5,836,33"/>
+<area shape="rect" id="node7" href="$interface_t_m_document_aede60a3222114b9be9cdda8eae94ca40.html#aede60a3222114b9be9cdda8eae94ca40" title="Executed in response to user entering a new time in the time&#45;remaining box." alt="" coords="581,57,845,85"/>
+</map>
