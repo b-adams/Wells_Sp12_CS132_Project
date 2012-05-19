@@ -1,10 +1,8 @@
-//
-//  TMDocument.m
-//  TaskMaster
-//
-//  Created by Bryant Adams on 5/1/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
+/**
+ @file TMDocument.m
+ @author Bryant Adams
+ @date 2012/05/01
+ */
 
 #import "TMDocument.h"
 #import "CS132Manager.h"
@@ -42,10 +40,9 @@
 {
     self = [super init];
     if (self) {
-        [self setTaskTracker: [[CS132Manager alloc] init]];
-        
         // Add your subclass-specific initialization here.
         // If an error occurs here, return nil.
+        [self setTaskTracker: [[CS132Manager alloc] init]];
     }
     return self;
 }
@@ -97,16 +94,11 @@
 #pragma mark User Interface Methods
 - (IBAction)dChangeOfUnits:(id)sender
 {
-//    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-//    NSLog(@"SENDER: %@\n\tselectedItem: %@\n\tindexOfSelectedItem: %ld\n\ttitleOfSelectedItem: %@\n\n", 
-//          sender, [sender selectedItem], [sender indexOfSelectedItem], [sender titleOfSelectedItem]);
     [self setUnitMultiplier:[self multiplierForUnitSelector:sender]];
     [self updateCurrentTaskDisplay];
 }
 - (IBAction)dChangeTaskActivity:(id)sender
 {
-//    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-//    NSLog(@"SENDER: %@\n\tstate: %ld\n\n", sender, [sender state]);
     printf("\nChange Task Activity\n");
 
     if(![sender state]) //Stopped working
@@ -145,10 +137,6 @@
 }
 - (IBAction)dAddTask:(id)sender
 {
-//    NSLog(@"\n\tStatus=<%@> Class=<%@> Selector=<%@>", @"Stub", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-//    NSLog(@"SENDER: %@\n\n", sender);
-//    NSLog(@"\n\tName: %@\n\tDescription: %@\n\tDue: %@",
-//          [dNewTaskName stringValue], [dNewTaskDescription string], [dNewTaskDueDate stringValue]);
     printf("\nAdd Task\n");
     NSTimeInterval timeMagnitude = [dNewTaskDuration doubleValue];
     int timeUnits = [self multiplierForUnitSelector:dNewTaskTimeUnit];
